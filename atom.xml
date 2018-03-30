@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>HI</title>
+  <title>General</title>
   
-  <subtitle>，越幸运</subtitle>
+  <subtitle>越努力,越幸运</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/hjyApple/hjyApple.github.io/"/>
