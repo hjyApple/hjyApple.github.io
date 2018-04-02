@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="hexo next主题配置本站采用Misc风格，主题背景默认的，不过颜色可以自己设置，新建一个tags标签，hexo new page tags，此时会在本地创建一个tags文件夹,想让侧栏出现tags和分类，只需将这个弄好就OK了 添加本地搜索安装hexo-generator-searchdbinstall hexo-generator-searchdb --save```1#### 修改站点配">
+<meta name="description" content="hexo next主题配置本站采用Misc风格，主题背景默认的，不过颜色可以自己设置，新建一个tags标签，hexo new page tags，此时会在本地创建一个tags文件夹,想让侧栏出现tags和分类，只需将这个弄好就OK了 添加本地搜索安装hexo-generator-searchdbnpm install hexo-generator-searchdb --save 修改站点配置文件1">
 <meta name="keywords" content="hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo">
 <meta property="og:url" content="https://github.com/hjyApple/hjyApple.github.io/2018/04/02/hexo/index.html">
 <meta property="og:site_name" content="General">
-<meta property="og:description" content="hexo next主题配置本站采用Misc风格，主题背景默认的，不过颜色可以自己设置，新建一个tags标签，hexo new page tags，此时会在本地创建一个tags文件夹,想让侧栏出现tags和分类，只需将这个弄好就OK了 添加本地搜索安装hexo-generator-searchdbinstall hexo-generator-searchdb --save```1#### 修改站点配">
+<meta property="og:description" content="hexo next主题配置本站采用Misc风格，主题背景默认的，不过颜色可以自己设置，新建一个tags标签，hexo new page tags，此时会在本地创建一个tags文件夹,想让侧栏出现tags和分类，只需将这个弄好就OK了 添加本地搜索安装hexo-generator-searchdbnpm install hexo-generator-searchdb --save 修改站点配置文件1">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-02T12:48:18.150Z">
+<meta property="og:updated_time" content="2018-04-02T12:56:53.872Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo">
-<meta name="twitter:description" content="hexo next主题配置本站采用Misc风格，主题背景默认的，不过颜色可以自己设置，新建一个tags标签，hexo new page tags，此时会在本地创建一个tags文件夹,想让侧栏出现tags和分类，只需将这个弄好就OK了 添加本地搜索安装hexo-generator-searchdbinstall hexo-generator-searchdb --save```1#### 修改站点配">
+<meta name="twitter:description" content="hexo next主题配置本站采用Misc风格，主题背景默认的，不过颜色可以自己设置，新建一个tags标签，hexo new page tags，此时会在本地创建一个tags文件夹,想让侧栏出现tags和分类，只需将这个弄好就OK了 添加本地搜索安装hexo-generator-searchdbnpm install hexo-generator-searchdb --save 修改站点配置文件1">
 
 
 
@@ -374,9 +374,10 @@ color="255,255,0" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
 
       
         <h3 id="hexo-next主题配置"><a href="#hexo-next主题配置" class="headerlink" title="hexo next主题配置"></a>hexo next主题配置</h3><p>本站采用Misc风格，主题背景默认的，不过颜色可以自己设置，新建一个tags标签，<code>hexo new page tags</code>，此时会在本地创建一个tags文件夹<br>,想让侧栏出现tags和分类，只需将这个弄好就OK了</p>
-<h3 id="添加本地搜索"><a href="#添加本地搜索" class="headerlink" title="添加本地搜索"></a>添加本地搜索</h3><h4 id="安装hexo-generator-searchdb"><a href="#安装hexo-generator-searchdb" class="headerlink" title="安装hexo-generator-searchdb"></a>安装hexo-generator-searchdb</h4><figure class="highlight plain"><figcaption><span>install hexo-generator-searchdb --save```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#### 修改站点配置文件</span><br></pre></td></tr></table></figure>
-<p>search:<br>  path: search.xml<br>  field: post<br>  format: html<br>  limit: 10000<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#### 修改主题配置文件</span><br></pre></td></tr></table></figure></p>
-<h1 id="Local-search"><a href="#Local-search" class="headerlink" title="Local search"></a>Local search</h1><p>local_search:<br>  enable: true<br><code>`</code><br>每次修改完成后先 <code>heco clean</code>,再<code>hexo generate(hexo g)</code></p>
+<h3 id="添加本地搜索"><a href="#添加本地搜索" class="headerlink" title="添加本地搜索"></a>添加本地搜索</h3><h3 id="安装hexo-generator-searchdb"><a href="#安装hexo-generator-searchdb" class="headerlink" title="安装hexo-generator-searchdb"></a>安装hexo-generator-searchdb</h3><p><code>npm install hexo-generator-searchdb --save</code></p>
+<h3 id="修改站点配置文件"><a href="#修改站点配置文件" class="headerlink" title="修改站点配置文件"></a>修改站点配置文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  format: html</span><br><span class="line">  limit: 10000</span><br></pre></td></tr></table></figure>
+<h3 id="修改主题配置文件"><a href="#修改主题配置文件" class="headerlink" title="修改主题配置文件"></a>修改主题配置文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># Local search</span><br><span class="line">local_search:</span><br><span class="line">  enable: true</span><br></pre></td></tr></table></figure>
+<p>每次修改完成后先 <code>heco clean</code>,再<code>hexo generate(hexo g)</code></p>
 <p>插入一句Markdownpad使用，使用时修改选项为commonMark;</p>
 
       
@@ -408,7 +409,7 @@ color="255,255,0" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/30/Campus/" rel="next" title="Web">
+              <a href="/2018/03/30/Web/" rel="next" title="Web">
                 <i class="fa fa-chevron-left"></i> Web
               </a>
             
@@ -497,7 +498,7 @@ color="255,255,0" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -550,7 +551,7 @@ color="255,255,0" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo-next主题配置"><span class="nav-number">1.</span> <span class="nav-text">hexo next主题配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加本地搜索"><span class="nav-number">2.</span> <span class="nav-text">添加本地搜索</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装hexo-generator-searchdb"><span class="nav-number">2.1.</span> <span class="nav-text">安装hexo-generator-searchdb</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Local-search"><span class="nav-number"></span> <span class="nav-text">Local search</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo-next主题配置"><span class="nav-number">1.</span> <span class="nav-text">hexo next主题配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加本地搜索"><span class="nav-number">2.</span> <span class="nav-text">添加本地搜索</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装hexo-generator-searchdb"><span class="nav-number">3.</span> <span class="nav-text">安装hexo-generator-searchdb</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改站点配置文件"><span class="nav-number">4.</span> <span class="nav-text">修改站点配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改主题配置文件"><span class="nav-number">5.</span> <span class="nav-text">修改主题配置文件</span></a></li></ol></div>
             
 
           </div>

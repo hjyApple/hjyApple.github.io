@@ -3,15 +3,10 @@
   <entry>
     <title><![CDATA[hexo]]></title>
     <url>%2F2018%2F04%2F02%2Fhexo%2F</url>
-    <content type="text"><![CDATA[hexo next主题配置本站采用Misc风格，主题背景默认的，不过颜色可以自己设置，新建一个tags标签，hexo new page tags，此时会在本地创建一个tags文件夹,想让侧栏出现tags和分类，只需将这个弄好就OK了 添加本地搜索安装hexo-generator-searchdbinstall hexo-generator-searchdb --save```1#### 修改站点配置文件 search: path: search.xml field: post format: html limit: 100001#### 修改主题配置文件 Local searchlocal_search: enable: true`每次修改完成后先 heco clean,再hexo generate(hexo g) 插入一句Markdownpad使用，使用时修改选项为commonMark;]]></content>
+    <content type="text"><![CDATA[hexo next主题配置本站采用Misc风格，主题背景默认的，不过颜色可以自己设置，新建一个tags标签，hexo new page tags，此时会在本地创建一个tags文件夹,想让侧栏出现tags和分类，只需将这个弄好就OK了 添加本地搜索安装hexo-generator-searchdbnpm install hexo-generator-searchdb --save 修改站点配置文件12345search: path: search.xml field: post format: html limit: 10000 修改主题配置文件123# Local searchlocal_search: enable: true 每次修改完成后先 heco clean,再hexo generate(hexo g) 插入一句Markdownpad使用，使用时修改选项为commonMark;]]></content>
       <tags>
         <tag>hexo</tag>
       </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Web]]></title>
-    <url>%2F2018%2F03%2F30%2FCampus%2F</url>
-    <content type="text"><![CDATA[这是一个平凡的世界，却有一群不平凡的人，]]></content>
   </entry>
   <entry>
     <title><![CDATA[Web]]></title>
