@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[CTF-Web]]></title>
+    <url>%2F2018%2F04%2F05%2FCTF-Web%2F</url>
+    <content type="text"><![CDATA[1、md5 collision，传送参数，函数如下：123456789101112&lt;?php$md51 = md5('QNKCDZO');$a = @$_GET['a'];$md52 = @md5($a);if(isset($a))&#123;if ($a != 'QNKCDZO' &amp;&amp; $md51 == $md52) &#123; echo "nctf&#123;*****************&#125;";&#125; else &#123; echo "false!!!";&#125;&#125;else&#123;echo "please input a";&#125;?&gt; 这个题目如果知道MD5碰撞的概念，同时知道了在PHP中的MD5中的0e的比较，这道题目就十分的简单。如果md的值是以0e开头的，那么就与其他的0e开头的Md5值是相等的。例子如下，其他符合/0[eE]\d{30}/的MD5值： 原码 md5 QNKCDZO 0e830400451993494058024219903391 s878926199a 0e545993274517709034328855841020 s155964671a 0e342768416822451524974117254469 s1502113478a 0e861580163291561247404381396064 s214587387a 0e848240448830537924465865611904 s878926199a 0e545993274517709034328855841020 s1091221200a 0e940624217856561557816327384675 s1885207154a 0e509367213418206700842008763514 s1836677006a 0e481036490867661113260034900752 s1184209335a 0e072485820392773389523109082030 s1665632922a 0e731198061491163073197128363787 s532378020a 0e220463095855511507588041205815 240610708 0e462097431906509019562988736854 2、层层递进查看源代码，最下面发现有子网站，直到最后找到404.html,发现注释里面存在flag3、JSAAencode代码报错，未定义的字符，修改一下，在控制台里面运行一下即可，关于控制台指南4、单身二十年使用Burpsuite抓包，发history里面藏着一个search_key.php，查看response，出现flag5、Are you from google?修改referer为 https://www.google.com提供一个http头部字段详解6、php decode123456789&lt;?phpfunction CLsI($ZzvSWE) &#123; $ZzvSWE = gzinflate(base64_decode($ZzvSWE)); for ($i = 0; $i &lt; strlen($ZzvSWE); $i++) &#123; $ZzvSWE[$i] = chr(ord($ZzvSWE[$i]) - 1); &#125; return $ZzvSWE;&#125;eval(CLsI("+7DnQGFmYVZ+eoGmlg0fd3puUoZ1fkppek1GdVZhQnJSSZq5aUImGNQBAA=="));?&gt; eval函数详解上述代码最后一行eval改为echo放入本地运行即可]]></content>
+      <categories>
+        <category>CTF</category>
+      </categories>
+      <tags>
+        <tag>Web-writeup</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[安装Burpsuite1.7.31]]></title>
     <url>%2F2018%2F04%2F05%2F%E5%AE%89%E8%A3%85Burpsuite1-7-31%2F</url>
     <content type="text"><![CDATA[起码要有一个Burpsuite的安装包，下载链接 密码：zgcxzip里面有两个文件首先打开burp-loader-keygen.jar，点击右上角的Run接着会出现将图三红色框内的License序列号复制到图二里面，点击右下角的Next，进入图五，点击Manual activation点击图五里面的Copy request，进入图一，粘贴到此处粘贴完后，出现红色框内的序列号，复制到图五的Paste response里面，点击Next，至此安装已经完成以后每次使用时双击burp-loader-keygen.jar，点击右上角的Run即可]]></content>
@@ -29,11 +40,6 @@
       <tags>
         <tag>hexo</tag>
       </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Web]]></title>
-    <url>%2F2018%2F03%2F30%2FWeb%2F</url>
-    <content type="text"><![CDATA[这是一个平凡的世界，却有一群不平凡的人，]]></content>
   </entry>
   <entry>
     <title><![CDATA[Hello World]]></title>
