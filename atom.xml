@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/hjyApple/hjyApple.github.io/"/>
-  <updated>2018-04-05T08:52:35.396Z</updated>
+  <updated>2018-04-05T12:52:33.170Z</updated>
   <id>https://github.com/hjyApple/hjyApple.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Burpsuite抓取收据数据包</title>
+    <link href="https://github.com/hjyApple/hjyApple.github.io/2018/04/05/Burpsuite%E6%8A%93%E5%8F%96%E6%94%B6%E6%8D%AE%E6%95%B0%E6%8D%AE%E5%8C%85/"/>
+    <id>https://github.com/hjyApple/hjyApple.github.io/2018/04/05/Burpsuite抓取收据数据包/</id>
+    <published>2018-04-05T12:51:52.000Z</published>
+    <updated>2018-04-05T12:52:33.170Z</updated>
+    
+    <content type="html"><![CDATA[<p>首先给手机导入crt证书，电脑证书为der格式，直接修改后缀为crt格式即可，此链接已经改好了<br>网盘下载:<em><a href="https://pan.baidu.com/s/1JmdjJ1VO40Vjv0a2OkGVNw" target="_blank" rel="noopener">https://pan.baidu.com/s/1JmdjJ1VO40Vjv0a2OkGVNw</a></em> &nbsp;密码：<code>6bs8</code><br>电脑和手机要处于同一个网络，手机WIFI设置好代理及端口，使用Burpsuite进行抓包分析，使用手机访问想要抓取的网站或App里面某一功能，<code>Burpsuite</code>的<code>history</code>里面有记录，可进行分析<br><a href="https://www.cnblogs.com/nieliangcai/p/6689915.html" target="_blank" rel="noopener">Burpsuite使用教程</a>,此处需要知道重放包的使用以及history即可<br>此处举例：<a href="https://zhuanlan.zhihu.com/p/35268895?utm_source=qq&amp;utm_medium=social" target="_blank" rel="noopener">坦白说</a><br>&nbsp;&nbsp;QQ新出的坦白说功能，抓取到的页面<code>Host</code>应为<code>ti.qq.com</code>，抓取到的数据为加密类型，<a href="https://jackz.cn/article/qq_honestsay" target="_blank" rel="noopener">解密网址</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;首先给手机导入crt证书，电脑证书为der格式，直接修改后缀为crt格式即可，此链接已经改好了&lt;br&gt;网盘下载:&lt;em&gt;&lt;a href=&quot;https://pan.baidu.com/s/1JmdjJ1VO40Vjv0a2OkGVNw&quot; target=&quot;_blank&quot; rel
+      
+    
+    </summary>
+    
+      <category term="Tools" scheme="https://github.com/hjyApple/hjyApple.github.io/categories/Tools/"/>
+    
+    
+      <category term="Tools" scheme="https://github.com/hjyApple/hjyApple.github.io/tags/Tools/"/>
+    
+  </entry>
   
   <entry>
     <title>CTF-Web</title>

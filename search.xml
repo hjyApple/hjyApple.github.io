@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Burpsuite抓取收据数据包]]></title>
+    <url>%2F2018%2F04%2F05%2FBurpsuite%E6%8A%93%E5%8F%96%E6%94%B6%E6%8D%AE%E6%95%B0%E6%8D%AE%E5%8C%85%2F</url>
+    <content type="text"><![CDATA[首先给手机导入crt证书，电脑证书为der格式，直接修改后缀为crt格式即可，此链接已经改好了网盘下载:https://pan.baidu.com/s/1JmdjJ1VO40Vjv0a2OkGVNw &nbsp;密码：6bs8电脑和手机要处于同一个网络，手机WIFI设置好代理及端口，使用Burpsuite进行抓包分析，使用手机访问想要抓取的网站或App里面某一功能，Burpsuite的history里面有记录，可进行分析Burpsuite使用教程,此处需要知道重放包的使用以及history即可此处举例：坦白说&nbsp;&nbsp;QQ新出的坦白说功能，抓取到的页面Host应为ti.qq.com，抓取到的数据为加密类型，解密网址]]></content>
+      <categories>
+        <category>Tools</category>
+      </categories>
+      <tags>
+        <tag>Tools</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[CTF-Web]]></title>
     <url>%2F2018%2F04%2F05%2FCTF-Web%2F</url>
     <content type="text"><![CDATA[1、md5 collision，传送参数，函数如下：123456789101112&lt;?php$md51 = md5('QNKCDZO');$a = @$_GET['a'];$md52 = @md5($a);if(isset($a))&#123;if ($a != 'QNKCDZO' &amp;&amp; $md51 == $md52) &#123; echo "nctf&#123;*****************&#125;";&#125; else &#123; echo "false!!!";&#125;&#125;else&#123;echo "please input a";&#125;?&gt; 这个题目如果知道MD5碰撞的概念，同时知道了在PHP中的MD5中的0e的比较，这道题目就十分的简单。如果md的值是以0e开头的，那么就与其他的0e开头的Md5值是相等的。例子如下，其他符合/0[eE]\d{30}/的MD5值： 原码 md5 QNKCDZO 0e830400451993494058024219903391 s878926199a 0e545993274517709034328855841020 s155964671a 0e342768416822451524974117254469 s1502113478a 0e861580163291561247404381396064 s214587387a 0e848240448830537924465865611904 s878926199a 0e545993274517709034328855841020 s1091221200a 0e940624217856561557816327384675 s1885207154a 0e509367213418206700842008763514 s1836677006a 0e481036490867661113260034900752 s1184209335a 0e072485820392773389523109082030 s1665632922a 0e731198061491163073197128363787 s532378020a 0e220463095855511507588041205815 240610708 0e462097431906509019562988736854 2、层层递进查看源代码，最下面发现有子网站，直到最后找到404.html,发现注释里面存在flag3、JSAAencode代码报错，未定义的字符，修改一下，在控制台里面运行一下即可，关于控制台指南4、单身二十年使用Burpsuite抓包，发history里面藏着一个search_key.php，查看response，出现flag5、Are you from google?修改referer为 https://www.google.com提供一个http头部字段详解6、php decode123456789&lt;?phpfunction CLsI($ZzvSWE) &#123; $ZzvSWE = gzinflate(base64_decode($ZzvSWE)); for ($i = 0; $i &lt; strlen($ZzvSWE); $i++) &#123; $ZzvSWE[$i] = chr(ord($ZzvSWE[$i]) - 1); &#125; return $ZzvSWE;&#125;eval(CLsI("+7DnQGFmYVZ+eoGmlg0fd3puUoZ1fkppek1GdVZhQnJSSZq5aUImGNQBAA=="));?&gt; eval函数详解上述代码最后一行eval改为echo放入本地运行即可]]></content>
