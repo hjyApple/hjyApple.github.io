@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/hjyApple/hjyApple.github.io/"/>
-  <updated>2018-04-05T05:35:41.862Z</updated>
+  <updated>2018-04-05T05:42:04.372Z</updated>
   <id>https://github.com/hjyApple/hjyApple.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>安装Burpsuite1.7.31</title>
+    <link href="https://github.com/hjyApple/hjyApple.github.io/2018/04/05/%E5%AE%89%E8%A3%85Burpsuite1-7-31/"/>
+    <id>https://github.com/hjyApple/hjyApple.github.io/2018/04/05/安装Burpsuite1-7-31/</id>
+    <published>2018-04-05T05:41:05.000Z</published>
+    <updated>2018-04-05T05:42:04.372Z</updated>
+    
+    <content type="html"><![CDATA[<p>起码要有一个<code>Burpsuite</code>的安装包，<a href="https://pan.baidu.com/s/1zGngNs71eUhC5gSRgiWLrg" target="_blank" rel="noopener">下载链接</a> 密码：<code>zgcx</code><br>zip里面有两个文件<br>首先打开<code>burp-loader-keygen.jar</code>，点击右上角的<code>Run</code><br><img src="https://upload-images.jianshu.io/upload_images/9464729-a7873c51f4c00444.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图一"><br>接着会出现<br><img src="https://upload-images.jianshu.io/upload_images/9464729-f231e4dd9a736ee0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图二"><br><img src="https://upload-images.jianshu.io/upload_images/9464729-770938421718989d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图三"><br>将图三红色框内的License序列号复制到图二里面，点击右下角的<code>Next</code>，进入图五，点击<code>Manual activation</code><br><img src="https://upload-images.jianshu.io/upload_images/9464729-d3cca93b9ac7ffb4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图四"><br><img src="https://upload-images.jianshu.io/upload_images/9464729-ffa7f00dddcfe19e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图五"><br>点击图五里面的<code>Copy request</code>，进入图一，粘贴到此处<br><img src="https://upload-images.jianshu.io/upload_images/9464729-8ed8dabc151b83fb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图六"><br><img src="https://upload-images.jianshu.io/upload_images/9464729-04b75f69a7c0b32a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图七"><br>粘贴完后，出现红色框内的序列号，复制到图五的<code>Paste response</code>里面，点击Next，至此安装已经完成<br><img src="https://upload-images.jianshu.io/upload_images/9464729-63d0ad23c6d5b1cf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图八"><br>以后每次使用时双击<code>burp-loader-keygen.jar</code>，点击右上角的<code>Run</code>即可</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;起码要有一个&lt;code&gt;Burpsuite&lt;/code&gt;的安装包，&lt;a href=&quot;https://pan.baidu.com/s/1zGngNs71eUhC5gSRgiWLrg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;下载链接&lt;/a&gt; 密码：&lt;co
+      
+    
+    </summary>
+    
+      <category term="Tools" scheme="https://github.com/hjyApple/hjyApple.github.io/categories/Tools/"/>
+    
+    
+      <category term="Tools" scheme="https://github.com/hjyApple/hjyApple.github.io/tags/Tools/"/>
+    
+  </entry>
   
   <entry>
     <title>Daily-One</title>
