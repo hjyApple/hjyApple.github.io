@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/hjyApple/hjyApple.github.io/"/>
-  <updated>2018-04-05T13:59:31.794Z</updated>
+  <updated>2018-04-07T05:31:43.057Z</updated>
   <id>https://github.com/hjyApple/hjyApple.github.io/</id>
   
   <author>
@@ -15,6 +15,56 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Ssh远程连接Linux</title>
+    <link href="https://github.com/hjyApple/hjyApple.github.io/2018/04/07/%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5Linux/"/>
+    <id>https://github.com/hjyApple/hjyApple.github.io/2018/04/07/远程连接Linux/</id>
+    <published>2018-04-07T04:54:05.000Z</published>
+    <updated>2018-04-07T05:31:43.057Z</updated>
+    
+    <content type="html"><![CDATA[<p>首先,确定是否有安装SSH服务<br>命令：<code>ps -e | grep ssh*</code><br>如果没有任何显示,则没有安装该服务<br>其次,安装SSH-server<br><code>sudo apt-get install openssh-server</code><br>接着,更重要的是安装SSH-client<br><code>sudo apt-get install openssh-client</code><br>确认安装SSH服务成功与否<br><code>ps -e | grep ssh*</code><br>如果,看到sshd表明ssh-server启动了;</p><h2 id="服务器端设置ssh免密"><a href="#服务器端设置ssh免密" class="headerlink" title="服务器端设置ssh免密"></a>服务器端设置ssh免密</h2><p>首先Linux要配置好ssh免密连接<br><code>cd /root/.ssh/</code><br>如果没有此文件，可以先使用<code>ssh localhost</code><br>之后便可以进入.ssh文件<br>ls查看<br>只有这一个文件,<code>known_hosts</code><br>先在本机生成公钥和私钥, <code>ssh-keygen -t rsa</code><br>将公钥写入认证里面,<code>cat ./id_rsa.pub &gt;&gt; ./authorized_keys</code><br>修改文件<code>authorized_keys</code>权限为600,<code>chmod 600 .ssh/authorized_keys</code><br>至此，ssh免密已经配置好了，上述步骤如下<br><img src="https://upload-images.jianshu.io/upload_images/9464729-caa958e67eb90366.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="ssh"></p><h3 id="使用Xshell免密远程连接linux"><a href="#使用Xshell免密远程连接linux" class="headerlink" title="使用Xshell免密远程连接linux"></a>使用Xshell免密远程连接linux</h3><p>转自<em><a href="https://www.linuxidc.com/Linux/2015-03/114947.htm" target="_blank" rel="noopener">https://www.linuxidc.com/Linux/2015-03/114947.htm</a></em><br>补充网址里面的第六步：<br>复制生成的公钥到linux可以直接将本地<code>id_rsa_2048.pub</code>直接复制过去,将其放入<code>/root/.ssh/</code>文件夹下，使用此命令写入认证<code>cat ./id_rsa_2048.pub &gt;&gt; ./authorized_keys</code><br>此时再按照上面的网址操作即可</p><p>使用cmder免密连接linux<br>先在本机生成公钥和私钥, <code>ssh-keygen -t rsa</code><br>将生成的<code>id_rsa.pub</code>重命名为<code>id_rsa0.pub</code>(因为linux下一句有一个与此同名的文件),上传至服务器;<br>window下生成的<code>id_rsa.pub</code>存放于<code>C:\Users\用户名\.ssh</code>下<br>将其放入<code>/root/.ssh/</code>文件夹下;<br>使用此命令写入认证<code>cat ./id_rsa0.pub &gt;&gt; ./authorized_keys</code><br>此时Cmder连接linux已经免密了</p><h3 id="PS："><a href="#PS：" class="headerlink" title="PS："></a>PS：</h3><p>使用ssh连接，关闭linux系统防火墙才可连接，关闭防火墙命令<code>service iptables stop</code></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;首先,确定是否有安装SSH服务&lt;br&gt;命令：&lt;code&gt;ps -e | grep ssh*&lt;/code&gt;&lt;br&gt;如果没有任何显示,则没有安装该服务&lt;br&gt;其次,安装SSH-server&lt;br&gt;&lt;code&gt;sudo apt-get install openssh-server
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://github.com/hjyApple/hjyApple.github.io/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="https://github.com/hjyApple/hjyApple.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>文件包含漏洞</title>
+    <link href="https://github.com/hjyApple/hjyApple.github.io/2018/04/07/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E/"/>
+    <id>https://github.com/hjyApple/hjyApple.github.io/2018/04/07/文件包含漏洞/</id>
+    <published>2018-04-07T01:17:16.000Z</published>
+    <updated>2018-04-07T01:24:17.802Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Windows下制作图片一句话木马php写入图片"><a href="#Windows下制作图片一句话木马php写入图片" class="headerlink" title="Windows下制作图片一句话木马php写入图片"></a>Windows下制作图片一句话木马php写入图片</h3><p>copy 1.jpg/b+2.php/a  New.jpg</p><h3 id="Linux下"><a href="#Linux下" class="headerlink" title="Linux下"></a>Linux下</h3><p>cat 1.jpg 2.php &gt; new.jpg<br>将此图片上传到服务器，<br>先在html页面将此图片传至服务器，<code>http://localhost/upload/upload.html</code><br>上传成功后，使用文件包含程序，将jpg文件进行解析<br><code>http://localhost/upload/1.php?page=./uploads/h.jpg</code><br>?paragam(参数)=图片的绝对路径<br>此时上传成功，php程序一句被即解析，本页面只会显示图片的源码，而不显示php程序<br>此时可以使用菜刀连接&nbsp;刚刚的网址，密码是php程序里面写入的参数<br>1.php<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">if(isset($_GET[&quot;page&quot;]))&#123;</span><br><span class="line">include $_GET[&quot;page&quot;];</span><br><span class="line">&#125;else&#123;</span><br><span class="line">include &apos;2.php&apos;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure></p><p>2.php<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">echo &quot;niaho&quot;;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure></p><p>文件包含漏洞详解，转自<em><a href="https://blog.csdn.net/chence19871/article/details/51906523" target="_blank" rel="noopener">https://blog.csdn.net/chence19871/article/details/51906523</a></em><br>web安全文件包含漏洞，转自<em><a href="https://blog.csdn.net/hitwangpeng/article/details/45952625" target="_blank" rel="noopener">https://blog.csdn.net/hitwangpeng/article/details/45952625</a></em></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;Windows下制作图片一句话木马php写入图片&quot;&gt;&lt;a href=&quot;#Windows下制作图片一句话木马php写入图片&quot; class=&quot;headerlink&quot; title=&quot;Windows下制作图片一句话木马php写入图片&quot;&gt;&lt;/a&gt;Windows下制作图片一句
+      
+    
+    </summary>
+    
+      <category term="Security" scheme="https://github.com/hjyApple/hjyApple.github.io/categories/Security/"/>
+    
+    
+      <category term="Php安全 Security" scheme="https://github.com/hjyApple/hjyApple.github.io/tags/Php%E5%AE%89%E5%85%A8-Security/"/>
+    
+  </entry>
   
   <entry>
     <title>Destiny</title>
