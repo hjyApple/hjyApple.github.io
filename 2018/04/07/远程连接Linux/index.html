@@ -90,7 +90,7 @@
 <meta property="og:description" content="首先,确定是否有安装SSH服务命令：ps -e | grep ssh*如果没有任何显示,则没有安装该服务其次,安装SSH-serversudo apt-get install openssh-server接着,更重要的是安装SSH-clientsudo apt-get install openssh-client确认安装SSH服务成功与否ps -e | grep ssh*如果,看到sshd表明ss">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/9464729-caa958e67eb90366.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-04-07T05:31:43.057Z">
+<meta property="og:updated_time" content="2018-04-07T09:20:43.303Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ssh远程连接Linux">
 <meta name="twitter:description" content="首先,确定是否有安装SSH服务命令：ps -e | grep ssh*如果没有任何显示,则没有安装该服务其次,安装SSH-serversudo apt-get install openssh-server接着,更重要的是安装SSH-clientsudo apt-get install openssh-client确认安装SSH服务成功与否ps -e | grep ssh*如果,看到sshd表明ss">
@@ -400,7 +400,7 @@ color="255,255,0" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
         <p>首先,确定是否有安装SSH服务<br>命令：<code>ps -e | grep ssh*</code><br>如果没有任何显示,则没有安装该服务<br>其次,安装SSH-server<br><code>sudo apt-get install openssh-server</code><br>接着,更重要的是安装SSH-client<br><code>sudo apt-get install openssh-client</code><br>确认安装SSH服务成功与否<br><code>ps -e | grep ssh*</code><br>如果,看到sshd表明ssh-server启动了;</p>
 <h2 id="服务器端设置ssh免密"><a href="#服务器端设置ssh免密" class="headerlink" title="服务器端设置ssh免密"></a>服务器端设置ssh免密</h2><p>首先Linux要配置好ssh免密连接<br><code>cd /root/.ssh/</code><br>如果没有此文件，可以先使用<code>ssh localhost</code><br>之后便可以进入.ssh文件<br>ls查看<br>只有这一个文件,<code>known_hosts</code><br>先在本机生成公钥和私钥, <code>ssh-keygen -t rsa</code><br>将公钥写入认证里面,<code>cat ./id_rsa.pub &gt;&gt; ./authorized_keys</code><br>修改文件<code>authorized_keys</code>权限为600,<code>chmod 600 .ssh/authorized_keys</code><br>至此，ssh免密已经配置好了，上述步骤如下<br><img src="https://upload-images.jianshu.io/upload_images/9464729-caa958e67eb90366.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="ssh"></p>
 <h3 id="使用Xshell免密远程连接linux"><a href="#使用Xshell免密远程连接linux" class="headerlink" title="使用Xshell免密远程连接linux"></a>使用Xshell免密远程连接linux</h3><p>转自<em><a href="https://www.linuxidc.com/Linux/2015-03/114947.htm" target="_blank" rel="noopener">https://www.linuxidc.com/Linux/2015-03/114947.htm</a></em><br>补充网址里面的第六步：<br>复制生成的公钥到linux可以直接将本地<code>id_rsa_2048.pub</code>直接复制过去,将其放入<code>/root/.ssh/</code>文件夹下，使用此命令写入认证<code>cat ./id_rsa_2048.pub &gt;&gt; ./authorized_keys</code><br>此时再按照上面的网址操作即可</p>
-<p>使用cmder免密连接linux<br>先在本机生成公钥和私钥, <code>ssh-keygen -t rsa</code><br>将生成的<code>id_rsa.pub</code>重命名为<code>id_rsa0.pub</code>(因为linux下一句有一个与此同名的文件),上传至服务器;<br>window下生成的<code>id_rsa.pub</code>存放于<code>C:\Users\用户名\.ssh</code>下<br>将其放入<code>/root/.ssh/</code>文件夹下;<br>使用此命令写入认证<code>cat ./id_rsa0.pub &gt;&gt; ./authorized_keys</code><br>此时Cmder连接linux已经免密了</p>
+<h3 id="使用cmder免密连接linux"><a href="#使用cmder免密连接linux" class="headerlink" title="使用cmder免密连接linux"></a>使用cmder免密连接linux</h3><p>先在本机生成公钥和私钥, <code>ssh-keygen -t rsa</code><br>将生成的<code>id_rsa.pub</code>重命名为<code>id_rsa0.pub</code>(因为linux下一句有一个与此同名的文件),上传至服务器;<br>window下生成的<code>id_rsa.pub</code>存放于<code>C:\Users\用户名\.ssh</code>下<br>将其放入<code>/root/.ssh/</code>文件夹下;<br>使用此命令写入认证<code>cat ./id_rsa0.pub &gt;&gt; ./authorized_keys</code><br>此时Cmder连接linux已经免密了</p>
 <h3 id="PS："><a href="#PS：" class="headerlink" title="PS："></a>PS：</h3><p>使用ssh连接，关闭linux系统防火墙才可连接，关闭防火墙命令<code>service iptables stop</code></p>
 
       
@@ -586,7 +586,7 @@ color="255,255,0" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#服务器端设置ssh免密"><span class="nav-number">1.</span> <span class="nav-text">服务器端设置ssh免密</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用Xshell免密远程连接linux"><span class="nav-number">1.1.</span> <span class="nav-text">使用Xshell免密远程连接linux</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PS："><span class="nav-number">1.2.</span> <span class="nav-text">PS：</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#服务器端设置ssh免密"><span class="nav-number">1.</span> <span class="nav-text">服务器端设置ssh免密</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用Xshell免密远程连接linux"><span class="nav-number">1.1.</span> <span class="nav-text">使用Xshell免密远程连接linux</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用cmder免密连接linux"><span class="nav-number">1.2.</span> <span class="nav-text">使用cmder免密连接linux</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PS："><span class="nav-number">1.3.</span> <span class="nav-text">PS：</span></a></li></ol></li></ol></div>
             
 
           </div>
