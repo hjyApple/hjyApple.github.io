@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/hjyApple/hjyApple.github.io/"/>
-  <updated>2018-04-19T12:31:03.942Z</updated>
+  <updated>2018-04-21T03:11:00.177Z</updated>
   <id>https://github.com/hjyApple/hjyApple.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Brute_Force</title>
+    <link href="https://github.com/hjyApple/hjyApple.github.io/2018/04/21/Brute-Force/"/>
+    <id>https://github.com/hjyApple/hjyApple.github.io/2018/04/21/Brute-Force/</id>
+    <published>2018-04-21T02:33:29.000Z</published>
+    <updated>2018-04-21T03:11:00.177Z</updated>
+    
+    <content type="html"><![CDATA[<p>首先来认识下Burp Suite Intruder的四种攻击类型：</p><h4 id="Sniper（狙击手模式）"><a href="#Sniper（狙击手模式）" class="headerlink" title="Sniper（狙击手模式）"></a>Sniper（狙击手模式）</h4><p>这个模式使用单一的payload组。它会针对每个位置设置payload。这种攻击类型适合对常见漏洞中的请求参数单独地进行fuzzing测试。攻击中的请求总数应该是position数量和payload数量的乘积。</p><h4 id="Battering-ram（攻城锤模式）"><a href="#Battering-ram（攻城锤模式）" class="headerlink" title="Battering ram（攻城锤模式）"></a>Battering ram（攻城锤模式）</h4><p>这一模式使用单一的payload组。它会重复payload并且一次把所有相同的payload放入指定的位置中。这种攻击适合那种需要在请求中把相同的输入放到多个位置的情况。请求的总数是payload组中payload的总数。</p><h4 id="Pitchfork（草叉模式）"><a href="#Pitchfork（草叉模式）" class="headerlink" title="Pitchfork（草叉模式）"></a>Pitchfork（草叉模式）</h4><p>这一模式使用多个payload组。对于定义的位置可以使用不同的payload组。攻击会同步迭代所有的payload组，把payload放入每个定义的位置中。这种攻击类型非常适合那种不同位置中需要插入不同但相关的输入的情况。请求的数量应该是最小的payload组中的payload数量。</p><h4 id="Cluster-bomb（集束炸弹模式）"><a href="#Cluster-bomb（集束炸弹模式）" class="headerlink" title="Cluster bomb（集束炸弹模式）"></a>Cluster bomb（集束炸弹模式）</h4><p>这种模式会使用多个payload组。每个定义的位置中有不同的payload组。攻击会迭代每个payload组，每种payload组合都会被测试一遍。这种攻击适用于那种位置中需要不同且不相关或者未知的输入的攻击。攻击请求的总数是各payload组中payload数量的乘积。</p><h5 id="DVWA下的Brute-Force模块"><a href="#DVWA下的Brute-Force模块" class="headerlink" title="DVWA下的Brute Force模块"></a>DVWA下的Brute Force模块</h5><p>随便登录一个账号，记下报错码<br><img src="https://upload-images.jianshu.io/upload_images/9464729-deafa0671bebb1f5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="错误码"><br>打开BurpSuite，抓包开始爆破<br><img src="https://upload-images.jianshu.io/upload_images/9464729-f8e855bcd42c1f3c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>Ctrl+I发送到Intruder模块，选择攻击类型，此处为了爆破账户名和密码，选择Cluster bomb模式，选中要进行爆破的字段内容<br><img src="https://upload-images.jianshu.io/upload_images/9464729-07eff3d34e907e49.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="首先改"><br>在Payloads选项卡下面，设置set：1的list，可以自定义，也可以使用BurpSuite自带的字段，set：2设置密码字段，可以在simple list里面用load使用本地密码字典<br><img src="https://upload-images.jianshu.io/upload_images/9464729-b899a05db27105cc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="1+2"><br>复制刚刚的报错信息到Options选项卡里面，在Grep-Match里面Add一下<br><img src="https://upload-images.jianshu.io/upload_images/9464729-0e64530aac748cc8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="错误"><br>准备工作到此结束，可以开始攻击了，点击Start attack,根据Length的不同，找出有效的Payload，<br><img src="https://upload-images.jianshu.io/upload_images/9464729-50a0f7c0f6eb0c67.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="破解"><br>在response里面查看一下，成功了，大功告成<br><img src="https://upload-images.jianshu.io/upload_images/9464729-682d4cfe8c40d9f6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="显示"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;首先来认识下Burp Suite Intruder的四种攻击类型：&lt;/p&gt;
+&lt;h4 id=&quot;Sniper（狙击手模式）&quot;&gt;&lt;a href=&quot;#Sniper（狙击手模式）&quot; class=&quot;headerlink&quot; title=&quot;Sniper（狙击手模式）&quot;&gt;&lt;/a&gt;Sniper
+      
+    
+    </summary>
+    
+      <category term="Security" scheme="https://github.com/hjyApple/hjyApple.github.io/categories/Security/"/>
+    
+    
+      <category term="Security,BurpSuite" scheme="https://github.com/hjyApple/hjyApple.github.io/tags/Security-BurpSuite/"/>
+    
+  </entry>
   
   <entry>
     <title>DVWA系列之XSS</title>
@@ -293,32 +319,6 @@
     
     
       <category term="hexo" scheme="https://github.com/hjyApple/hjyApple.github.io/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Brute_Force</title>
-    <link href="https://github.com/hjyApple/hjyApple.github.io/2018/04/01/Brute-Force/"/>
-    <id>https://github.com/hjyApple/hjyApple.github.io/2018/04/01/Brute-Force/</id>
-    <published>2018-04-01T02:33:29.000Z</published>
-    <updated>2018-04-21T03:07:21.251Z</updated>
-    
-    <content type="html"><![CDATA[<p>首先来认识下Burp Suite Intruder的四种攻击类型：</p><h4 id="Sniper（狙击手模式）"><a href="#Sniper（狙击手模式）" class="headerlink" title="Sniper（狙击手模式）"></a>Sniper（狙击手模式）</h4><p>这个模式使用单一的payload组。它会针对每个位置设置payload。这种攻击类型适合对常见漏洞中的请求参数单独地进行fuzzing测试。攻击中的请求总数应该是position数量和payload数量的乘积。</p><h4 id="Battering-ram（攻城锤模式）"><a href="#Battering-ram（攻城锤模式）" class="headerlink" title="Battering ram（攻城锤模式）"></a>Battering ram（攻城锤模式）</h4><p>这一模式使用单一的payload组。它会重复payload并且一次把所有相同的payload放入指定的位置中。这种攻击适合那种需要在请求中把相同的输入放到多个位置的情况。请求的总数是payload组中payload的总数。</p><h4 id="Pitchfork（草叉模式）"><a href="#Pitchfork（草叉模式）" class="headerlink" title="Pitchfork（草叉模式）"></a>Pitchfork（草叉模式）</h4><p>这一模式使用多个payload组。对于定义的位置可以使用不同的payload组。攻击会同步迭代所有的payload组，把payload放入每个定义的位置中。这种攻击类型非常适合那种不同位置中需要插入不同但相关的输入的情况。请求的数量应该是最小的payload组中的payload数量。</p><h4 id="Cluster-bomb（集束炸弹模式）"><a href="#Cluster-bomb（集束炸弹模式）" class="headerlink" title="Cluster bomb（集束炸弹模式）"></a>Cluster bomb（集束炸弹模式）</h4><p>这种模式会使用多个payload组。每个定义的位置中有不同的payload组。攻击会迭代每个payload组，每种payload组合都会被测试一遍。这种攻击适用于那种位置中需要不同且不相关或者未知的输入的攻击。攻击请求的总数是各payload组中payload数量的乘积。</p><h5 id="DVWA下的Brute-Force模块"><a href="#DVWA下的Brute-Force模块" class="headerlink" title="DVWA下的Brute Force模块"></a>DVWA下的Brute Force模块</h5><p>随便登录一个账号，记下报错码<br><img src="https://upload-images.jianshu.io/upload_images/9464729-deafa0671bebb1f5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="错误码"><br>打开BurpSuite，抓包开始爆破<br><img src="https://upload-images.jianshu.io/upload_images/9464729-f8e855bcd42c1f3c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>Ctrl+I发送到Intruder模块，选择攻击类型，此处为了爆破账户名和密码，选择Cluster bomb模式，选中要进行爆破的字段内容<br><img src="https://upload-images.jianshu.io/upload_images/9464729-07eff3d34e907e49.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="首先改"><br>在Payloads选项卡下面，设置set：1的list，可以自定义，也可以使用BurpSuite自带的字段，set：2设置密码字段，可以在simple list里面用load使用本地密码字典<br><img src="https://upload-images.jianshu.io/upload_images/9464729-b899a05db27105cc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="1+2"><br>复制刚刚的报错信息到Options选项卡里面，在Grep-Match里面Add一下<br><img src="https://upload-images.jianshu.io/upload_images/9464729-0e64530aac748cc8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="错误"><br>准备工作到此结束，可以开始攻击了，点击Start attack,根据Length的不同，找出有效的Payload，<br><img src="https://upload-images.jianshu.io/upload_images/9464729-50a0f7c0f6eb0c67.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="破解"><br>在response里面查看一下，成功了，大功告成<br><img src="https://upload-images.jianshu.io/upload_images/9464729-682d4cfe8c40d9f6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="显示"></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;首先来认识下Burp Suite Intruder的四种攻击类型：&lt;/p&gt;
-&lt;h4 id=&quot;Sniper（狙击手模式）&quot;&gt;&lt;a href=&quot;#Sniper（狙击手模式）&quot; class=&quot;headerlink&quot; title=&quot;Sniper（狙击手模式）&quot;&gt;&lt;/a&gt;Sniper
-      
-    
-    </summary>
-    
-      <category term="Security" scheme="https://github.com/hjyApple/hjyApple.github.io/categories/Security/"/>
-    
-    
-      <category term="Security,BurpSuite" scheme="https://github.com/hjyApple/hjyApple.github.io/tags/Security-BurpSuite/"/>
     
   </entry>
   
