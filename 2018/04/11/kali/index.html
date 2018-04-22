@@ -81,18 +81,20 @@
 
 
 
-<meta name="description" content="kali2018-1安装官网下载:https://www.kali.org/downloads/出处http://www.weixianmanbu.com/article/2336.html Vmtools问题成功安装Vmtools后仍然无法使用文件复制粘贴，就放弃了Vmtools，改用open-vmtools一行命令即可apt-get install open-vm-tools-desktop">
+<meta name="description" content="kali2018-1安装官网下载:https://www.kali.org/downloads/出处http://www.weixianmanbu.com/article/2336.html Vmtools问题成功安装Vmtools后仍然无法使用文件复制粘贴，(在2016 rolling版本后遗弃了vmtools)就放弃了Vmtools，改用open-vmtools先改kali源vi /etc/a">
 <meta name="keywords" content="kali">
 <meta property="og:type" content="article">
 <meta property="og:title" content="kali">
 <meta property="og:url" content="https://github.com/hjyApple/hjyApple.github.io/2018/04/11/kali/index.html">
 <meta property="og:site_name" content="General">
-<meta property="og:description" content="kali2018-1安装官网下载:https://www.kali.org/downloads/出处http://www.weixianmanbu.com/article/2336.html Vmtools问题成功安装Vmtools后仍然无法使用文件复制粘贴，就放弃了Vmtools，改用open-vmtools一行命令即可apt-get install open-vm-tools-desktop">
+<meta property="og:description" content="kali2018-1安装官网下载:https://www.kali.org/downloads/出处http://www.weixianmanbu.com/article/2336.html Vmtools问题成功安装Vmtools后仍然无法使用文件复制粘贴，(在2016 rolling版本后遗弃了vmtools)就放弃了Vmtools，改用open-vmtools先改kali源vi /etc/a">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-11T01:18:03.943Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/9464729-f06da06f78fb9295.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-04-22T09:29:47.215Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="kali">
-<meta name="twitter:description" content="kali2018-1安装官网下载:https://www.kali.org/downloads/出处http://www.weixianmanbu.com/article/2336.html Vmtools问题成功安装Vmtools后仍然无法使用文件复制粘贴，就放弃了Vmtools，改用open-vmtools一行命令即可apt-get install open-vm-tools-desktop">
+<meta name="twitter:description" content="kali2018-1安装官网下载:https://www.kali.org/downloads/出处http://www.weixianmanbu.com/article/2336.html Vmtools问题成功安装Vmtools后仍然无法使用文件复制粘贴，(在2016 rolling版本后遗弃了vmtools)就放弃了Vmtools，改用open-vmtools先改kali源vi /etc/a">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/9464729-f06da06f78fb9295.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -396,8 +398,12 @@ color="255,255,0" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
 
       
         <p>kali2018-1安装<br>官网下载:<em><a href="https://www.kali.org/downloads/" target="_blank" rel="noopener">https://www.kali.org/downloads/</a></em><br>出处<em><a href="http://www.weixianmanbu.com/article/2336.html" target="_blank" rel="noopener">http://www.weixianmanbu.com/article/2336.html</a></em></p>
-<h3 id="Vmtools问题"><a href="#Vmtools问题" class="headerlink" title="Vmtools问题"></a>Vmtools问题</h3><p>成功安装Vmtools后仍然无法使用文件复制粘贴，<br>就放弃了Vmtools，改用open-vmtools<br>一行命令即可<code>apt-get install open-vm-tools-desktop fuse</code><br>然后<code>reboot</code></p>
+<h3 id="Vmtools问题"><a href="#Vmtools问题" class="headerlink" title="Vmtools问题"></a>Vmtools问题</h3><p>成功安装Vmtools后仍然无法使用文件复制粘贴，(在2016 rolling版本后遗弃了vmtools)<br>就放弃了Vmtools，改用open-vmtools<br>先改kali源<br>vi /etc/apt/sources.list<br>中科大更新源</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">deb http://mirrors.ustc.edu.cn/kali kali-rolling main non-free contrib</span><br><span class="line"></span><br><span class="line">deb-src http://mirrors.ustc.edu.cn/kali/ kali-rolling main contrib non-free</span><br></pre></td></tr></table></figure>
+<p>然后<code>apt-get install open-vm-tools-desktop fuse</code><br>再<code>reboot</code>即可</p>
 <h3 id="mysql任意密码登录问题"><a href="#mysql任意密码登录问题" class="headerlink" title="mysql任意密码登录问题"></a>mysql任意密码登录问题</h3><p><code>mysql -u root</code>，进入mysql，输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GRANT ALL PRIVILEGES ON *.* TO &apos;root&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;youpassword&apos; WITH GRANT OPTION; #youpassword你的新密码</span><br><span class="line">flush privileges; #刷新一下</span><br></pre></td></tr></table></figure></p>
+<h3 id="配置ssh远程登录"><a href="#配置ssh远程登录" class="headerlink" title="配置ssh远程登录"></a>配置ssh远程登录</h3><p>一、修改ssh配置<br>1、修改sshd_config文件，命令为：<br>vi /etc/ssh/sshd_config<br>将#PasswordAuthentication no的注释去掉，参数为yes<br>2、将PermitRootLogin without-password修改为<br>PermitRootLogin yes<br><img src="https://upload-images.jianshu.io/upload_images/9464729-f06da06f78fb9295.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"><br>保存，退出vim<br>二、启动ssh服务<br>命令为：<br><code>/etc/init.d/ssh start</code><br>或者<br><code>service ssh start</code><br>查看SSH服务状态是否正常运行，命令为：<br><code>/etc/init.d/ssh status</code><br>或者<br><code>service ssh status</code><br>如有其他问题可参考<em><a href="https://jingyan.baidu.com/article/eae07827a3e6bc1fec5485e3.html" target="_blank" rel="noopener">https://jingyan.baidu.com/article/eae07827a3e6bc1fec5485e3.html</a></em></p>
+<h3 id="配置ssh免密"><a href="#配置ssh免密" class="headerlink" title="配置ssh免密"></a>配置ssh免密</h3><p>修改sshd_config 文件， 将#PasswordAuthentication yes的注释（“#”号）去掉，然后保存退出<br><code>vim /etc/ssh/sshd_config</code><br>生成密钥<br><code>ssh-keygen -t rsa</code><br>追加文件<br><code>cat id_rsa.pub &gt;&gt; authorized_keys</code><br>修改文件权限<br><code>chmod 600 authorized_keys</code><br><code>cd /root/.ssh/</code><br>ls<br><code>authorized.keys  id_rsa  id_rsa.pub  known_hosts</code><br>将ssh服务加入开机自启<br><code>update-rc.d ssh enable</code></p>
 
       
     </div>
@@ -521,7 +527,7 @@ color="255,255,0" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -532,7 +538,7 @@ color="255,255,0" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -543,7 +549,7 @@ color="255,255,0" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -585,7 +591,7 @@ color="255,255,0" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Vmtools问题"><span class="nav-number">1.</span> <span class="nav-text">Vmtools问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mysql任意密码登录问题"><span class="nav-number">2.</span> <span class="nav-text">mysql任意密码登录问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Vmtools问题"><span class="nav-number">1.</span> <span class="nav-text">Vmtools问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mysql任意密码登录问题"><span class="nav-number">2.</span> <span class="nav-text">mysql任意密码登录问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置ssh远程登录"><span class="nav-number">3.</span> <span class="nav-text">配置ssh远程登录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置ssh免密"><span class="nav-number">4.</span> <span class="nav-text">配置ssh免密</span></a></li></ol></div>
             
 
           </div>

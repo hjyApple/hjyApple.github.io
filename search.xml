@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[office使用问题]]></title>
+    <url>%2F2018%2F04%2F22%2Foffice%2F</url>
+    <content type="text"><![CDATA[Office打开文件问题解决此问题，先左击该文件，再右击属性，右下角文件属性，解除锁定 问题解决 两行文字之间有空白段PDF转为word的文件，两行文字之间有空白段，但是按删除键却删除不了，这是由于文档中插入了分页符，我们需要删除分页符 删除分页符方法：第三步处，鼠标移至分页符前面按下Delete键即可删除此段空白]]></content>
+      <categories>
+        <category>Office</category>
+      </categories>
+      <tags>
+        <tag>Office</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[arp欺骗]]></title>
+    <url>%2F2018%2F04%2F22%2Farp%2F</url>
+    <content type="text"><![CDATA[ARPARP（Address Resolution Protocol）是地址解析协议，是一种将IP地址转化成物理地址的协议。从IP地址到物理地址的映射有两种方式：表格方式和非表格方式。ARP具体说来就是将网络层（也就是相当于OSI的第三层）地址解析为数据链路层（也就是相当于OSI的第二层）的物理地址(注:此处物理地址并不一定指MAC地址)。 ARP原理某机器A要向主机B发送报文，会查询本地的ARP缓存表，找到B的IP地址对应的MAC地址后，就会进行数据传输。如果未找到，则A广播一个ARP请求报文（携带主机A的IP地址Ia——物理地址Pa），请求IP地址为Ib的主机B回答物理地址Pb。网上所有主机包括B都收到ARP请求，但只有主机B识别自己的IP地址，于是向A主机发回一个ARP响应报文。其中就包含有B的MAC地址，A接收到B的应答后，就会更新本地的ARP缓存。接着使用这个MAC地址发送数据（由网卡附加MAC地址）。因此，本地高速缓存的这个ARP表是本地网络流通的基础，而且这个缓存是动态的。 ARP欺骗在局域网中，黑客经过收到ARP Request广播包，能够偷听到其它节点的 (IP, MAC) 地址, 黑客就伪装为A，告诉B (受害者) 一个假地址，使得B在发送给A 的数据包都被黑客截取；ARP欺骗是局域网中常用的攻击手段，其目的是对局域网中的目标机数据包进行转发，以实现中间人攻击，进而对数据监听、重放、钓鱼等攻击。 ARP实战在kali虚拟机下进行练习本机IP查看局域网中的IPfping -asg 192.168.231.0/24（局域网的网段）使用arpspoof工具进行欺骗输入arpspoof -i eth0 -t 192.168.0.102 -r 192.168.0.1 （网卡和网关可在ifconfig中查看）arpspoof -i 攻击机网卡 -t 目标主机IP 目标主机网关 开启流量转发echo 1 &gt;/proc/sys/net/ipv4/ip_dorward重新进行ARP欺骗，Driftnet -i eth0进行图片获取 抓取http协议上的登录账户和密码ettercap -Tq -i eth0]]></content>
+      <categories>
+        <category>Wireless security</category>
+      </categories>
+      <tags>
+        <tag>Wireless security</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Brute_Force]]></title>
     <url>%2F2018%2F04%2F21%2FBrute-Force%2F</url>
     <content type="text"><![CDATA[首先来认识下Burp Suite Intruder的四种攻击类型： Sniper（狙击手模式）这个模式使用单一的payload组。它会针对每个位置设置payload。这种攻击类型适合对常见漏洞中的请求参数单独地进行fuzzing测试。攻击中的请求总数应该是position数量和payload数量的乘积。 Battering ram（攻城锤模式）这一模式使用单一的payload组。它会重复payload并且一次把所有相同的payload放入指定的位置中。这种攻击适合那种需要在请求中把相同的输入放到多个位置的情况。请求的总数是payload组中payload的总数。 Pitchfork（草叉模式）这一模式使用多个payload组。对于定义的位置可以使用不同的payload组。攻击会同步迭代所有的payload组，把payload放入每个定义的位置中。这种攻击类型非常适合那种不同位置中需要插入不同但相关的输入的情况。请求的数量应该是最小的payload组中的payload数量。 Cluster bomb（集束炸弹模式）这种模式会使用多个payload组。每个定义的位置中有不同的payload组。攻击会迭代每个payload组，每种payload组合都会被测试一遍。这种攻击适用于那种位置中需要不同且不相关或者未知的输入的攻击。攻击请求的总数是各payload组中payload数量的乘积。 DVWA下的Brute Force模块随便登录一个账号，记下报错码打开BurpSuite，抓包开始爆破Ctrl+I发送到Intruder模块，选择攻击类型，此处为了爆破账户名和密码，选择Cluster bomb模式，选中要进行爆破的字段内容在Payloads选项卡下面，设置set：1的list，可以自定义，也可以使用BurpSuite自带的字段，set：2设置密码字段，可以在simple list里面用load使用本地密码字典复制刚刚的报错信息到Options选项卡里面，在Grep-Match里面Add一下准备工作到此结束，可以开始攻击了，点击Start attack,根据Length的不同，找出有效的Payload，在response里面查看一下，成功了，大功告成]]></content>
@@ -37,7 +59,7 @@
   <entry>
     <title><![CDATA[kali]]></title>
     <url>%2F2018%2F04%2F11%2Fkali%2F</url>
-    <content type="text"><![CDATA[kali2018-1安装官网下载:https://www.kali.org/downloads/出处http://www.weixianmanbu.com/article/2336.html Vmtools问题成功安装Vmtools后仍然无法使用文件复制粘贴，就放弃了Vmtools，改用open-vmtools一行命令即可apt-get install open-vm-tools-desktop fuse然后reboot mysql任意密码登录问题mysql -u root，进入mysql，输入12GRANT ALL PRIVILEGES ON *.* TO &apos;root&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;youpassword&apos; WITH GRANT OPTION; #youpassword你的新密码flush privileges; #刷新一下]]></content>
+    <content type="text"><![CDATA[kali2018-1安装官网下载:https://www.kali.org/downloads/出处http://www.weixianmanbu.com/article/2336.html Vmtools问题成功安装Vmtools后仍然无法使用文件复制粘贴，(在2016 rolling版本后遗弃了vmtools)就放弃了Vmtools，改用open-vmtools先改kali源vi /etc/apt/sources.list中科大更新源 123deb http://mirrors.ustc.edu.cn/kali kali-rolling main non-free contribdeb-src http://mirrors.ustc.edu.cn/kali/ kali-rolling main contrib non-free 然后apt-get install open-vm-tools-desktop fuse再reboot即可 mysql任意密码登录问题mysql -u root，进入mysql，输入12GRANT ALL PRIVILEGES ON *.* TO &apos;root&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;youpassword&apos; WITH GRANT OPTION; #youpassword你的新密码flush privileges; #刷新一下 配置ssh远程登录一、修改ssh配置1、修改sshd_config文件，命令为：vi /etc/ssh/sshd_config将#PasswordAuthentication no的注释去掉，参数为yes2、将PermitRootLogin without-password修改为PermitRootLogin yes保存，退出vim二、启动ssh服务命令为：/etc/init.d/ssh start或者service ssh start查看SSH服务状态是否正常运行，命令为：/etc/init.d/ssh status或者service ssh status如有其他问题可参考https://jingyan.baidu.com/article/eae07827a3e6bc1fec5485e3.html 配置ssh免密修改sshd_config 文件， 将#PasswordAuthentication yes的注释（“#”号）去掉，然后保存退出vim /etc/ssh/sshd_config生成密钥ssh-keygen -t rsa追加文件cat id_rsa.pub &gt;&gt; authorized_keys修改文件权限chmod 600 authorized_keyscd /root/.ssh/lsauthorized.keys id_rsa id_rsa.pub known_hosts将ssh服务加入开机自启update-rc.d ssh enable]]></content>
       <categories>
         <category>Kali</category>
       </categories>
