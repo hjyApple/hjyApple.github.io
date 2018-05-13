@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[搜集Web]]></title>
+    <url>%2F2018%2F05%2F13%2F%E6%90%9C%E9%9B%86Web%2F</url>
+    <content type="text"><![CDATA[关键字 说明 site 指定域名 intitle 标题中存在关键字的网页 intext 标题中存在关键字的网页 info 一些基本信息 inur URL存在关键字的网页 filetype 搜索指定文件类型 案例一：搜索存在敏感信息的网站输入：intitle:管理登录 filetype:php,这句话的意思为查询网页标题含有“管理登录”，并且为php类型的网站，Google可以轻松搜索到很多该类网站案例二：搜集Discuz论坛主机语法为：intext:Powered by Discuz案例三:搜索有注入点的网站语法:inurl:?id=]]></content>
+      <categories>
+        <category>Security</category>
+      </categories>
+      <tags>
+        <tag>Web Security</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[sublime text不能安装插件，错误提示]]></title>
     <url>%2F2018%2F05%2F06%2Fsublime%2F</url>
     <content type="text"><![CDATA[sublime text不能安装插件，错误提示There are no packages available for installation。方法一：1、cmd下输入ping sublime.wbond.net记录返回的IP地址2、将上一步得到的IP地址加入到本机hosts文件中，hosts文件所在目录为C:\Windows\System32\drivers\etc123#sublime第一步的IP地址 sublime.wbond.net.#end 4、修改后保存，重启sublime 方法二：一、先安装Package Control.sublime-package到Sublime Text\Packages下面下载链接 密码：viuc二、安装REPL1、手动下载sublimeREPL插件https://github.com/wuub/SublimeREPL，将其解压到sublime Text\Data\Packages目录下2、打开\sublime Text\Data\Packages\sublimeREPL\config\python\Main.sublime-menu文件，找到”id”为”reply_python”的段落，将”cmd”的属性改为[&quot;python&quot;, &quot;-i&quot;, &quot;-u&quot;, &quot;$file_basename&quot;]这样相当于将SublimeREPL的python交互环境的命令改为运行当前文件的交互环境，如果还想保留以前的功能，可以自己添加一个这样的节点，注意id值要取名为唯一的id值。3、设置快捷键点击首选项-&gt;按键绑定-用户，然后在弹出的文件中输入1234567891011121314[ &#123; &quot;keys&quot;: [&quot;alt+q&quot;], &quot;command&quot;: &quot;repl_open&quot;, &quot;caption&quot;: &quot;Python&quot;, &quot;mnemonic&quot;: &quot;p&quot;, &quot;args&quot;: &#123; &quot;type&quot;: &quot;subprocess&quot;, &quot;encoding&quot;: &quot;utf8&quot;, &quot;cmd&quot;: [&quot;python&quot;, &quot;-i&quot;, &quot;-u&quot;, &quot;$file&quot;], &quot;cwd&quot;: &quot;$file_path&quot;, &quot;syntax&quot;: &quot;Packages/Python/Python.tmLanguage&quot;, &quot;external_id&quot;: &quot;python&quot; &#125; &#125; ] 本文仅定义了Python - RUN current file的快捷键，这里使用的是alt+q，可以根据自己的需要进行灵活的调整。为了调试方便，我们可以把这个窗口放到右边，先设置sublime的窗口显示为多层，点击查看-&gt;布局-&gt;列数 2列方法二参考https://blog.csdn.net/zhihaoma/article/details/51132755其他方法参考]]></content>
@@ -35,7 +46,7 @@
     <url>%2F2018%2F04%2F22%2Farp%2F</url>
     <content type="text"><![CDATA[ARPARP（Address Resolution Protocol）是地址解析协议，是一种将IP地址转化成物理地址的协议。从IP地址到物理地址的映射有两种方式：表格方式和非表格方式。ARP具体说来就是将网络层（也就是相当于OSI的第三层）地址解析为数据链路层（也就是相当于OSI的第二层）的物理地址(注:此处物理地址并不一定指MAC地址)。 ARP原理某机器A要向主机B发送报文，会查询本地的ARP缓存表，找到B的IP地址对应的MAC地址后，就会进行数据传输。如果未找到，则A广播一个ARP请求报文（携带主机A的IP地址Ia——物理地址Pa），请求IP地址为Ib的主机B回答物理地址Pb。网上所有主机包括B都收到ARP请求，但只有主机B识别自己的IP地址，于是向A主机发回一个ARP响应报文。其中就包含有B的MAC地址，A接收到B的应答后，就会更新本地的ARP缓存。接着使用这个MAC地址发送数据（由网卡附加MAC地址）。因此，本地高速缓存的这个ARP表是本地网络流通的基础，而且这个缓存是动态的。 ARP欺骗在局域网中，黑客经过收到ARP Request广播包，能够偷听到其它节点的 (IP, MAC) 地址, 黑客就伪装为A，告诉B (受害者) 一个假地址，使得B在发送给A 的数据包都被黑客截取；ARP欺骗是局域网中常用的攻击手段，其目的是对局域网中的目标机数据包进行转发，以实现中间人攻击，进而对数据监听、重放、钓鱼等攻击。 ARP实战在kali虚拟机下进行练习本机IP查看局域网中哪些主机在线fping -asg 192.168.231.0/24（局域网的网段）使用arpspoof工具进行欺骗，arpspoof -h，输入arpspoof -i eth0 -t 192.168.0.102 -r 192.168.0.1arpspoof -i 攻击机网卡 -t 目标主机IP 目标主机网关。此时目标机已经断网。ctrl+c停止断网攻击。 ARP欺骗开启流量转发echo 1 &gt;/proc/sys/net/ipv4/ip_dorward依然使用ARPSpoof工具，输入arpspoof -i eth0 -t 192.168.0.102 -r 192.168.0.1开始欺骗，接下来使用ettercap嗅探工具来抓取http协议上的登录账户和密码ettercap -Tq -i eth0 进行图片获取使用Driftnet -i eth0]]></content>
       <categories>
-        <category>Wireless security</category>
+        <category>Security</category>
       </categories>
       <tags>
         <tag>Wireless security</tag>
@@ -46,10 +57,10 @@
     <url>%2F2018%2F04%2F21%2FBrute-Force%2F</url>
     <content type="text"><![CDATA[首先来认识下Burp Suite Intruder的四种攻击类型： Sniper（狙击手模式）这个模式使用单一的payload组。它会针对每个位置设置payload。这种攻击类型适合对常见漏洞中的请求参数单独地进行fuzzing测试。攻击中的请求总数应该是position数量和payload数量的乘积。 Battering ram（攻城锤模式）这一模式使用单一的payload组。它会重复payload并且一次把所有相同的payload放入指定的位置中。这种攻击适合那种需要在请求中把相同的输入放到多个位置的情况。请求的总数是payload组中payload的总数。 Pitchfork（草叉模式）这一模式使用多个payload组。对于定义的位置可以使用不同的payload组。攻击会同步迭代所有的payload组，把payload放入每个定义的位置中。这种攻击类型非常适合那种不同位置中需要插入不同但相关的输入的情况。请求的数量应该是最小的payload组中的payload数量。 Cluster bomb（集束炸弹模式）这种模式会使用多个payload组。每个定义的位置中有不同的payload组。攻击会迭代每个payload组，每种payload组合都会被测试一遍。这种攻击适用于那种位置中需要不同且不相关或者未知的输入的攻击。攻击请求的总数是各payload组中payload数量的乘积。 DVWA下的Brute Force模块随便登录一个账号，记下报错码打开BurpSuite，抓包开始爆破Ctrl+I发送到Intruder模块，选择攻击类型，此处为了爆破账户名和密码，选择Cluster bomb模式，选中要进行爆破的字段内容在Payloads选项卡下面，设置set：1的list，可以自定义，也可以使用BurpSuite自带的字段，set：2设置密码字段，可以在simple list里面用load使用本地密码字典复制刚刚的报错信息到Options选项卡里面，在Grep-Match里面Add一下准备工作到此结束，可以开始攻击了，点击Start attack,根据Length的不同，找出有效的Payload，在response里面查看一下，成功了，大功告成]]></content>
       <categories>
-        <category>Security</category>
+        <category>Tools</category>
       </categories>
       <tags>
-        <tag>Security</tag>
+        <tag>Tools</tag>
         <tag>BurpSuite</tag>
       </tags>
   </entry>
@@ -61,6 +72,7 @@
         <category>Security</category>
       </categories>
       <tags>
+        <tag>Security</tag>
         <tag>XSS</tag>
       </tags>
   </entry>
@@ -80,10 +92,10 @@
     <url>%2F2018%2F04%2F11%2Fkali%2F</url>
     <content type="text"><![CDATA[kali2018-1安装官网下载:https://www.kali.org/downloads/出处http://www.weixianmanbu.com/article/2336.html Vmtools问题成功安装Vmtools后仍然无法使用文件复制粘贴，(在2016 rolling版本后遗弃了vmtools)就放弃了Vmtools，改用open-vmtools先改kali源vi /etc/apt/sources.list中科大更新源 123deb http://mirrors.ustc.edu.cn/kali kali-rolling main non-free contribdeb-src http://mirrors.ustc.edu.cn/kali/ kali-rolling main contrib non-free 然后apt-get install open-vm-tools-desktop fuse再reboot即可 mysql任意密码登录问题mysql -u root，进入mysql，输入12GRANT ALL PRIVILEGES ON *.* TO &apos;root&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;youpassword&apos; WITH GRANT OPTION; #youpassword你的新密码flush privileges; #刷新一下 配置ssh远程登录一、修改ssh配置1、修改sshd_config文件，命令为：vi /etc/ssh/sshd_config将#PasswordAuthentication no的注释去掉，参数为yes2、将PermitRootLogin without-password修改为PermitRootLogin yes保存，退出vim二、启动ssh服务命令为：/etc/init.d/ssh start或者service ssh start查看SSH服务状态是否正常运行，命令为：/etc/init.d/ssh status或者service ssh status如有其他问题可参考https://jingyan.baidu.com/article/eae07827a3e6bc1fec5485e3.html 配置ssh免密修改sshd_config 文件， 将#PasswordAuthentication yes的注释（“#”号）去掉，然后保存退出vim /etc/ssh/sshd_config生成密钥ssh-keygen -t rsa追加文件cat id_rsa.pub &gt;&gt; authorized_keys修改文件权限chmod 600 authorized_keyscd /root/.ssh/lsauthorized.keys id_rsa id_rsa.pub known_hosts将ssh服务加入开机自启update-rc.d ssh enable]]></content>
       <categories>
-        <category>Kali</category>
+        <category>Linux</category>
       </categories>
       <tags>
-        <tag>kali</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -94,7 +106,7 @@
         <category>Security</category>
       </categories>
       <tags>
-        <tag>Php安全</tag>
+        <tag>文件包含漏洞</tag>
       </tags>
   </entry>
   <entry>
@@ -128,6 +140,7 @@
       </categories>
       <tags>
         <tag>Tools</tag>
+        <tag>Security</tag>
       </tags>
   </entry>
   <entry>
@@ -138,7 +151,7 @@
         <category>CTF</category>
       </categories>
       <tags>
-        <tag>Web-writeup</tag>
+        <tag>Web-WriteUp</tag>
       </tags>
   </entry>
   <entry>
@@ -168,10 +181,10 @@
     <url>%2F2018%2F04%2F02%2Fhexo%2F</url>
     <content type="text"><![CDATA[hexo next主题配置本站采用Misc风格，主题背景默认的，不过颜色可以自己设置，新建一个tags标签，hexo new page tags，此时会在本地创建一个tags文件夹,想让侧栏出现tags和分类，只需将这个弄好就OK了 添加本地搜索安装hexo-generator-searchdbnpm install hexo-generator-searchdb --save 修改站点配置文件12345search: path: search.xml field: post format: html limit: 10000 修改主题配置文件123# Local searchlocal_search: enable: true 接入网易云音乐进入网易云音乐官网，搜索想要的歌曲，生成外链接，复制此代码到/hexo/themes/next/layout/_macro/sidebar.swig，复制到112行 每次修改完成后先 heco clean,再hexo d -g即可发布 插入一句Markdownpad使用，使用时修改选项为commonMark; 一篇文章使用多个标签tags： - 标签1 - 标签2]]></content>
       <categories>
-        <category>hexo</category>
+        <category>Blog</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
+        <tag>Github+next</tag>
       </tags>
   </entry>
   <entry>
