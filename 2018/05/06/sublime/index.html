@@ -89,12 +89,12 @@
 <meta property="og:site_name" content="嶽General">
 <meta property="og:description" content="sublime text不能安装插件，错误提示There are no packages available for installation。方法一：1、cmd下输入ping sublime.wbond.net记录返回的IP地址2、将上一步得到的IP地址加入到本机hosts文件中，hosts文件所在目录为C:\Windows\System32\drivers\etc123#sublime第一步的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="c:/Users/General%20Apple/Desktop/sublime主题.jpg">
-<meta property="og:updated_time" content="2018-07-08T08:37:24.630Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/9464729-aaf3f055b8094295.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-07-08T08:52:01.088Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sublime text不能安装插件，错误提示">
 <meta name="twitter:description" content="sublime text不能安装插件，错误提示There are no packages available for installation。方法一：1、cmd下输入ping sublime.wbond.net记录返回的IP地址2、将上一步得到的IP地址加入到本机hosts文件中，hosts文件所在目录为C:\Windows\System32\drivers\etc123#sublime第一步的">
-<meta name="twitter:image" content="c:/Users/General%20Apple/Desktop/sublime主题.jpg">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/9464729-aaf3f055b8094295.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -402,7 +402,7 @@ color="255,255,0" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
 <h4 id="方法二："><a href="#方法二：" class="headerlink" title="方法二："></a>方法二：</h4><p>一、先安装<code>Package Control.sublime-package</code>到Sublime Text\Packages下面<br><a href="https://pan.baidu.com/s/1N1RKJrMh2nlzLgwm-r2QDQ" target="_blank" rel="noopener">下载链接</a> 密码：<code>viuc</code><br>二、安装REPL<br>1、手动下载sublimeREPL插件<em><a href="https://github.com/wuub/SublimeREPL">https://github.com/wuub/SublimeREPL</a></em>，将其解压到sublime Text\Data\Packages目录下<br>2、打开\sublime Text\Data\Packages\sublimeREPL\config\python\Main.sublime-menu文件，找到”id”为”reply_python”的段落，将”cmd”的属性改为<code>[&quot;python&quot;, &quot;-i&quot;, &quot;-u&quot;, &quot;$file_basename&quot;]</code><br>这样相当于将SublimeREPL的python交互环境的命令改为运行当前文件的交互环境，如果还想保留以前的功能，可以自己添加一个这样的节点，注意id值要取名为唯一的id值。<br>3、设置快捷键<br>点击首选项-&gt;按键绑定-用户，然后在弹出的文件中输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">	&#123; &quot;keys&quot;: [&quot;alt+q&quot;], &quot;command&quot;: &quot;repl_open&quot;,   </span><br><span class="line">             &quot;caption&quot;: &quot;Python&quot;,  </span><br><span class="line">             &quot;mnemonic&quot;: &quot;p&quot;,  </span><br><span class="line">             &quot;args&quot;: &#123;  </span><br><span class="line">             &quot;type&quot;: &quot;subprocess&quot;,  </span><br><span class="line">             &quot;encoding&quot;: &quot;utf8&quot;,  </span><br><span class="line">             &quot;cmd&quot;: [&quot;python&quot;, &quot;-i&quot;, &quot;-u&quot;, &quot;$file&quot;],  </span><br><span class="line">             &quot;cwd&quot;: &quot;$file_path&quot;,  </span><br><span class="line">             &quot;syntax&quot;: &quot;Packages/Python/Python.tmLanguage&quot;,  </span><br><span class="line">             &quot;external_id&quot;: &quot;python&quot;  </span><br><span class="line">             &#125;   </span><br><span class="line">	&#125;  </span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
 <p>本文仅定义了Python - RUN current file的快捷键，这里使用的是alt+q，可以根据自己的需要进行灵活的调整。<br>为了调试方便，我们可以把这个窗口放到右边，先设置sublime的窗口显示为多层，点击查看-&gt;布局-&gt;列数 2列<br>方法二参考<em><a href="https://blog.csdn.net/zhihaoma/article/details/51132755" target="_blank" rel="noopener">https://blog.csdn.net/zhihaoma/article/details/51132755</a></em><br><a href="https://blog.csdn.net/feilong_csdn/article/details/67638660" target="_blank" rel="noopener">其他方法参考</a><br></p>
 <p>Sublime默认主题配置</p>
-<p> <img src="C:\Users\General Apple\Desktop\sublime主题.jpg" alt="sublime主题"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/9464729-aaf3f055b8094295.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="sublime主题.jpg"></p>
 
       
     </div>
