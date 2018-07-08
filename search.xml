@@ -166,17 +166,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Daily-One]]></title>
-    <url>%2F2018%2F04%2F05%2FDaily-One%2F</url>
-    <content type="text"><![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;此刻经历的这一幕，父亲站在路边等着我去接外孙的回来，从他身旁过的时候，看到他满脸洋溢着微笑，我也挺开心的，而此刻我脑海里却浮现着将来的某一天，等自己孩子回来的时候，父母已经老啦，但他们同样会这样做，那一刻或许我会更加有感触。&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;生在农村，长在农村，我们的童年无忧无虑，充满幻想，充满生机，小时候渴望去长大，如今真正成年之后，那个无忧无虑的年代再也不复回。有的是生活中的压力，学习上的奋斗。越长大，越孤单。曾给自己定下计划，却不能坚持到底，高中时那种奋斗劲渐渐消去；不要给自己找太多借口，我们可以放松自己但不是放纵。&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;写此文仅此作为回忆，以后多发些技术型文章]]></content>
-      <categories>
-        <category>Daily</category>
-      </categories>
-      <tags>
-        <tag>Daily</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[hexo]]></title>
     <url>%2F2018%2F04%2F02%2Fhexo%2F</url>
     <content type="text"><![CDATA[hexo next主题配置本站采用Misc风格，主题背景默认的，不过颜色可以自己设置，新建一个tags标签，hexo new page tags，此时会在本地创建一个tags文件夹,想让侧栏出现tags和分类，只需将这个弄好就OK了 添加本地搜索安装hexo-generator-searchdbnpm install hexo-generator-searchdb --save 修改站点配置文件12345search: path: search.xml field: post format: html limit: 10000 修改主题配置文件123# Local searchlocal_search: enable: true 接入网易云音乐进入网易云音乐官网，搜索想要的歌曲，生成外链接，复制此代码到/hexo/themes/next/layout/_macro/sidebar.swig，复制到112行 每次修改完成后先 heco clean,再hexo d -g即可发布 插入一句Markdownpad使用，使用时修改选项为commonMark; 一篇文章使用多个标签tags： - 标签1 - 标签2]]></content>
