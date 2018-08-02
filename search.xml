@@ -12,8 +12,8 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[搜集Web]]></title>
-    <url>%2F2018%2F05%2F13%2F%E6%90%9C%E9%9B%86Web%2F</url>
+    <title><![CDATA[Google Hack]]></title>
+    <url>%2F2018%2F05%2F13%2FGoogleHack%2F</url>
     <content type="text"><![CDATA[关键字 说明 site 指定域名 intitle 标题中存在关键字的网页 intext 标题中存在关键字的网页 info 一些基本信息 inur URL存在关键字的网页 filetype 搜索指定文件类型 案例一：搜索存在敏感信息的网站输入：intitle:管理登录 filetype:php,这句话的意思为查询网页标题含有“管理登录”，并且为php类型的网站，Google可以轻松搜索到很多该类网站案例二：搜集Discuz论坛主机语法为：intext:Powered by Discuz案例三:搜索有注入点的网站语法:inurl:?id=]]></content>
       <categories>
         <category>Security</category>

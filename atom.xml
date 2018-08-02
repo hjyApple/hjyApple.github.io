@@ -42,11 +42,11 @@
   </entry>
   
   <entry>
-    <title>搜集Web</title>
-    <link href="https://github.com/hjyApple/hjyApple.github.io/2018/05/13/%E6%90%9C%E9%9B%86Web/"/>
-    <id>https://github.com/hjyApple/hjyApple.github.io/2018/05/13/搜集Web/</id>
+    <title>Google Hack</title>
+    <link href="https://github.com/hjyApple/hjyApple.github.io/2018/05/13/GoogleHack/"/>
+    <id>https://github.com/hjyApple/hjyApple.github.io/2018/05/13/GoogleHack/</id>
     <published>2018-05-13T07:13:51.000Z</published>
-    <updated>2018-05-13T07:23:01.379Z</updated>
+    <updated>2018-08-02T03:17:07.364Z</updated>
     
     <content type="html"><![CDATA[<table><thead><tr><th>关键字</th><th>说明</th></tr></thead><tbody><tr><td>site</td><td>指定域名</td><td></td></tr><tr><td>intitle</td><td>标题中存在关键字的网页</td><td></td></tr><tr><td>intext</td><td>标题中存在关键字的网页</td><td></td></tr><tr><td>info</td><td>一些基本信息</td><td></td></tr><tr><td>inur</td><td>URL存在关键字的网页</td><td></td></tr><tr><td>filetype</td><td>搜索指定文件类型</td><td></td></tr></tbody></table><p>案例一：搜索存在敏感信息的网站<br>输入：<code>intitle:管理登录 filetype:php</code>,这句话的意思为查询网页标题含有“管理登录”，并且为php类型的网站，Google可以轻松搜索到很多该类网站<br>案例二：搜集Discuz论坛主机<br>语法为：<code>intext:Powered by Discuz</code><br>案例三:搜索有注入点的网站<br>语法:<code>inurl:?id=</code></p>]]></content>
     
