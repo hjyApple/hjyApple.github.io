@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/hjyApple/hjyApple.github.io/"/>
-  <updated>2018-08-04T08:44:40.613Z</updated>
+  <updated>2018-08-08T02:21:41.647Z</updated>
   <id>https://github.com/hjyApple/hjyApple.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Office任意页面设置页码为起始页码</title>
+    <link href="https://github.com/hjyApple/hjyApple.github.io/2018/08/08/Office-Set-Page/"/>
+    <id>https://github.com/hjyApple/hjyApple.github.io/2018/08/08/Office-Set-Page/</id>
+    <published>2018-08-08T01:57:58.000Z</published>
+    <updated>2018-08-08T02:21:41.647Z</updated>
+    
+    <content type="html"><![CDATA[<p>要将第N页的页码设置为第一页，需进行一下设置</p><p>1、进入页码格式，将起始页码设置为1，</p><p><img src="https://upload-images.jianshu.io/upload_images/9464729-ffd9476471f02cf9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><p><img src="https://upload-images.jianshu.io/upload_images/9464729-1dfd090de8470547.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><p>2、将鼠标移动至第N-1页的文段末尾，点击office工具栏上面的布局里面的分隔符，点击下一页（此处以设置第四页的页码为首页为例）</p><p><img src="https://upload-images.jianshu.io/upload_images/9464729-3ebf570174db2c79.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><p>3、编辑第四页的页脚，将 链接到前一条页眉 去掉，此处为去掉后的界面</p><p><img src="https://upload-images.jianshu.io/upload_images/9464729-ea4e50b1674fffbd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png">4、此时可以在第四页的页脚处添加页码，直接在此处显示页码为1，文档的前三页是没有页码的，如果文档前三页有页码，手动将其删除即可</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;要将第N页的页码设置为第一页，需进行一下设置&lt;/p&gt;
+&lt;p&gt;1、进入页码格式，将起始页码设置为1，&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9464729-ffd9476471f02cf
+      
+    
+    </summary>
+    
+      <category term="Windows" scheme="https://github.com/hjyApple/hjyApple.github.io/categories/Windows/"/>
+    
+    
+      <category term="Windows" scheme="https://github.com/hjyApple/hjyApple.github.io/tags/Windows/"/>
+    
+  </entry>
   
   <entry>
     <title>信息收集之命令行的使用</title>
