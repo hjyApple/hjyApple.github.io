@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/hjyApple/hjyApple.github.io/"/>
-  <updated>2018-08-08T02:21:41.647Z</updated>
+  <updated>2018-08-16T12:54:40.265Z</updated>
   <id>https://github.com/hjyApple/hjyApple.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>github部署本地仓库到远程仓库</title>
+    <link href="https://github.com/hjyApple/hjyApple.github.io/2018/08/16/github%E9%83%A8%E7%BD%B2%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E5%88%B0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/"/>
+    <id>https://github.com/hjyApple/hjyApple.github.io/2018/08/16/github部署本地仓库到远程仓库/</id>
+    <published>2018-08-16T09:28:29.000Z</published>
+    <updated>2018-08-16T12:54:40.265Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1-github里面建立仓库"><a href="#1-github里面建立仓库" class="headerlink" title="1.github里面建立仓库"></a>1.github里面建立仓库</h3><h4 id="1、首先在github里面新建一个仓库"><a href="#1、首先在github里面新建一个仓库" class="headerlink" title="1、首先在github里面新建一个仓库"></a>1、首先在github里面新建一个仓库</h4><p><img src="https://upload-images.jianshu.io/upload_images/9464729-a445cc307e3b768a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><h4 id="2、创建test仓库"><a href="#2、创建test仓库" class="headerlink" title="2、创建test仓库"></a>2、创建test仓库</h4><p><img src="https://upload-images.jianshu.io/upload_images/9464729-8e72a2c82e8b5278.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><h4 id="3、创建成功后如图显示"><a href="#3、创建成功后如图显示" class="headerlink" title="3、创建成功后如图显示"></a>3、创建成功后如图显示</h4><p><img src="https://upload-images.jianshu.io/upload_images/9464729-31a181ccfebd63d5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><h3 id="2-windows本地仓库配置"><a href="#2-windows本地仓库配置" class="headerlink" title="2.windows本地仓库配置"></a>2.windows本地仓库配置</h3><h4 id="1、建立个人仓库文件夹"><a href="#1、建立个人仓库文件夹" class="headerlink" title="1、建立个人仓库文件夹"></a>1、建立个人仓库文件夹</h4><p>可以使用github的命令：<figure class="highlight plain"><figcaption><span>file``` 或者直接 右键新建文件夹即可</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### 2、本地仓库初始化（对该文件夹进行初始化）</span><br><span class="line"></span><br><span class="line">在刚刚新建的文件夹中，右键选择 Git Bash Here打开，或者通过其他方式打开，但需要用cd进入此文件夹目录</span><br></pre></td></tr></table></figure></p><p>git init<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">![image.png](https://upload-images.jianshu.io/upload_images/9464729-2b24e41ed3a70815.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</span><br><span class="line"></span><br><span class="line">#### 3、创建一个test.md文件</span><br></pre></td></tr></table></figure></p><p>touch test.md<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### 4、添加刚刚创建的test.md文件到本地仓库</span><br></pre></td></tr></table></figure></p><p>git add test.md   //git add . 可将本文件夹内文件全部同步到远程github上面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### 5、提交添加的文件到本地仓库</span><br></pre></td></tr></table></figure></p><p>git commit -m “此处是对文件上传的文件的描述”<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">![image.png](https://upload-images.jianshu.io/upload_images/9464729-5086ce56a64fcb30.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</span><br><span class="line"></span><br><span class="line">#### 6、将本地仓库和远程仓库关联起来</span><br></pre></td></tr></table></figure></p><p>git remote add origin <a href="mailto:git@github.com">git@github.com</a>:用户名/仓库名  //第一次配置的时候使用即可，以后同步文件不用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### 7、上传文件到远程仓库</span><br></pre></td></tr></table></figure></p><p>git push -u origin master //第一次上传使用-u参数，以后就不用-u参数了<br>git push origin master   //以后直接用此命令便可将本地仓库的文件更新同步到远程仓库<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">![image.png](https://upload-images.jianshu.io/upload_images/9464729-aded61ee2a210272.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</span><br><span class="line"></span><br><span class="line">报出错误，原因是本地仓库没有readme.md文件，使用此命令即可解决</span><br></pre></td></tr></table></figure></p><p>git pull –rebase origin master   //pull=fetch+merge<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">![image.png](https://upload-images.jianshu.io/upload_images/9464729-959e426cf3ab0a5e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</span><br><span class="line"></span><br><span class="line">到目前为止已经完成了上传</span><br><span class="line"></span><br><span class="line">以后再上传文件直接使用这三个命令即可</span><br></pre></td></tr></table></figure></p><p>git add . //文件夹内所有文件均上传，可以指定文件来上传<br>git commit -m “对此次上传文件的描述”<br>git push origin master<br><code>`</code></p><p><strong>PS</strong>：以上操作基于windows以及按照git并配置好了远程链接github的账户</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;1-github里面建立仓库&quot;&gt;&lt;a href=&quot;#1-github里面建立仓库&quot; class=&quot;headerlink&quot; title=&quot;1.github里面建立仓库&quot;&gt;&lt;/a&gt;1.github里面建立仓库&lt;/h3&gt;&lt;h4 id=&quot;1、首先在github里面新建一个
+      
+    
+    </summary>
+    
+      <category term="Windows" scheme="https://github.com/hjyApple/hjyApple.github.io/categories/Windows/"/>
+    
+    
+      <category term="Windows" scheme="https://github.com/hjyApple/hjyApple.github.io/tags/Windows/"/>
+    
+  </entry>
   
   <entry>
     <title>Office任意页面设置页码为起始页码</title>
@@ -515,31 +540,6 @@
     
     
       <category term="Tools" scheme="https://github.com/hjyApple/hjyApple.github.io/tags/Tools/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hexo</title>
-    <link href="https://github.com/hjyApple/hjyApple.github.io/2018/04/02/hexo/"/>
-    <id>https://github.com/hjyApple/hjyApple.github.io/2018/04/02/hexo/</id>
-    <published>2018-04-02T05:55:05.000Z</published>
-    <updated>2018-05-13T07:21:13.732Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="hexo-next主题配置"><a href="#hexo-next主题配置" class="headerlink" title="hexo next主题配置"></a>hexo next主题配置</h3><p>本站采用Misc风格，主题背景默认的，不过颜色可以自己设置，新建一个tags标签，<code>hexo new page tags</code>，此时会在本地创建一个tags文件夹<br>,想让侧栏出现tags和分类，只需将这个弄好就OK了</p><h3 id="添加本地搜索"><a href="#添加本地搜索" class="headerlink" title="添加本地搜索"></a>添加本地搜索</h3><h3 id="安装hexo-generator-searchdb"><a href="#安装hexo-generator-searchdb" class="headerlink" title="安装hexo-generator-searchdb"></a>安装hexo-generator-searchdb</h3><p><code>npm install hexo-generator-searchdb --save</code></p><h3 id="修改站点配置文件"><a href="#修改站点配置文件" class="headerlink" title="修改站点配置文件"></a>修改站点配置文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  format: html</span><br><span class="line">  limit: 10000</span><br></pre></td></tr></table></figure><h3 id="修改主题配置文件"><a href="#修改主题配置文件" class="headerlink" title="修改主题配置文件"></a>修改主题配置文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># Local search</span><br><span class="line">local_search:</span><br><span class="line">  enable: true</span><br></pre></td></tr></table></figure><h3 id="接入网易云音乐"><a href="#接入网易云音乐" class="headerlink" title="接入网易云音乐"></a>接入网易云音乐</h3><p>进入网易云音乐官网，搜索想要的歌曲，生成外链接，复制此代码到<code>/hexo/themes/next/layout/_macro/sidebar.swig</code>，复制到112行</p><p>每次修改完成后先 <code>heco clean</code>,再<code>hexo d -g</code>即可发布</p><p>插入一句Markdownpad使用，使用时修改选项为commonMark;</p><h4 id="一篇文章使用多个标签"><a href="#一篇文章使用多个标签" class="headerlink" title="一篇文章使用多个标签"></a>一篇文章使用多个标签</h4><pre><code>tags：- 标签1- 标签2</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;hexo-next主题配置&quot;&gt;&lt;a href=&quot;#hexo-next主题配置&quot; class=&quot;headerlink&quot; title=&quot;hexo next主题配置&quot;&gt;&lt;/a&gt;hexo next主题配置&lt;/h3&gt;&lt;p&gt;本站采用Misc风格，主题背景默认的，不过颜色可以自
-      
-    
-    </summary>
-    
-      <category term="Blog" scheme="https://github.com/hjyApple/hjyApple.github.io/categories/Blog/"/>
-    
-    
-      <category term="Github+next" scheme="https://github.com/hjyApple/hjyApple.github.io/tags/Github-next/"/>
     
   </entry>
   
