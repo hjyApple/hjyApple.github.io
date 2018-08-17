@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="首先要有一个U盘启动盘或者装机光盘； 一、安装12- ```Launch CSm```关闭- ```Security Boot```选择```Disable修改完成后按F10保存并退出接下来就该修改磁盘格式为GPT格式了，进入安装界面时按住1- 首先输入```diskpart  进入磁盘操作界面disk```1- 查看磁盘名及类型```select disk 0  清除磁盘格式1- 安装``win">
+<meta name="description" content="首先要有一个U盘启动盘或者装机光盘； 一、安装12345678910111213141516171819- `Launch CSm`关闭- `Security Boot`选择`Disable`  修改完成后按F10保存并退出  接下来就该修改磁盘格式为GPT格式了，进入安装界面时按住`Shift+F10`，进入命令行，- 首先输入`diskpart`- 进入磁盘操作界面`list disk`- 查">
 <meta name="keywords" content="Windows">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Win resystem">
 <meta property="og:url" content="https://github.com/hjyApple/hjyApple.github.io/2018/04/19/system/index.html">
 <meta property="og:site_name" content="嶽General">
-<meta property="og:description" content="首先要有一个U盘启动盘或者装机光盘； 一、安装12- ```Launch CSm```关闭- ```Security Boot```选择```Disable修改完成后按F10保存并退出接下来就该修改磁盘格式为GPT格式了，进入安装界面时按住1- 首先输入```diskpart  进入磁盘操作界面disk```1- 查看磁盘名及类型```select disk 0  清除磁盘格式1- 安装``win">
+<meta property="og:description" content="首先要有一个U盘启动盘或者装机光盘； 一、安装12345678910111213141516171819- `Launch CSm`关闭- `Security Boot`选择`Disable`  修改完成后按F10保存并退出  接下来就该修改磁盘格式为GPT格式了，进入安装界面时按住`Shift+F10`，进入命令行，- 首先输入`diskpart`- 进入磁盘操作界面`list disk`- 查">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-17T01:36:15.676Z">
+<meta property="og:updated_time" content="2018-08-17T01:40:40.088Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Win resystem">
-<meta name="twitter:description" content="首先要有一个U盘启动盘或者装机光盘； 一、安装12- ```Launch CSm```关闭- ```Security Boot```选择```Disable修改完成后按F10保存并退出接下来就该修改磁盘格式为GPT格式了，进入安装界面时按住1- 首先输入```diskpart  进入磁盘操作界面disk```1- 查看磁盘名及类型```select disk 0  清除磁盘格式1- 安装``win">
+<meta name="twitter:description" content="首先要有一个U盘启动盘或者装机光盘； 一、安装12345678910111213141516171819- `Launch CSm`关闭- `Security Boot`选择`Disable`  修改完成后按F10保存并退出  接下来就该修改磁盘格式为GPT格式了，进入安装界面时按住`Shift+F10`，进入命令行，- 首先输入`diskpart`- 进入磁盘操作界面`list disk`- 查">
 
 
 
@@ -396,16 +396,7 @@ color="255,255,0" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
 
       
         <p>首先要有一个U盘启动盘或者装机光盘；</p>
-<h2 id="一、安装"><a href="#一、安装" class="headerlink" title="一、安装"></a>一、安装<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- ```Launch CSm```关闭</span><br><span class="line">- ```Security Boot```选择```Disable</span><br></pre></td></tr></table></figure></h2><p>修改完成后按F10保存并退出<br>接下来就该修改磁盘格式为GPT格式了，进入安装界面时按住<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 首先输入```diskpart</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li><p>进入磁盘操作界面<figure class="highlight plain"><figcaption><span>disk```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 查看磁盘名及类型```select disk 0</span><br></pre></td></tr></table></figure></p>
-</li>
-<li><p>清除磁盘格式<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 安装``win10``需要格式化为gpt格式```convert gpt</span><br></pre></td></tr></table></figure></p>
-</li>
-<li><p>格式化完成后进行分区<figure class="highlight plain"><figcaption><span>paraition ```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">- 创建```EFI```分区，执行```create partition efi size=200```（分区大小为200MB）</span><br><span class="line">- 创建``MSR``分区，执行```create partition msr size=200```（微软系统保留分区）</span><br><span class="line">- 创建主分区，执行```create partition primary size=xxx```（具体大小根据你的要求而定，作为系统分区来说，如果有足够空间，可以留出大于100GB即102400MB的空间，命令为```create partition primary size=102400```，方便系统有足够周转空间）</span><br><span class="line">- 如果还有剩余空间，可继续重复执行上述命令来创建新的分区（注意修改具体数值）。但建议用户创建完系统分区后就退出命令提示符继续安装系统，毕竟这种方式不容易估算剩下的硬盘空间大小，进入安装程序后可以进一步划分剩余空间，也可以在安装结束后，进入系统磁盘管理中进行分配</span><br><span class="line">- 企业版win10激活方法，鼠标右击```win```键，点击```Windows Powershell（管理员）```，依次输入一下命令，如若序列号不可使用，请百度最新win10企业版序列号替换即可，也可以使用Windows激活工具进行激活</span><br><span class="line">```slmgr.vbs /upk</span><br><span class="line">slmgr /ipk NPPR9-FWDCX-D2C8J-H872K-2YT43</span><br><span class="line">slmgr /skms zh.us.to</span><br><span class="line">slmgr /ato</span><br></pre></td></tr></table></figure></p>
-</li>
-</ul>
-<h2 id="二、安装Win7"><a href="#二、安装Win7" class="headerlink" title="二、安装Win7"></a>二、安装Win7</h2><p>听说现在新版电脑不再支持安装Win7了，当然如果你的电脑支持安装Win7，最好不过了。<br>按<code>Esc</code>进入<code>Bios</code></p>
+<h2 id="一、安装"><a href="#一、安装" class="headerlink" title="一、安装"></a>一、安装<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">- `Launch CSm`关闭</span><br><span class="line">- `Security Boot`选择`Disable`</span><br><span class="line">  修改完成后按F10保存并退出</span><br><span class="line">  接下来就该修改磁盘格式为GPT格式了，进入安装界面时按住`Shift+F10`，进入命令行，</span><br><span class="line">- 首先输入`diskpart`</span><br><span class="line">- 进入磁盘操作界面`list disk`</span><br><span class="line">- 查看磁盘名及类型`select disk 0`</span><br><span class="line">- 清除磁盘格式`clean`</span><br><span class="line">- 安装`win10`需要格式化为gpt格式`convert gpt`</span><br><span class="line">- 格式化完成后进行分区`create paraition `</span><br><span class="line">- 创建`EFI`分区，执行`create partition efi size=200`（分区大小为200MB）</span><br><span class="line">- 创建`MSR`分区，执行`create partition msr size=200`（微软系统保留分区）</span><br><span class="line">- 创建主分区，执行`create partition primary size=xxx`（具体大小根据你的要求而定，作为系统分区来说，如果有足够空间，可以留出大于100GB即102400MB的空间，命令为`create partition primary size=102400`，方便系统有足够周转空间）</span><br><span class="line">- 如果还有剩余空间，可继续重复执行上述命令来创建新的分区（注意修改具体数值）。但建议用户创建完系统分区后就退出命令提示符继续安装系统，毕竟这种方式不容易估算剩下的硬盘空间大小，进入安装程序后可以进一步划分剩余空间，也可以在安装结束后，进入系统磁盘管理中进行分配</span><br><span class="line">- 企业版win10激活方法，鼠标右击`win`键，点击`Windows Powershell（管理员）`，依次输入一下命令，如若序列号不可使用，请百度最新win10企业版序列号替换即可，也可以使用Windows激活工具进行激活</span><br><span class="line">```slmgr.vbs /upk</span><br><span class="line">slmgr /ipk NPPR9-FWDCX-D2C8J-H872K-2YT43</span><br><span class="line">slmgr /skms zh.us.to</span><br><span class="line">slmgr /ato</span><br></pre></td></tr></table></figure></h2><h2 id="二、安装Win7"><a href="#二、安装Win7" class="headerlink" title="二、安装Win7"></a>二、安装Win7</h2><p>听说现在新版电脑不再支持安装Win7了，当然如果你的电脑支持安装Win7，最好不过了。<br>按<code>Esc</code>进入<code>Bios</code></p>
 <ul>
 <li>修改<code>Lanuch CMS</code>为<code>Enable</code></li>
 <li><code>Security Boot</code>选择<code>Disable</code><br>修改完成后按F10保存并退出<br>接下来就该修改磁盘格式了，进入安装界面时按住<code>Shift+F10</code>，进入命令行，</li>
@@ -602,7 +593,7 @@ color="255,255,0" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、安装"><span class="nav-number">1.</span> <span class="nav-text">一、安装12- ```Launch CSm```关闭- ```Security Boot```选择```Disable</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、安装Win7"><span class="nav-number">2.</span> <span class="nav-text">二、安装Win7</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、安装"><span class="nav-number">1.</span> <span class="nav-text">一、安装12345678910111213141516171819- `Launch CSm`关闭- `Security Boot`选择`Disable`  修改完成后按F10保存并退出  接下来就该修改磁盘格式为GPT格式了，进入安装界面时按住`Shift+F10`，进入命令行，- 首先输入`diskpart`- 进入磁盘操作界面`list disk`- 查看磁盘名及类型`select disk 0`- 清除磁盘格式`clean`- 安装`win10`需要格式化为gpt格式`convert gpt`- 格式化完成后进行分区`create paraition `- 创建`EFI`分区，执行`create partition efi size=200`（分区大小为200MB）- 创建`MSR`分区，执行`create partition msr size=200`（微软系统保留分区）- 创建主分区，执行`create partition primary size=xxx`（具体大小根据你的要求而定，作为系统分区来说，如果有足够空间，可以留出大于100GB即102400MB的空间，命令为`create partition primary size=102400`，方便系统有足够周转空间）- 如果还有剩余空间，可继续重复执行上述命令来创建新的分区（注意修改具体数值）。但建议用户创建完系统分区后就退出命令提示符继续安装系统，毕竟这种方式不容易估算剩下的硬盘空间大小，进入安装程序后可以进一步划分剩余空间，也可以在安装结束后，进入系统磁盘管理中进行分配- 企业版win10激活方法，鼠标右击`win`键，点击`Windows Powershell（管理员）`，依次输入一下命令，如若序列号不可使用，请百度最新win10企业版序列号替换即可，也可以使用Windows激活工具进行激活```slmgr.vbs /upkslmgr /ipk NPPR9-FWDCX-D2C8J-H872K-2YT43slmgr /skms zh.us.toslmgr /ato</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、安装Win7"><span class="nav-number">2.</span> <span class="nav-text">二、安装Win7</span></a></li></ol></div>
             
 
           </div>
