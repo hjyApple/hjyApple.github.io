@@ -67,17 +67,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Linux&Windows之命令行使用]]></title>
-    <url>%2F2018%2F05%2F06%2FLinux-Windows%E4%B9%8B%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%BD%BF%E7%94%A8%2F</url>
-    <content type="text"><![CDATA[Linux系统下基本命令： （区分大小写 ）uname 显示版本信息（同win2K的 ver ）dir 显示当前目录文件,ls -al 显示包括隐藏文件（同win2K的 dir）pwd 查询当前所在的目录位置cd cd ..回到上一层目录，注意cd 与..之间有空格。cd /返回到根目录。cat 文件名 查看文件内容cat &gt;abc.txt 往abc.txt文件中写上内容。more 文件名 以一页一页的方式显示一个文本文件。cp 复制文件mv 移动文件rm 文件名 删除文件，rm -a 目录名删除目录及子目录mkdir 目录名 建立目录rmdir 删除子目录，目录内没有文档。chmod 设定档案或目录的存取权限grep 在档案中查找字符串diff 档案文件比较find 档案搜寻date 现在的日期、时间who 查询目前和你使用同一台机器的人以及Login时间地点w 查询目前上机者的详细资料whoami 查看自己的帐号名称groups 查看某人的Grouppasswd 更改密码history 查看自己下过的命令ps 显示进程状态kill 停止某进程gcc 黑客通常用它来编译C语言写的文件su 权限转换为指定使用者telnet IP telnet连接对方主机（同win2K），当出现bash$时就说明连接成功。ftp ftp连接上某服务器（同win2K） windows 系统命令大全常用的CMD命令：cd 改变当前目录cls 清屏copy 拷贝文件del 删除文件deltree 删除目录树dir 列文件名diskcopy 复制磁盘edit 文本编辑format 格式化磁盘md 建立子目录more 分屏显示move 移动文件、改目录名rd 删除目录ren 改变文件名echo 内容 &gt; 文件名 创建新文件type 显示文件内容xcopy 拷贝目录与文件attrib 设置文件属性chkdsk 检查磁盘date 显示及修改日期defrag 磁盘碎片整理doskey 重新调用DOS命令emm386 扩展内存管理fdisk 硬盘分区help 帮助label 设置卷标号path 设置搜寻目录prempt 设置提示符restore 恢复备份文件time 显示及修改时间scandisk检测、修理磁盘set 设置环境变量smartdrv设置磁盘加速器undelete恢复被删的文件append 设置非执行文件路径debug 随机调试程序diskcomp磁盘比较expand 还原DOS文件fasthelp快速显示帮助信息fc 文件比较interink启动服务器intersvr启动客户机qbasic Basic集成环境setver 设置版本share 文件共享subst 路径替换tree 列目录树unformat恢复已格式化的磁盘vsafe 防病毒ver 显示DOS版本号vol 显示磁盘卷标号ctty 改变控制设备nbtstat 该命令使用TCP/IP上的NetBIOS显示协议统计和当前TCP/IP连接，使用这个命令你可以得到远程主机的NETBIOS信息 计算机运行命令全集winver———检查Windows版本wmimgmt.msc—-打开windows管理体系结构wupdmgr——–windows更新程序winver———检查Windows版本wmimgmt.msc—-打开windows管理体系结构wupdmgr——–windows更新程序wwww——–windows脚本宿主设置write———-写字板winmsd—–系统信息wiaacmgr——-扫描仪和照相机向导winchat——–XP自带局域网聊天mem.exe——–显示内存使用情况Msconfig.exe—系统配置实用程序mplayer2——-简易widnows media playermspaint——–画图板mstsc———-远程桌面连接mplayer2——-媒体播放机magnify——–放大镜实用程序mmc————打开控制台mobsync——–同步命令dxdiag———检查directx信息drwtsn32—— 系统医生devmgmt.msc— 设备管理器dfrg.msc——-磁盘碎片整理程序diskmgmt.msc—磁盘管理实用程序dcomcnfg——-打开系统组件服务ddeshare——-打开DDE共享设置dvdplay——–DVD播放器net stop messenger—–停止信使服务net start messenger—-开始信使服务notepad——–打开记事本nslookup——-网络管理的工具向导ntbackup——-系统备份和还原narrator——-屏幕”讲述人”ntmsmgr.msc—-移动存储管理器ntmsoprq.msc—移动存储管理员操作请求netstat -an—-(TC)命令检查接口syncapp——–创建一个公文包sysedit——–系统配置编辑器sigverif——-文件签名验证程序sndrec32——-录音机shrpubw——–创建共享文件夹secpol.msc—–本地安全策略syskey———系统加密，一旦加密就不能解开，保护windows xp系统的双重密码services.msc—本地服务设置Sndvol32——-音量控制程序sfc.exe——–系统文件检查器sfc /scannow—windows文件保护tsshutdn——-60秒倒计时关机命令tourstart——xp简介（安装完成后出现的漫游xp程序）taskmgr——–任务管理器eventvwr——-事件查看器eudcedit——-造字程序explorer——-打开资源管理器packager——-对象包装程序perfmon.msc—-计算机性能监测程序progman——–程序管理器regedit.exe—-注册表rsop.msc——-组策略结果集regedt32——-注册表编辑器rononce -p —-15秒关机regsvr32 /u *.dll—-停止dll文件运行regsvr32 /u zipfldr.dll——取消ZIP支持cmd.exe——–CMD命令提示符chkdsk.exe—–Chkdsk磁盘检查certmgr.msc—-证书管理实用程序calc———–启动计算器charmap——–启动字符映射表cliconfg——-SQL SERVER 客户端网络实用程序Clipbrd——–剪贴板查看器conf———–启动netmeetingcompmgmt.msc—计算机管理cleanmgr——-**整理ciadv.msc——索引服务程序osk————打开屏幕键盘odbcad32——-ODBC数据源管理器oobe/msoobe /a—-检查XP是否激活lusrmgr.msc—-本机用户和组logoff———注销命令iexpress——-木马捆绑工具，系统自带Nslookup——-IP地址侦测器fsmgmt.msc—–共享文件夹管理器utilman——–辅助工具管理器gpedit.msc—–组策略]]></content>
-      <categories>
-        <category>Windows,Linux,Tools</category>
-      </categories>
-      <tags>
-        <tag>Windows，Linux,Tools</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[win10开机键盘无法使用问题]]></title>
     <url>%2F2018%2F05%2F05%2F%E9%94%AE%E7%9B%98%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[电脑开机外置键盘无法使用进入设备管理器发现键盘下的PC/AT 增强型PS/2键盘驱动为感叹号打开注册表，此时键盘无法使用，那就进入C盘Windows文件下双击regedit.exe文件打开注册表，依次进入HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E96B-E325-11CE-BFC1-08002BE10318}删除UpperFilters项在设备管理器下的键盘选项里删除PC/AT 增强型PS/2键盘卸载此设备，重新启动。此时安装驱动会提示错误代码10，该设备无法启动。 接着修改注册表：HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E96B-E325-11CE-BFC1-08002BE10318}添加字符串UpperFilters项，内容为kbdclass卸载设备，重新启动。重新启动后问题得以解决。]]></content>
@@ -94,6 +83,21 @@
       </categories>
       <tags>
         <tag>Security</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Linux&Windows之命令行使用]]></title>
+    <url>%2F2018%2F04%2F26%2FLinux-Windows%E4%B9%8B%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%BD%BF%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[Linux系统下基本命令： （区分大小写 ）uname 显示版本信息（同win2K的 ver ）dir 显示当前目录文件,ls -al 显示包括隐藏文件（同win2K的 dir）pwd 查询当前所在的目录位置cd cd ..回到上一层目录，注意cd 与..之间有空格。cd /返回到根目录。cat 文件名 查看文件内容cat &gt;abc.txt 往abc.txt文件中写上内容。more 文件名 以一页一页的方式显示一个文本文件。cp 复制文件mv 移动文件rm 文件名 删除文件，rm -a 目录名删除目录及子目录mkdir 目录名 建立目录rmdir 删除子目录，目录内没有文档。chmod 设定档案或目录的存取权限grep 在档案中查找字符串diff 档案文件比较find 档案搜寻date 现在的日期、时间who 查询目前和你使用同一台机器的人以及Login时间地点w 查询目前上机者的详细资料whoami 查看自己的帐号名称groups 查看某人的Grouppasswd 更改密码history 查看自己下过的命令ps 显示进程状态kill 停止某进程gcc 黑客通常用它来编译C语言写的文件su 权限转换为指定使用者telnet IP telnet连接对方主机（同win2K），当出现bash$时就说明连接成功。ftp ftp连接上某服务器（同win2K） windows 系统命令大全常用的CMD命令：cd 改变当前目录cls 清屏copy 拷贝文件del 删除文件deltree 删除目录树dir 列文件名diskcopy 复制磁盘edit 文本编辑format 格式化磁盘md 建立子目录more 分屏显示move 移动文件、改目录名rd 删除目录ren 改变文件名echo 内容 &gt; 文件名 创建新文件type 显示文件内容xcopy 拷贝目录与文件attrib 设置文件属性chkdsk 检查磁盘date 显示及修改日期defrag 磁盘碎片整理doskey 重新调用DOS命令emm386 扩展内存管理fdisk 硬盘分区help 帮助label 设置卷标号path 设置搜寻目录prempt 设置提示符restore 恢复备份文件time 显示及修改时间scandisk检测、修理磁盘set 设置环境变量smartdrv设置磁盘加速器undelete恢复被删的文件append 设置非执行文件路径debug 随机调试程序diskcomp磁盘比较expand 还原DOS文件fasthelp快速显示帮助信息fc 文件比较interink启动服务器intersvr启动客户机qbasic Basic集成环境setver 设置版本share 文件共享subst 路径替换tree 列目录树unformat恢复已格式化的磁盘vsafe 防病毒ver 显示DOS版本号vol 显示磁盘卷标号ctty 改变控制设备nbtstat 该命令使用TCP/IP上的NetBIOS显示协议统计和当前TCP/IP连接，使用这个命令你可以得到远程主机的NETBIOS信息 计算机运行命令全集winver———检查Windows版本wmimgmt.msc—-打开windows管理体系结构wupdmgr——–windows更新程序winver———检查Windows版本wmimgmt.msc—-打开windows管理体系结构wupdmgr——–windows更新程序wwww——–windows脚本宿主设置write———-写字板winmsd—–系统信息wiaacmgr——-扫描仪和照相机向导winchat——–XP自带局域网聊天mem.exe——–显示内存使用情况Msconfig.exe—系统配置实用程序mplayer2——-简易widnows media playermspaint——–画图板mstsc———-远程桌面连接mplayer2——-媒体播放机magnify——–放大镜实用程序mmc————打开控制台mobsync——–同步命令dxdiag———检查directx信息drwtsn32—— 系统医生devmgmt.msc— 设备管理器dfrg.msc——-磁盘碎片整理程序diskmgmt.msc—磁盘管理实用程序dcomcnfg——-打开系统组件服务ddeshare——-打开DDE共享设置dvdplay——–DVD播放器net stop messenger—–停止信使服务net start messenger—-开始信使服务notepad——–打开记事本nslookup——-网络管理的工具向导ntbackup——-系统备份和还原narrator——-屏幕”讲述人”ntmsmgr.msc—-移动存储管理器ntmsoprq.msc—移动存储管理员操作请求netstat -an—-(TC)命令检查接口syncapp——–创建一个公文包sysedit——–系统配置编辑器sigverif——-文件签名验证程序sndrec32——-录音机shrpubw——–创建共享文件夹secpol.msc—–本地安全策略syskey———系统加密，一旦加密就不能解开，保护windows xp系统的双重密码services.msc—本地服务设置Sndvol32——-音量控制程序sfc.exe——–系统文件检查器sfc /scannow—windows文件保护tsshutdn——-60秒倒计时关机命令tourstart——xp简介（安装完成后出现的漫游xp程序）taskmgr——–任务管理器eventvwr——-事件查看器eudcedit——-造字程序explorer——-打开资源管理器packager——-对象包装程序perfmon.msc—-计算机性能监测程序progman——–程序管理器regedit.exe—-注册表rsop.msc——-组策略结果集regedt32——-注册表编辑器rononce -p —-15秒关机regsvr32 /u *.dll—-停止dll文件运行regsvr32 /u zipfldr.dll——取消ZIP支持cmd.exe——–CMD命令提示符chkdsk.exe—–Chkdsk磁盘检查certmgr.msc—-证书管理实用程序calc———–启动计算器charmap——–启动字符映射表cliconfg——-SQL SERVER 客户端网络实用程序Clipbrd——–剪贴板查看器conf———–启动netmeetingcompmgmt.msc—计算机管理cleanmgr——-**整理ciadv.msc——索引服务程序osk————打开屏幕键盘odbcad32——-ODBC数据源管理器oobe/msoobe /a—-检查XP是否激活lusrmgr.msc—-本机用户和组logoff———注销命令iexpress——-木马捆绑工具，系统自带Nslookup——-IP地址侦测器fsmgmt.msc—–共享文件夹管理器utilman——–辅助工具管理器gpedit.msc—–组策略]]></content>
+      <categories>
+        <category>Windows</category>
+        <category>Linux</category>
+        <category>Tools</category>
+      </categories>
+      <tags>
+        <tag>Tools</tag>
+        <tag>Windows</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
