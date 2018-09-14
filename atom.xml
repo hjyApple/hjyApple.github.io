@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/hjyApple/hjyApple.github.io/"/>
-  <updated>2018-09-14T08:53:12.118Z</updated>
+  <updated>2018-09-05T02:30:13.310Z</updated>
   <id>https://github.com/hjyApple/hjyApple.github.io/</id>
   
   <author>
@@ -15,20 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>Sublime</title>
-    <link href="https://github.com/hjyApple/hjyApple.github.io/2018/09/14/Sublime-0/"/>
-    <id>https://github.com/hjyApple/hjyApple.github.io/2018/09/14/Sublime-0/</id>
-    <published>2018-09-14T08:53:12.000Z</published>
-    <updated>2018-09-14T08:53:12.118Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title></title>
@@ -223,9 +209,9 @@
     <link href="https://github.com/hjyApple/hjyApple.github.io/2018/05/06/sublime/"/>
     <id>https://github.com/hjyApple/hjyApple.github.io/2018/05/06/sublime/</id>
     <published>2018-05-06T04:59:07.000Z</published>
-    <updated>2018-09-14T09:03:38.510Z</updated>
+    <updated>2018-09-14T09:07:31.819Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="sublime-text不能安装插件，错误提示There-are-no-packages-available-for-installation。"><a href="#sublime-text不能安装插件，错误提示There-are-no-packages-available-for-installation。" class="headerlink" title="sublime text不能安装插件，错误提示There are no packages available for installation。"></a>sublime text不能安装插件，错误提示There are no packages available for installation。</h3><h4 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h4><p>1、cmd下输入<code>ping sublime.wbond.net</code><br>记录返回的IP地址<br>2、将上一步得到的IP地址加入到本机hosts文件中，hosts文件所在目录为C:\Windows\System32\drivers\etc<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#sublime</span><br><span class="line">第一步的IP地址       sublime.wbond.net.</span><br><span class="line">#end</span><br></pre></td></tr></table></figure></p><p>4、修改后保存，重启sublime</p><h4 id="方法二："><a href="#方法二：" class="headerlink" title="方法二："></a>方法二：</h4><p>一、先安装<code>Package Control.sublime-package</code>到Sublime Text\Packages下面<br><a href="https://pan.baidu.com/s/1N1RKJrMh2nlzLgwm-r2QDQ" target="_blank" rel="noopener">下载链接</a> 密码：<code>viuc</code><br>二、安装REPL<br>1、手动下载sublimeREPL插件<em><a href="https://github.com/wuub/SublimeREPL">https://github.com/wuub/SublimeREPL</a></em>，将其解压到sublime Text\Data\Packages目录下<br>2、打开\sublime Text\Data\Packages\sublimeREPL\config\python\Main.sublime-menu文件，找到”id”为”reply_python”的段落，将”cmd”的属性改为<code>[&quot;python&quot;, &quot;-i&quot;, &quot;-u&quot;, &quot;$file_basename&quot;]</code><br>这样相当于将SublimeREPL的python交互环境的命令改为运行当前文件的交互环境，如果还想保留以前的功能，可以自己添加一个这样的节点，注意id值要取名为唯一的id值。<br>3、设置快捷键<br>点击首选项-&gt;按键绑定-用户，然后在弹出的文件中输入</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">&#123; &quot;keys&quot;: [&quot;alt+q&quot;], &quot;command&quot;: &quot;repl_open&quot;,   </span><br><span class="line">             &quot;caption&quot;: &quot;Python&quot;,  </span><br><span class="line">             &quot;mnemonic&quot;: &quot;p&quot;,  </span><br><span class="line">             &quot;args&quot;: &#123;  </span><br><span class="line">             &quot;type&quot;: &quot;subprocess&quot;,  </span><br><span class="line">             &quot;encoding&quot;: &quot;utf8&quot;,  </span><br><span class="line">             &quot;cmd&quot;: [&quot;python&quot;, &quot;-i&quot;, &quot;-u&quot;, &quot;$file&quot;],  </span><br><span class="line">             &quot;cwd&quot;: &quot;$file_path&quot;,  </span><br><span class="line">             &quot;syntax&quot;: &quot;Packages/Python/Python.tmLanguage&quot;,  </span><br><span class="line">             &quot;external_id&quot;: &quot;python&quot;  </span><br><span class="line">             &#125;   </span><br><span class="line">&#125;  </span><br><span class="line">]</span><br></pre></td></tr></table></figure><p>本文仅定义了Python - RUN current file的快捷键，这里使用的是alt+q，可以根据自己的需要进行灵活的调整。<br>为了调试方便，我们可以把这个窗口放到右边，先设置sublime的窗口显示为多层，点击查看-&gt;布局-&gt;列数 2列<br>方法二参考<em><a href="https://blog.csdn.net/zhihaoma/article/details/51132755" target="_blank" rel="noopener">https://blog.csdn.net/zhihaoma/article/details/51132755</a></em><br><a href="https://blog.csdn.net/feilong_csdn/article/details/67638660" target="_blank" rel="noopener">其他方法参考</a><br></p><p>Sublime默认主题配置</p><p><img src="https://upload-images.jianshu.io/upload_images/9464729-aaf3f055b8094295.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="sublime主题.jpg"></p><h4 id="Sublime-透明度设置"><a href="#Sublime-透明度设置" class="headerlink" title="Sublime 透明度设置"></a>Sublime 透明度设置</h4><p>Sublime安装包下面有Data目录的，直接将设置透明度的Package放入Data目录下面的Package下面即可</p><p>没有Data目录的，需要将设置透明度的Package放在sublime的Package目录下，点击 Sublime Text3 的 <code>Preferences -&gt; Browse Packages</code> 打开 Packages 存放目录，将文件放入，并重命名为SublimeTextTrans，然后在<code>Preferences -&gt; Package Setting -&gt; SublimeTextTrans -&gt; Setting - User</code> 就可以设置透明度的级别了。</p><p>也可以通过 <code>Ctrl+Shift+1、2、3、4、5、6</code> 加载默认的 6 个透明级别。默认的透明级别在 <code>Preferences -&gt; Package Setting -&gt; SublimeTextTrans -&gt; Setting - Default</code> 中可以查</p>]]></content>
+    <content type="html"><![CDATA[<h3 id="sublime-text不能安装插件，错误提示There-are-no-packages-available-for-installation。"><a href="#sublime-text不能安装插件，错误提示There-are-no-packages-available-for-installation。" class="headerlink" title="sublime text不能安装插件，错误提示There are no packages available for installation。"></a>sublime text不能安装插件，错误提示There are no packages available for installation。</h3><h4 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h4><p>1、cmd下输入<code>ping sublime.wbond.net</code><br>记录返回的IP地址<br>2、将上一步得到的IP地址加入到本机hosts文件中，hosts文件所在目录为C:\Windows\System32\drivers\etc<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#sublime</span><br><span class="line">第一步的IP地址       sublime.wbond.net.</span><br><span class="line">#end</span><br></pre></td></tr></table></figure></p><p>4、修改后保存，重启sublime</p><h4 id="方法二："><a href="#方法二：" class="headerlink" title="方法二："></a>方法二：</h4><p>一、先安装<code>Package Control.sublime-package</code>到Sublime Text\Packages下面<br><a href="https://pan.baidu.com/s/1N1RKJrMh2nlzLgwm-r2QDQ" target="_blank" rel="noopener">下载链接</a> 密码：<code>viuc</code><br>二、安装REPL<br>1、手动下载sublimeREPL插件<em><a href="https://github.com/wuub/SublimeREPL">https://github.com/wuub/SublimeREPL</a></em>，将其解压到sublime Text\Data\Packages目录下<br>2、打开\sublime Text\Data\Packages\sublimeREPL\config\python\Main.sublime-menu文件，找到”id”为”reply_python”的段落，将”cmd”的属性改为<code>[&quot;python&quot;, &quot;-i&quot;, &quot;-u&quot;, &quot;$file_basename&quot;]</code><br>这样相当于将SublimeREPL的python交互环境的命令改为运行当前文件的交互环境，如果还想保留以前的功能，可以自己添加一个这样的节点，注意id值要取名为唯一的id值。<br>3、设置快捷键<br>点击首选项-&gt;按键绑定-用户，然后在弹出的文件中输入</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">&#123; &quot;keys&quot;: [&quot;alt+q&quot;], &quot;command&quot;: &quot;repl_open&quot;,   </span><br><span class="line">             &quot;caption&quot;: &quot;Python&quot;,  </span><br><span class="line">             &quot;mnemonic&quot;: &quot;p&quot;,  </span><br><span class="line">             &quot;args&quot;: &#123;  </span><br><span class="line">             &quot;type&quot;: &quot;subprocess&quot;,  </span><br><span class="line">             &quot;encoding&quot;: &quot;utf8&quot;,  </span><br><span class="line">             &quot;cmd&quot;: [&quot;python&quot;, &quot;-i&quot;, &quot;-u&quot;, &quot;$file&quot;],  </span><br><span class="line">             &quot;cwd&quot;: &quot;$file_path&quot;,  </span><br><span class="line">             &quot;syntax&quot;: &quot;Packages/Python/Python.tmLanguage&quot;,  </span><br><span class="line">             &quot;external_id&quot;: &quot;python&quot;  </span><br><span class="line">             &#125;   </span><br><span class="line">&#125;  </span><br><span class="line">]</span><br></pre></td></tr></table></figure><p>本文仅定义了Python - RUN current file的快捷键，这里使用的是alt+q，可以根据自己的需要进行灵活的调整。<br>为了调试方便，我们可以把这个窗口放到右边，先设置sublime的窗口显示为多层，点击查看-&gt;布局-&gt;列数 2列<br>方法二参考<em><a href="https://blog.csdn.net/zhihaoma/article/details/51132755" target="_blank" rel="noopener">https://blog.csdn.net/zhihaoma/article/details/51132755</a></em><br><a href="https://blog.csdn.net/feilong_csdn/article/details/67638660" target="_blank" rel="noopener">其他方法参考</a><br></p><p>Sublime默认主题配置</p><p><img src="https://upload-images.jianshu.io/upload_images/9464729-aaf3f055b8094295.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="sublime主题.jpg"></p><h4 id="Sublime-透明度设置"><a href="#Sublime-透明度设置" class="headerlink" title="Sublime 透明度设置"></a>Sublime 透明度设置</h4><p>设置透明度包<a href="https://pan.baidu.com/s/1EI8lRpxjGzlXaVZkVeO6fA" target="_blank" rel="noopener">下载链接</a>密码：t89y</p><p>Sublime安装包下面有Data目录的<a href="https://pan.baidu.com/s/1xdT6gZjM_ZkcvlZIGifxDA" target="_blank" rel="noopener">下载链接</a> 密码：rysf，直接将设置透明度的Package放入Data目录下面的Package下面即可</p><p>没有Data目录的<a href="https://pan.baidu.com/s/1Bg-2mbjYX4NG9Q8D8ufzUQ" target="_blank" rel="noopener">下载链接</a>，密码：kpwm，需要将设置透明度的Package放在sublime的Package目录下，点击 Sublime Text3 的 <code>Preferences -&gt; Browse Packages</code> 打开 Packages 存放目录，将文件放入，并重命名为SublimeTextTrans，然后在<code>Preferences -&gt; Package Setting -&gt; SublimeTextTrans -&gt; Setting - User</code> 就可以设置透明度的级别了。</p><p>也可以通过 <code>Ctrl+Shift+1、2、3、4、5、6</code> 加载默认的 6 个透明级别。默认的透明级别在 <code>Preferences -&gt; Package Setting -&gt; SublimeTextTrans -&gt; Setting - Default</code> 中可以查</p>]]></content>
     
     <summary type="html">
     
@@ -523,6 +509,31 @@
     
     
       <category term="Linux" scheme="https://github.com/hjyApple/hjyApple.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Destiny</title>
+    <link href="https://github.com/hjyApple/hjyApple.github.io/2018/04/05/Destiny/"/>
+    <id>https://github.com/hjyApple/hjyApple.github.io/2018/04/05/Destiny/</id>
+    <published>2018-04-05T13:04:39.000Z</published>
+    <updated>2018-04-05T13:59:31.794Z</updated>
+    
+    <content type="html"><![CDATA[<p>&nbsp;&nbsp;成功正因我志在成功！成功呈概率分布，关键是你能不能坚持到成功开始呈现的那一刻。<br><br><br>&nbsp;&nbsp;人生的路上，我们都在奔跑，我们总在赶超一些人，也总在被一些人超越。人生的要义，一是欣赏沿途的风景，二是抵达遥远的终点。人生的秘诀，就在于寻找一种最适合自己的速度，莫因疾进而不堪重荷，莫因迟缓而空耗生命。人生的快乐，就是走自己的路，看自己的景。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&amp;nbsp;&amp;nbsp;成功正因我志在成功！成功呈概率分布，关键是你能不能坚持到成功开始呈现的那一刻。&lt;br&gt;&lt;br&gt;&lt;br&gt;&amp;nbsp;&amp;nbsp;人生的路上，我们都在奔跑，我们总在赶超一些人，也总在被一些人超越。人生的要义，一是欣赏沿途的风景，二是抵达遥远的终点。人生的
+      
+    
+    </summary>
+    
+      <category term="Daily" scheme="https://github.com/hjyApple/hjyApple.github.io/categories/Daily/"/>
+    
+    
+      <category term="Daily" scheme="https://github.com/hjyApple/hjyApple.github.io/tags/Daily/"/>
     
   </entry>
   
