@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[防火墙技术之总结篇]]></title>
+    <url>%2F2018%2F10%2F10%2F%E9%98%B2%E7%81%AB%E5%A2%99%E6%8A%80%E6%9C%AF%E4%B9%8B%E6%80%BB%E7%BB%93%E7%AF%87%2F</url>
+    <content type="text"><![CDATA[设置默认路由：Ensp里面配置默认路由设置下一跳即可，而不是下下跳：如在防火墙处设置去往服务器的路由，只需添加下一跳为防火墙最近的一个路由器的接口ip即可，离目的ip最近处的设备的下一跳不用设置路由器添加默认路由：ip route-static 19.1.1.2 24 200.1.1.1 //ip route-static 目的IP 掩码 下一跳设置企业内网IP访问外网指定IP时需要配置防火墙策略，能够让内网IP访问到指定网段或指定IP windows有关路由表的命令查看默认路由命令：route print删除路由规则：route delete 0.0.0.0临时添加路由：route add 172.18.0.0 mask 255.255.0.0 172.16.0.1 重启之后自动消失永久添加路由：route add 172.19.0.0 mask 255.255.0.0 172.16.0.1 -p //添加上-p参数即可修改电脑内部路由：route change 网段 mask 子网掩码 网关 //说明：只用于修改网关和/或跃点数。例如：修改172.20.0.0 网关由172.20.0.1修改为172.20.0.254 route change 172.20.0.0 mask 255.255.0.0 172.20.0.254 删除内部路由: route delete 网段route delete 172.18.0.0 防火墙配置Weblogin防火墙启动之后先到设置里面配置密码，然后weblogin登录到192.168.0.100:8443访问，默认账号admin&amp;&amp;密码Admin@123，第一次登录会让修改默认密码，修改之后才可以进行其他操作。首先要将防火墙的接口IP分配好以及分配安全域 Nat地址转换策略 L2TP服务通过L2TP，可以实现让公网用户通过VPN访问到私网，私网IP为地址池分配，用户地址分配时：192.168.5.1/255.255.255.0这个IP不要被包含在用户地址池里面，比如本处用户地址池为192.168.5.2-192.168.5.20设置L2TP，选择LNS，对端隧道名称要记住，后面要用到vpn client添加连接时，LNS服务器地址设置为防火墙与公网连接的IP地址 安全策略牵扯到防火墙的配置，一定要修改策略，理顺好思路，不要一股脑的只用命令去配置，最终ping不通，仅仅是因为策略问题，低级错误要避免 修改地址池中IP或用户]]></content>
+      <categories>
+        <category>Security</category>
+      </categories>
+      <tags>
+        <tag>Security</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[spider]]></title>
+    <url>%2F2018%2F09%2F29%2Fspider%2F</url>
+    <content type="text"><![CDATA[闲来没事，就想着去爬取一下wooyun站的漏洞详情页面的内容 原本尝试直接爬wooyun本站的信息的，结果在分析页面的时候出了点小问题，只能说一时脑子不开窍了 然后就去找了一个其他的，其实还是乌云的站 代码方面这里着重说一下使用的BeautifulSoup库 先分析网页源代码，我需要找到的是漏洞的url和标题在页面中的位置， url存在于 td 标签下面的a标签里面，接下来就下去获取这个标签，然后再取出标签内我们需要的内容 BeautifulSoup库 Beautiful Soup提供一些简单的、python式的函数用来处理导航、搜索、修改分析树等功能。它是一个工具箱，通过解析文档为用户提供需要抓取的数据，因为简单，所以不需要多少代码就可以写出一个完整的应用程序。Beautiful Soup自动将输入文档转换为Unicode编码，输出文档转换为utf-8编码。不需要考虑编码方式，除非文档没有指定一个编码方式，这时，Beautiful Soup就不能自动识别编码方式了。然后，你仅仅需要说明一下原始编码方式就可以了。Beautiful Soup已成为和lxml、html6lib一样出色的python解释器，为用户灵活地提供不同的解析策略或强劲的速度。 安装此库 pip install BeautifulSoup4 首先应该导入BeautifulSoup类库 from bs4 import BeautifulSoup 我们需要取出标签及内容 find_all 123451. 查找指定标签 soup.find_all(&apos;tag&apos;) 2. 查找指定文本 soup.find_all(text=&apos;text&apos;) 3. 根据id查找 soup.find_all(id=&apos;tag id&apos;) 4. 使用正则进行匹配 soup.find_all(text=re.compile(&apos;your re&apos;)), soup.find_all(id=re.compile(&apos;your re&apos;)) 5. 指定属性查找标签 soup.find_all(&apos;tag&apos;, &#123;&apos;id&apos;: &apos;tag id&apos;, &apos;class&apos;: &apos;tag class&apos;&#125;) a = soup.find_all(&#39;a&#39;,href=re.compile(&quot;/bugs/wooyun?&quot;)) #定向匹配 ？ 这就可以取出整个a标签，是不是比正则简单了很多呢 取a标签里面href的值使用a[0][&#39;href&#39;]即可 12345for num in range(0,len(a)): b = a[num][&apos;href&apos;] u_href = &quot;http://zone.secevery.com:4321&quot; + b #拼接第一种：用 + ；第二种：空格：只要把两个字符串（仅限字符串）放在一起，中间有空白或者没有空格，两个字符串自动拼接为一个字符串；第三种：逗号 str=&quot;HI&quot; str，&apos;tom&apos; ，output: Hi tom,使用逗号会自动加上一个空格 url_list.append(u_href) 下载整个网页内容 对应标题 url 将标题名字作为存储的文件名 python爬取原生网页 或者直接将页面保存为PDF 使用import urllib.request报错,改为 import urllib urllib.request.urlopen(url);]]></content>
+      <tags>
+        <tag>Tools</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[github部署本地仓库到远程仓库]]></title>
     <url>%2F2018%2F08%2F16%2Fgithub%E9%83%A8%E7%BD%B2%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E5%88%B0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%2F</url>
     <content type="text"><![CDATA[1.github里面建立仓库1、首先在github里面新建一个仓库 2、创建test仓库 3、创建成功后如图显示 2.windows本地仓库配置1、建立个人仓库文件夹可以使用github的命令：mkdir file 或者直接 右键新建文件夹即可 2、本地仓库初始化（对该文件夹进行初始化）在刚刚新建的文件夹中，右键选择 Git Bash Here打开，或者通过其他方式打开，但需要用cd进入此文件夹目录 1git init 3、创建一个test.md文件1touch test.md 4、添加刚刚创建的test.md文件到本地仓库1git add test.md //git add . 可将本文件夹内文件全部同步到远程github上面 5、提交添加的文件到本地仓库1git commit -m &quot;此处是对文件上传的文件的描述&quot; 6、将本地仓库和远程仓库关联起来1git remote add origin git@github.com:用户名/仓库名 //第一次配置的时候使用即可，以后同步文件不用 7、上传文件到远程仓库12git push -u origin master //第一次上传使用-u参数，以后就不用-u参数了git push origin master //以后直接用此命令便可将本地仓库的文件更新同步到远程仓库 报出错误，原因是本地仓库没有readme.md文件，使用此命令即可解决 1git pull --rebase origin master //pull=fetch+merge 到目前为止已经完成了上传 以后再上传文件直接使用这三个命令即可 123git add . //文件夹内所有文件均上传，可以指定文件来上传git commit -m &quot;对此次上传文件的描述&quot;git push origin master PS：以上操作基于windows以及按照git并配置好了远程链接github的账户 3.本地获取远程仓库文件1、首先要保证本地仓库没有修改过的文件，可以使用git add . 将之前的文件添加到暂存区 2、然后使用如下命令进行拉取远程文件 1git pull origin master 这样显示就是本地已经同步远程最新的文件了 当我们对远程仓库文件做了修改之后，再拉取文件就是如下显示，这样本地仓库已经同步了远程仓库的文件 PS:当直接同步本地文件到远程失败时，可能的原因是直接在远程仓库对文件进行了修改，导致两边数据不一致，此时可以这样执行 12345678先将远程仓库文件同步到本地git add . //git pull origin master同步远程的完成之后，再将本地修改的文件同步到远程仓库git add . git commit -m &quot;对上传文件的描述&quot;git push origin master]]></content>
@@ -216,8 +235,8 @@
         <category>Tools</category>
       </categories>
       <tags>
-        <tag>Security</tag>
         <tag>Tools</tag>
+        <tag>Security</tag>
       </tags>
   </entry>
   <entry>

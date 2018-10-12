@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/hjyApple/hjyApple.github.io/"/>
-  <updated>2018-08-17T01:56:56.094Z</updated>
+  <updated>2018-10-12T08:22:06.177Z</updated>
   <id>https://github.com/hjyApple/hjyApple.github.io/</id>
   
   <author>
@@ -15,6 +15,57 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>防火墙技术之总结篇</title>
+    <link href="https://github.com/hjyApple/hjyApple.github.io/2018/10/10/%E9%98%B2%E7%81%AB%E5%A2%99%E6%8A%80%E6%9C%AF%E4%B9%8B%E6%80%BB%E7%BB%93%E7%AF%87/"/>
+    <id>https://github.com/hjyApple/hjyApple.github.io/2018/10/10/防火墙技术之总结篇/</id>
+    <published>2018-10-10T08:20:47.000Z</published>
+    <updated>2018-10-12T08:22:06.177Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="设置默认路由："><a href="#设置默认路由：" class="headerlink" title="设置默认路由："></a>设置默认路由：</h2><h4 id="Ensp里面配置默认路由"><a href="#Ensp里面配置默认路由" class="headerlink" title="Ensp里面配置默认路由"></a>Ensp里面配置默认路由</h4><p>设置下一跳即可，而不是下下跳：如在防火墙处设置去往服务器的路由，只需添加下一跳为防火墙最近的一个路由器的接口ip即可，离目的ip最近处的设备的下一跳不用设置<br><img src="https://upload-images.jianshu.io/upload_images/9464729-63ccd3b6ef6808c0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="下一跳"><br>路由器添加默认路由：<code>ip route-static 19.1.1.2 24 200.1.1.1</code>  //<code>ip route-static 目的IP 掩码 下一跳</code><br>设置企业内网IP访问外网指定IP时需要配置防火墙策略，能够让内网IP访问到指定网段或指定IP      </p><h4 id="windows有关路由表的命令"><a href="#windows有关路由表的命令" class="headerlink" title="windows有关路由表的命令"></a>windows有关路由表的命令</h4><p>查看默认路由命令：<code>route print</code><br>删除路由规则：<code>route delete 0.0.0.0</code><br>临时添加路由：<code>route add 172.18.0.0 mask 255.255.0.0 172.16.0.1</code> 重启之后自动消失<br>永久添加路由：<code>route add 172.19.0.0 mask 255.255.0.0 172.16.0.1  -p</code>   //添加上-p参数即可<br>修改电脑内部路由：<code>route change 网段 mask 子网掩码 网关</code>   //说明：只用于修改网关和/或跃点数。<br>例如：修改<code>172.20.0.0</code>        网关由<code>172.20.0.1</code>修改为<code>172.20.0.254</code>     </p><p><code>route change 172.20.0.0 mask 255.255.0.0 172.20.0.254</code></p><p>删除内部路由: <code>route delete 网段</code><br><code>route delete 172.18.0.0</code></p><h2 id="防火墙配置"><a href="#防火墙配置" class="headerlink" title="防火墙配置"></a>防火墙配置</h2><h3 id="Weblogin"><a href="#Weblogin" class="headerlink" title="Weblogin"></a>Weblogin</h3><p>防火墙启动之后先到设置里面配置密码，然后weblogin登录到<code>192.168.0.100:8443</code>访问，默认账号<code>admin</code>&amp;&amp;密码<code>Admin@123</code>，第一次登录会让修改默认密码，修改之后才可以进行其他操作。<br>首先要将防火墙的接口IP分配好以及分配安全域<br><img src="https://upload-images.jianshu.io/upload_images/9464729-edb9bb5c31a83325.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="配置防火墙接口IP"></p><h3 id="Nat地址转换策略"><a href="#Nat地址转换策略" class="headerlink" title="Nat地址转换策略"></a>Nat地址转换策略</h3><p><img src="https://upload-images.jianshu.io/upload_images/9464729-dba3aa5d030ab3d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="NAT策略"><br><img src="https://upload-images.jianshu.io/upload_images/9464729-6bd516f870bbae8d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Nat地址池"></p><h3 id="L2TP服务"><a href="#L2TP服务" class="headerlink" title="L2TP服务"></a>L2TP服务</h3><p>通过L2TP，可以实现让公网用户通过VPN访问到私网，私网IP为地址池分配，<br>用户地址分配时：<br><code>192.168.5.1/255.255.255.0</code>这个IP不要被包含在用户地址池里面，比如本处用户地址池为<code>192.168.5.2-192.168.5.20</code><br>设置L2TP，选择LNS，对端隧道名称要记住，后面要用到<br><img src="https://upload-images.jianshu.io/upload_images/9464729-034f272bac7b6b49.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="L2TP"><br>vpn client添加连接时，LNS服务器地址设置为防火墙与公网连接的IP地址<br><img src="https://upload-images.jianshu.io/upload_images/9464729-ab9d3fbb902fc7e7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="LNS服务器地址"></p><h3 id="安全策略"><a href="#安全策略" class="headerlink" title="安全策略"></a>安全策略</h3><p>牵扯到防火墙的配置，一定要修改策略，理顺好思路，不要一股脑的只用命令去配置，最终ping不通，仅仅是因为策略问题，低级错误要避免<br><img src="https://upload-images.jianshu.io/upload_images/9464729-62ecb50d355ab940.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="安全策略"></p><p>修改地址池中IP或用户<br><img src="https://upload-images.jianshu.io/upload_images/9464729-e98d5eed14586d89.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="修改地址池或用户"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;设置默认路由：&quot;&gt;&lt;a href=&quot;#设置默认路由：&quot; class=&quot;headerlink&quot; title=&quot;设置默认路由：&quot;&gt;&lt;/a&gt;设置默认路由：&lt;/h2&gt;&lt;h4 id=&quot;Ensp里面配置默认路由&quot;&gt;&lt;a href=&quot;#Ensp里面配置默认路由&quot; class=&quot;
+      
+    
+    </summary>
+    
+      <category term="Security" scheme="https://github.com/hjyApple/hjyApple.github.io/categories/Security/"/>
+    
+    
+      <category term="Security" scheme="https://github.com/hjyApple/hjyApple.github.io/tags/Security/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>spider</title>
+    <link href="https://github.com/hjyApple/hjyApple.github.io/2018/09/29/spider/"/>
+    <id>https://github.com/hjyApple/hjyApple.github.io/2018/09/29/spider/</id>
+    <published>2018-09-29T07:48:59.000Z</published>
+    <updated>2018-09-30T13:44:37.855Z</updated>
+    
+    <content type="html"><![CDATA[<p>闲来没事，就想着去爬取一下wooyun站的漏洞详情页面的内容</p><p>原本尝试直接爬wooyun本站的信息的，结果在分析页面的时候出了点小问题，只能说一时脑子不开窍了</p><p>然后就去找了一个其他的，其实还是乌云的站</p><p>代码方面这里着重说一下使用的<code>BeautifulSoup</code>库</p><p>先分析网页源代码，我需要找到的是漏洞的url和标题在页面中的位置，</p><p>url存在于 td 标签下面的a标签里面，接下来就下去获取这个标签，然后再取出标签内我们需要的内容</p><h4 id="BeautifulSoup库"><a href="#BeautifulSoup库" class="headerlink" title="BeautifulSoup库"></a><code>BeautifulSoup</code>库</h4><p> <code>Beautiful Soup</code>提供一些简单的、python式的函数用来处理导航、搜索、修改分析树等功能。它是一个工具箱，通过解析文档为用户提供需要抓取的数据，因为简单，所以不需要多少代码就可以写出一个完整的应用程序。Beautiful Soup自动将输入文档转换为Unicode编码，输出文档转换为utf-8编码。不需要考虑编码方式，除非文档没有指定一个编码方式，这时，Beautiful Soup就不能自动识别编码方式了。然后，你仅仅需要说明一下原始编码方式就可以了。<br>Beautiful Soup已成为和lxml、html6lib一样出色的python解释器，为用户灵活地提供不同的解析策略或强劲的速度。</p><p>安装此库 <strong>pip install BeautifulSoup4</strong></p><p>首先应该导入<code>BeautifulSoup</code>类库 <code>from bs4 import BeautifulSoup</code></p><p>我们需要取出标签及内容</p><p><code>find_all</code></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. 查找指定标签 soup.find_all(&apos;tag&apos;) </span><br><span class="line">2. 查找指定文本 soup.find_all(text=&apos;text&apos;) </span><br><span class="line">3. 根据id查找 soup.find_all(id=&apos;tag id&apos;) </span><br><span class="line">4. 使用正则进行匹配 soup.find_all(text=re.compile(&apos;your re&apos;)), soup.find_all(id=re.compile(&apos;your re&apos;)) </span><br><span class="line">5. 指定属性查找标签 soup.find_all(&apos;tag&apos;, &#123;&apos;id&apos;: &apos;tag id&apos;, &apos;class&apos;: &apos;tag class&apos;&#125;)</span><br></pre></td></tr></table></figure><p><code>a = soup.find_all(&#39;a&#39;,href=re.compile(&quot;/bugs/wooyun?&quot;))  #定向匹配  ？</code></p><p>这就可以取出整个a标签，是不是比正则简单了很多呢</p><p>取a标签里面href的值使用<code>a[0][&#39;href&#39;]</code>即可</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">for num in range(0,len(a)):</span><br><span class="line">b = a[num][&apos;href&apos;]</span><br><span class="line">u_href = &quot;http://zone.secevery.com:4321&quot; + b  </span><br><span class="line">#拼接第一种：用 + ；第二种：空格：只要把两个字符串（仅限字符串）放在一起，中间有空白或者没有空格，两个字符串自动拼接为一个字符串；第三种：逗号 str=&quot;HI&quot;   str，&apos;tom&apos;  ，output: Hi tom,使用逗号会自动加上一个空格</span><br><span class="line">url_list.append(u_href)</span><br></pre></td></tr></table></figure><p>下载整个网页内容</p><p>对应标题 url</p><p>将标题名字作为存储的文件名</p><p>python爬取原生网页</p><p>或者直接将页面保存为PDF</p><p>使用<code>import urllib.request</code>报错,改为 import urllib</p><p>urllib.request.urlopen(url);</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;闲来没事，就想着去爬取一下wooyun站的漏洞详情页面的内容&lt;/p&gt;
+&lt;p&gt;原本尝试直接爬wooyun本站的信息的，结果在分析页面的时候出了点小问题，只能说一时脑子不开窍了&lt;/p&gt;
+&lt;p&gt;然后就去找了一个其他的，其实还是乌云的站&lt;/p&gt;
+&lt;p&gt;代码方面这里着重说一下使用的&lt;
+      
+    
+    </summary>
+    
+    
+      <category term="Tools" scheme="https://github.com/hjyApple/hjyApple.github.io/tags/Tools/"/>
+    
+  </entry>
   
   <entry>
     <title>github部署本地仓库到远程仓库</title>
@@ -488,58 +539,6 @@
     
     
       <category term="Linux" scheme="https://github.com/hjyApple/hjyApple.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Destiny</title>
-    <link href="https://github.com/hjyApple/hjyApple.github.io/2018/04/05/Destiny/"/>
-    <id>https://github.com/hjyApple/hjyApple.github.io/2018/04/05/Destiny/</id>
-    <published>2018-04-05T13:04:39.000Z</published>
-    <updated>2018-04-05T13:59:31.794Z</updated>
-    
-    <content type="html"><![CDATA[<p>&nbsp;&nbsp;成功正因我志在成功！成功呈概率分布，关键是你能不能坚持到成功开始呈现的那一刻。<br><br><br>&nbsp;&nbsp;人生的路上，我们都在奔跑，我们总在赶超一些人，也总在被一些人超越。人生的要义，一是欣赏沿途的风景，二是抵达遥远的终点。人生的秘诀，就在于寻找一种最适合自己的速度，莫因疾进而不堪重荷，莫因迟缓而空耗生命。人生的快乐，就是走自己的路，看自己的景。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&amp;nbsp;&amp;nbsp;成功正因我志在成功！成功呈概率分布，关键是你能不能坚持到成功开始呈现的那一刻。&lt;br&gt;&lt;br&gt;&lt;br&gt;&amp;nbsp;&amp;nbsp;人生的路上，我们都在奔跑，我们总在赶超一些人，也总在被一些人超越。人生的要义，一是欣赏沿途的风景，二是抵达遥远的终点。人生的
-      
-    
-    </summary>
-    
-      <category term="Daily" scheme="https://github.com/hjyApple/hjyApple.github.io/categories/Daily/"/>
-    
-    
-      <category term="Daily" scheme="https://github.com/hjyApple/hjyApple.github.io/tags/Daily/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Burpsuite抓取收据数据包</title>
-    <link href="https://github.com/hjyApple/hjyApple.github.io/2018/04/05/Burpsuite%E6%8A%93%E5%8F%96%E6%94%B6%E6%8D%AE%E6%95%B0%E6%8D%AE%E5%8C%85/"/>
-    <id>https://github.com/hjyApple/hjyApple.github.io/2018/04/05/Burpsuite抓取收据数据包/</id>
-    <published>2018-04-05T12:51:52.000Z</published>
-    <updated>2018-05-13T07:20:08.834Z</updated>
-    
-    <content type="html"><![CDATA[<p>首先给手机导入crt证书，电脑证书为der格式，直接修改后缀为crt格式即可，此链接已经改好了<br>网盘下载:<em><a href="https://pan.baidu.com/s/1JmdjJ1VO40Vjv0a2OkGVNw" target="_blank" rel="noopener">https://pan.baidu.com/s/1JmdjJ1VO40Vjv0a2OkGVNw</a></em> &nbsp;密码：<code>6bs8</code><br>电脑和手机要处于同一个网络，手机WIFI设置好代理及端口，使用Burpsuite进行抓包分析，使用手机访问想要抓取的网站或App里面某一功能，<code>Burpsuite</code>的<code>history</code>里面有记录，可进行分析<br><a href="https://www.cnblogs.com/nieliangcai/p/6689915.html" target="_blank" rel="noopener">Burpsuite使用教程</a>,此处需要知道重放包的使用以及history即可<br>此处举例：<a href="https://zhuanlan.zhihu.com/p/35268895?utm_source=qq&amp;utm_medium=social" target="_blank" rel="noopener">坦白说</a><br>&nbsp;&nbsp;QQ新出的坦白说功能，抓取到的页面<code>Host</code>应为<code>ti.qq.com</code>，抓取到的数据为加密类型，<a href="https://jackz.cn/article/qq_honestsay" target="_blank" rel="noopener">解密网址</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;首先给手机导入crt证书，电脑证书为der格式，直接修改后缀为crt格式即可，此链接已经改好了&lt;br&gt;网盘下载:&lt;em&gt;&lt;a href=&quot;https://pan.baidu.com/s/1JmdjJ1VO40Vjv0a2OkGVNw&quot; target=&quot;_blank&quot; rel
-      
-    
-    </summary>
-    
-      <category term="Tools" scheme="https://github.com/hjyApple/hjyApple.github.io/categories/Tools/"/>
-    
-    
-      <category term="Security" scheme="https://github.com/hjyApple/hjyApple.github.io/tags/Security/"/>
-    
-      <category term="Tools" scheme="https://github.com/hjyApple/hjyApple.github.io/tags/Tools/"/>
     
   </entry>
   

