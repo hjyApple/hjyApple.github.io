@@ -219,7 +219,7 @@
   <entry>
     <title><![CDATA[ssh远程连接Linux]]></title>
     <url>%2F2018%2F04%2F07%2F%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5Linux%2F</url>
-    <content type="text"><![CDATA[首先,确定是否有安装SSH服务命令：ps -e | grep ssh*如果没有任何显示,则没有安装该服务其次,安装SSH-serversudo apt-get install openssh-server接着,更重要的是安装SSH-clientsudo apt-get install openssh-client确认安装SSH服务成功与否ps -e | grep ssh*如果,看到sshd表明ssh-server启动了; 服务器端设置ssh免密首先Linux要配置好ssh免密连接cd /root/.ssh/如果没有此文件，可以先使用ssh localhost之后便可以进入.ssh文件ls查看只有这一个文件,known_hosts先在本机生成公钥和私钥, ssh-keygen -t rsa将公钥写入认证里面,cat ./id_rsa.pub &gt;&gt; ./authorized_keys修改文件authorized_keys权限为600,chmod 600 .ssh/authorized_keys至此，ssh免密已经配置好了，上述步骤如下 使用Xshell免密远程连接linux转自https://www.linuxidc.com/Linux/2015-03/114947.htm补充网址里面的第六步：复制生成的公钥到linux可以直接将本地id_rsa_2048.pub直接复制过去,将其放入/root/.ssh/文件夹下，使用此命令写入认证cat ./id_rsa_2048.pub &gt;&gt; ./authorized_keys此时再按照上面的网址操作即可 使用cmder免密连接linux先在本机生成公钥和私钥, ssh-keygen -t rsa将生成的id_rsa.pub重命名为id_rsa0.pub(因为linux下一句有一个与此同名的文件),上传至服务器;window下生成的id_rsa.pub存放于C:\Users\用户名\.ssh下将其放入/root/.ssh/文件夹下;使用此命令写入认证cat ./id_rsa0.pub &gt;&gt; ./authorized_keys此时Cmder连接linux已经免密了 PS：使用ssh连接，关闭linux系统防火墙才可连接，关闭防火墙命令service iptables stop]]></content>
+    <content type="text"><![CDATA[首先,确定是否有安装SSH服务命令：ps -e | grep ssh*如果没有任何显示,则没有安装该服务其次,安装SSH-serversudo apt-get install openssh-server接着,更重要的是安装SSH-clientsudo apt-get install openssh-client确认安装SSH服务成功与否ps -e | grep ssh*如果,看到sshd表明ssh-server启动了; 服务器端设置ssh免密首先Linux要配置好ssh免密连接cd /root/.ssh/如果没有此文件，可以先使用ssh localhost之后便可以进入.ssh文件ls查看只有这一个文件,known_hosts先在本机生成公钥和私钥, ssh-keygen -t rsa三次回车将公钥写入认证里面,cat ./id_rsa.pub &gt;&gt; ./authorized_keys修改文件authorized_keys权限为600,chmod 600 .ssh/authorized_keys至此，ssh免密已经配置好了，上述步骤如下 使用Xshell免密远程连接linux转自https://www.linuxidc.com/Linux/2015-03/114947.htm补充网址里面的第六步：复制生成的公钥到linux可以直接将本地id_rsa_2048.pub直接复制过去,将其放入/root/.ssh/文件夹下，使用此命令写入认证cat ./id_rsa_2048.pub &gt;&gt; ./authorized_keys此时再按照上面的网址操作即可 使用cmder免密连接linux先在本机生成公钥和私钥, ssh-keygen -t rsa将生成的id_rsa.pub重命名为id_rsa0.pub(因为linux下一句有一个与此同名的文件),上传至服务器;window下生成的id_rsa.pub存放于C:\Users\用户名\.ssh下将其放入/root/.ssh/文件夹下;使用此命令写入认证cat ./id_rsa0.pub &gt;&gt; ./authorized_keys此时Cmder连接linux已经免密了 PS：使用ssh连接，关闭linux系统防火墙才可连接，关闭防火墙命令service iptables stop]]></content>
       <categories>
         <category>Linux</category>
       </categories>
@@ -246,8 +246,8 @@
         <category>Tools</category>
       </categories>
       <tags>
-        <tag>Tools</tag>
         <tag>Security</tag>
+        <tag>Tools</tag>
       </tags>
   </entry>
   <entry>
