@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[github搭建静态网站]]></title>
+    <url>%2F2018%2F10%2F30%2Fgithub%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%2F</url>
+    <content type="text"><![CDATA[适应于搭建纯静态网站的个人网站建设 1、本地仓库同步部署到远程github仓库，参考链接 2、部署完成后，配置仓库设置点击settings可以看到GitHub Pages栏目选择源时有两个选择，一个是maste branch，另一个是maste branch/docs folder，选择一个后点击右侧的Save即可，访问链接在右上方，Your site is ready to be published at 你的站点链接’，设置完之后即可访问 如果选择 master branch需要将静态网站文件放到本地仓库下面，要让index.html这一默认页面在根目录下面，不能是直接将网站的压缩包放入根目录下，直接放入会导致github无法解析，直接源码显示 如果选择 maste branch/docs folder要确保该master下面有docs文件夹没有的话在本地仓库根目录新建一个，然后将网站放进去，如下图，直接再master里面放入网站时也要以这种形式 GitHub Pages官方参考文档]]></content>
+      <categories>
+        <category>Web</category>
+      </categories>
+      <tags>
+        <tag>Web</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[ShadowSock+SwitchyOmega科学上网]]></title>
     <url>%2F2018%2F10%2F29%2FShadowSock-SwitchyOmega%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%2F</url>
     <content type="text"><![CDATA[1、首先要有Shadowsock来连接外网(需要ss账号的哟)当然可以联系hgeneral@qq.com这里简单介绍下Shadowsock的使用Windows下载地址安卓的下载地址Windows版的安装成功之后，选择编辑服务器，添加一条信息填写服务器IP，端口，选择相应的加密方式,代理端口填写1080最直接的是上图中的 从剪贴板导入URL,导入的URl格式为ss*****==2、再介绍下ss客户端的部分功能PAC模式: 也就是智能分流模式，根据规则去匹配你访问的网站，国外网站走代理，国内网站不走代理，非常智能；优点： 节省流量，国内网站依旧走本地网络，速度快，绝大部分国外网站都走代理，速度也快。缺点：少部分国外网站会不经过代理，不能起到加速效果，甚至无法访问（解决方案：自己编辑PAC规则列表，将不走代理的国外网址加入进去，或者直接选择全局模式）。全局模式：国内、国外所有网站都走代理。优点：可访问全球所有网站。缺点：所有网站都走代理，访问国内网站速度变慢，且耗流量。为了解决Shadowsock部分功能的不便利，可以使用Chrome+SwitchyOmega+Shadowsock让你的代理更加顺手2、下面介绍的SwitchyOmega已安装在Chrome中，插件下载地址配置Auto Switch模式，gfwlist在线规则，很久没有更新了,地址是：https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt添加这样一条规则之后，在使用谷歌上网时，开启Auto Switch模式，此时浏览器会匹配这里面的规则自动选择哪些网站的流量走代理，哪些不走代理 那么，问题来了？这个gfwlist库文件里面的规则，覆盖面可能不全可能是个人设置问题，这样设置之后，google.com无法访问 解决方案1、额外添加一个情景模式,名称自定义，选择代理服务器类型，添加之后，设置如下2、然后再进入到Auto Switch里面手动添加指定网站的规则，或者当访问某个网站不能访问时插件会出现1个资源未加载，这样添加该网站的规则 例如：为facebook.com添加代理规则，当然这样添加之后，规则属于Auto Switch里面的一条规则，因为此时插件一直是在Auto Switch模式下这样就可以访问了]]></content>
@@ -46,10 +57,10 @@
     <url>%2F2018%2F08%2F16%2Fgithub%E9%83%A8%E7%BD%B2%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E5%88%B0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%2F</url>
     <content type="text"><![CDATA[1.github里面建立仓库1、首先在github里面新建一个仓库 2、创建test仓库 3、创建成功后如图显示 2.windows本地仓库配置1、建立个人仓库文件夹可以使用github的命令：mkdir file 或者直接 右键新建文件夹即可 2、本地仓库初始化（对该文件夹进行初始化）在刚刚新建的文件夹中，右键选择 Git Bash Here打开，或者通过其他方式打开，但需要用cd进入此文件夹目录 1git init 3、创建一个test.md文件1touch test.md 4、添加刚刚创建的test.md文件到本地仓库1git add test.md //git add . 可将本文件夹内文件全部同步到远程github上面 5、提交添加的文件到本地仓库1git commit -m &quot;此处是对文件上传的文件的描述&quot; 6、将本地仓库和远程仓库关联起来1git remote add origin git@github.com:用户名/仓库名 //第一次配置的时候使用即可，以后同步文件不用 7、上传文件到远程仓库12git push -u origin master //第一次上传使用-u参数，以后就不用-u参数了git push origin master //以后直接用此命令便可将本地仓库的文件更新同步到远程仓库 报出错误，原因是本地仓库没有readme.md文件，使用此命令即可解决 1git pull --rebase origin master //pull=fetch+merge 到目前为止已经完成了上传 以后再上传文件直接使用这三个命令即可 123git add . //文件夹内所有文件均上传，可以指定文件来上传git commit -m &quot;对此次上传文件的描述&quot;git push origin master PS：以上操作基于windows以及按照git并配置好了远程链接github的账户 3.本地获取远程仓库文件1、首先要保证本地仓库没有修改过的文件，可以使用git add . 将之前的文件添加到暂存区 2、然后使用如下命令进行拉取远程文件 1git pull origin master 这样显示就是本地已经同步远程最新的文件了 当我们对远程仓库文件做了修改之后，再拉取文件就是如下显示，这样本地仓库已经同步了远程仓库的文件 PS:当直接同步本地文件到远程失败时，可能的原因是直接在远程仓库对文件进行了修改，导致两边数据不一致，此时可以这样执行 12345678先将远程仓库文件同步到本地git add . //git pull origin master同步远程的完成之后，再将本地修改的文件同步到远程仓库git add . git commit -m &quot;对上传文件的描述&quot;git push origin master]]></content>
       <categories>
-        <category>Windows</category>
+        <category>Web</category>
       </categories>
       <tags>
-        <tag>Windows</tag>
+        <tag>Web</tag>
       </tags>
   </entry>
   <entry>
