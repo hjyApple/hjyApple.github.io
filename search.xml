@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[购买火车票指定铺位]]></title>
+    <url>%2F2018%2F11%2F14%2F%E8%B4%AD%E4%B9%B0%E7%81%AB%E8%BD%A6%E7%A5%A8%E6%8C%87%E5%AE%9A%E9%93%BA%E4%BD%8D%2F</url>
+    <content type="text"><![CDATA[1、生活中总是想着很多美好的事情，接下来要讲的是关于买火车票卧铺时指定铺位2、不建议使用谷歌浏览器，可以使用360安全浏览器，本人使用谷歌浏览器没有成功，然后下载了360浏览器，第一次提交系统直接出错，第二次就成功了3、进入12306官网，登录账户之后，在提交订单前的页面，鼠标放在硬座的地方，右键审查元素，或按下F12再定位硬卧3、定位完成之后，点击Edit as HTML4、在出来的select框中输入一下代码 123456&lt;select name=&quot;passenger_1_seat_detail_select&quot; style=&quot;display:block&quot; id=&quot;passenger_1_seat_detail_select&quot; onchange=&quot;setSeatDetail(&apos;1&apos;)&quot;&gt; &lt;option value=&quot;0&quot;&gt;随机&lt;/option&gt; &lt;option value=&quot;3&quot;&gt;上铺&lt;/option&gt; &lt;option value=&quot;2&quot;&gt;中铺&lt;/option&gt; &lt;option value=&quot;1&quot;&gt;下铺&lt;/option&gt;&lt;/select&gt; 5、输入完成后鼠标点击旁边的标签区域，上面席位旁边就会出现选择铺位的下拉菜单了6、接下来添加联系人信息，提交订单付款就可以了，如果遇到系统错误或没有订到心目中的铺位的话，有两种原因：(1)系统错误时可以再按照流程走一遍，碰下运气吧(2)也可能是确实没有想要订的铺位了(售空了)]]></content>
+      <categories>
+        <category>Daily</category>
+      </categories>
+      <tags>
+        <tag>Daily</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[github搭建静态网站]]></title>
     <url>%2F2018%2F10%2F30%2Fgithub%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%2F</url>
     <content type="text"><![CDATA[适应于搭建纯静态网站的个人网站建设 1、本地仓库同步部署到远程github仓库，参考链接 2、部署完成后，配置仓库设置点击settings可以看到GitHub Pages栏目选择源时有两个选择，一个是maste branch，另一个是maste branch/docs folder，选择一个后点击右侧的Save即可，访问链接在右上方，Your site is ready to be published at 你的站点链接’，设置完之后即可访问 如果选择 master branch需要将静态网站文件放到本地仓库下面，要让index.html这一默认页面在根目录下面，不能是直接将网站的压缩包放入根目录下，直接放入会导致github无法解析，直接源码显示 如果选择 maste branch/docs folder要确保该master下面有docs文件夹没有的话在本地仓库根目录新建一个，然后将网站放进去，如下图，直接再master里面放入网站时也要以这种形式 GitHub Pages官方参考文档]]></content>
@@ -20,17 +31,6 @@
       </categories>
       <tags>
         <tag>Tools</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[购买火车票指定铺位]]></title>
-    <url>%2F2018%2F10%2F14%2F%E8%B4%AD%E4%B9%B0%E7%81%AB%E8%BD%A6%E7%A5%A8%E6%8C%87%E5%AE%9A%E9%93%BA%E4%BD%8D%2F</url>
-    <content type="text"><![CDATA[1、生活中总是想着很多美好的事情，接下来要讲的是关于买火车票卧铺时指定铺位2、不建议使用谷歌浏览器，可以使用360安全浏览器，本人使用谷歌浏览器没有成功，然后下载了360浏览器，第一次提交系统直接出错，第二次就成功了3、进入12306官网，登录账户之后，在提交订单前的页面，鼠标放在硬座的地方，右键审查元素，或按下F12再定位硬卧3、定位完成之后，点击Edit as HTML4、在出来的select框中输入一下代码123456&lt;select name=&quot;passenger_1_seat_detail_select&quot; style=&quot;display:block&quot; id=&quot;passenger_1_seat_detail_select&quot; onchange=&quot;setSeatDetail(&apos;1&apos;)&quot;&gt; &lt;option value=&quot;0&quot;&gt;随机&lt;/option&gt; &lt;option value=&quot;3&quot;&gt;上铺&lt;/option&gt; &lt;option value=&quot;2&quot;&gt;中铺&lt;/option&gt; &lt;option value=&quot;1&quot;&gt;下铺&lt;/option&gt;&lt;/select&gt; 5、输入完成后鼠标点击旁边的标签区域，上面席位旁边就会出现选择铺位的下拉菜单了6、接下来添加联系人信息，提交订单付款就可以了，如果遇到系统错误或没有订到心目中的铺位的话，有两种原因：(1)系统错误时可以再按照流程走一遍，碰下运气吧(2)也可能是确实没有想要订的铺位了(售空了)]]></content>
-      <categories>
-        <category>Daily</category>
-      </categories>
-      <tags>
-        <tag>Daily</tag>
       </tags>
   </entry>
   <entry>
@@ -279,8 +279,8 @@
         <category>Tools</category>
       </categories>
       <tags>
-        <tag>Security</tag>
         <tag>Tools</tag>
+        <tag>Security</tag>
       </tags>
   </entry>
   <entry>
