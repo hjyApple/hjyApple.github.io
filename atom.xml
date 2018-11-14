@@ -68,6 +68,31 @@
   </entry>
   
   <entry>
+    <title>购买火车票指定铺位</title>
+    <link href="https://github.com/hjyApple/hjyApple.github.io/2018/10/14/%E8%B4%AD%E4%B9%B0%E7%81%AB%E8%BD%A6%E7%A5%A8%E6%8C%87%E5%AE%9A%E9%93%BA%E4%BD%8D/"/>
+    <id>https://github.com/hjyApple/hjyApple.github.io/2018/10/14/购买火车票指定铺位/</id>
+    <published>2018-10-14T12:54:31.000Z</published>
+    <updated>2018-11-14T12:56:04.299Z</updated>
+    
+    <content type="html"><![CDATA[<p>1、生活中总是想着很多美好的事情，接下来要讲的是关于买火车票卧铺时指定铺位<br>2、不建议使用谷歌浏览器，可以使用360安全浏览器，本人使用谷歌浏览器没有成功，然后下载了360浏览器，第一次提交系统直接出错，第二次就成功了<br>3、进入12306官网，登录账户之后，在提交订单前的页面，鼠标放在硬座的地方，右键审查元素，或按下F12再定位硬卧<br><img src="https://upload-images.jianshu.io/upload_images/9464729-b4fc033ffd5bb490.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>3、定位完成之后，点击Edit as HTML<br><img src="https://upload-images.jianshu.io/upload_images/9464729-6239b0377ca54333.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>4、在出来的select框中输入一下代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;select name=&quot;passenger_1_seat_detail_select&quot; style=&quot;display:block&quot; id=&quot;passenger_1_seat_detail_select&quot; onchange=&quot;setSeatDetail(&apos;1&apos;)&quot;&gt;</span><br><span class="line">    &lt;option value=&quot;0&quot;&gt;随机&lt;/option&gt;</span><br><span class="line">    &lt;option value=&quot;3&quot;&gt;上铺&lt;/option&gt;</span><br><span class="line">    &lt;option value=&quot;2&quot;&gt;中铺&lt;/option&gt;</span><br><span class="line">    &lt;option value=&quot;1&quot;&gt;下铺&lt;/option&gt;</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure></p><p><img src="https://upload-images.jianshu.io/upload_images/9464729-65472082ccddff47.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>5、输入完成后鼠标点击旁边的标签区域，上面席位旁边就会出现选择铺位的下拉菜单了<br><img src="https://upload-images.jianshu.io/upload_images/9464729-88d9393500b703a0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>6、接下来添加联系人信息，提交订单付款就可以了，如果遇到系统错误或没有订到心目中的铺位的话，有两种原因：<br>(1)系统错误时可以再按照流程走一遍，碰下运气吧<br>(2)也可能是确实没有想要订的铺位了(售空了)</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;1、生活中总是想着很多美好的事情，接下来要讲的是关于买火车票卧铺时指定铺位&lt;br&gt;2、不建议使用谷歌浏览器，可以使用360安全浏览器，本人使用谷歌浏览器没有成功，然后下载了360浏览器，第一次提交系统直接出错，第二次就成功了&lt;br&gt;3、进入12306官网，登录账户之后，在提
+      
+    
+    </summary>
+    
+      <category term="Daily" scheme="https://github.com/hjyApple/hjyApple.github.io/categories/Daily/"/>
+    
+    
+      <category term="Daily" scheme="https://github.com/hjyApple/hjyApple.github.io/tags/Daily/"/>
+    
+  </entry>
+  
+  <entry>
     <title>防火墙的策略控制&amp;病毒防御&amp;Nat技术&amp;L2TP功能</title>
     <link href="https://github.com/hjyApple/hjyApple.github.io/2018/10/12/%E9%98%B2%E7%81%AB%E5%A2%99%E7%9A%84%E7%AD%96%E7%95%A5%E6%8E%A7%E5%88%B6-%E7%97%85%E6%AF%92%E9%98%B2%E5%BE%A1-Nat%E6%8A%80%E6%9C%AF-L2TP%E5%8A%9F%E8%83%BD/"/>
     <id>https://github.com/hjyApple/hjyApple.github.io/2018/10/12/防火墙的策略控制-病毒防御-Nat技术-L2TP功能/</id>
@@ -511,32 +536,6 @@
       <category term="Security" scheme="https://github.com/hjyApple/hjyApple.github.io/tags/Security/"/>
     
       <category term="XSS" scheme="https://github.com/hjyApple/hjyApple.github.io/tags/XSS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Win resystem</title>
-    <link href="https://github.com/hjyApple/hjyApple.github.io/2018/04/19/system/"/>
-    <id>https://github.com/hjyApple/hjyApple.github.io/2018/04/19/system/</id>
-    <published>2018-04-19T02:14:17.000Z</published>
-    <updated>2018-08-17T01:42:13.170Z</updated>
-    
-    <content type="html"><![CDATA[<p>首先要有一个U盘启动盘或者装机光盘；</p><h2 id="一、安装Win10，按Esc进入BIOS设置两项，"><a href="#一、安装Win10，按Esc进入BIOS设置两项，" class="headerlink" title="一、安装Win10，按Esc进入BIOS设置两项，"></a>一、安装<code>Win10</code>，按<code>Esc</code>进入<code>BIOS</code>设置两项，</h2><ul><li><code>Launch CSm</code>关闭</li><li><code>Security Boot</code>选择<code>Disable</code><br>修改完成后按F10保存并退出<br>接下来就该修改磁盘格式为GPT格式了，进入安装界面时按住<code>Shift+F10</code>，进入命令行，</li><li>首先输入<code>diskpart</code></li><li>进入磁盘操作界面<code>list disk</code></li><li>查看磁盘名及类型<code>select disk 0</code></li><li>清除磁盘格式<code>clean</code></li><li>安装<code>win10</code>需要格式化为gpt格式<code>convert gpt</code></li><li>格式化完成后进行分区<code>create paraition</code></li><li>创建<code>EFI</code>分区，执行<code>create partition efi size=200</code>（分区大小为200MB）</li><li>创建<code>MSR</code>分区，执行<code>create partition msr size=200</code>（微软系统保留分区）</li><li>创建主分区，执行<code>create partition primary size=xxx</code>（具体大小根据你的要求而定，作为系统分区来说，如果有足够空间，可以留出大于100GB即102400MB的空间，命令为<code>create partition primary size=102400</code>，方便系统有足够周转空间）</li><li>如果还有剩余空间，可继续重复执行上述命令来创建新的分区（注意修改具体数值）。但建议用户创建完系统分区后就退出命令提示符继续安装系统，毕竟这种方式不容易估算剩下的硬盘空间大小，进入安装程序后可以进一步划分剩余空间，也可以在安装结束后，进入系统磁盘管理中进行分配</li><li>企业版win10激活方法，鼠标右击<code>win</code>键，点击<code>Windows Powershell（管理员）</code>，依次输入一下命令，如若序列号不可使用，请百度最新win10企业版序列号替换即可，也可以使用Windows激活工具进行激活<figure class="highlight plain"><figcaption><span>/upk</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">slmgr /ipk NPPR9-FWDCX-D2C8J-H872K-2YT43</span><br><span class="line">slmgr /skms zh.us.to</span><br><span class="line">slmgr /ato</span><br></pre></td></tr></table></figure></li></ul><h2 id="二、安装Win7"><a href="#二、安装Win7" class="headerlink" title="二、安装Win7"></a>二、安装Win7</h2><p>听说现在新版电脑不再支持安装Win7了，当然如果你的电脑支持安装Win7，最好不过了。<br>按<code>Esc</code>进入<code>Bios</code></p><ul><li>修改<code>Lanuch CMS</code>为<code>Enable</code></li><li><code>Security Boot</code>选择<code>Disable</code><br>修改完成后按F10保存并退出<br>接下来就该修改磁盘格式了，进入安装界面时按住<code>Shift+F10</code>，进入命令行，</li><li>首先输入<code>diskpart</code></li><li>进入磁盘操作界面<code>list disk</code></li><li>查看磁盘名及类型<code>select disk 0</code></li><li>清除磁盘格式<code>clean</code></li><li>安装<code>win7</code>需要格式化为MBR格式<code>convert mbr</code><br>操作完成后输入<code>exit</code>退出<br>到选择安装系统到哪个磁盘时再进行分区，这是<code>Win7</code>与<code>Win10</code>的不同，分多内存看自己电脑磁盘空间大小，C盘建议分100GB即可，此时电脑会自动分出100MB内存给系统默认分区，选择系统盘时选择自己刚刚创建的100GB的分区就可以，其它剩余的内存安装好系统后进去磁盘管理再分区会更加方便。</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;首先要有一个U盘启动盘或者装机光盘；&lt;/p&gt;
-&lt;h2 id=&quot;一、安装Win10，按Esc进入BIOS设置两项，&quot;&gt;&lt;a href=&quot;#一、安装Win10，按Esc进入BIOS设置两项，&quot; class=&quot;headerlink&quot; title=&quot;一、安装Win10，按Esc进入
-      
-    
-    </summary>
-    
-      <category term="Windows" scheme="https://github.com/hjyApple/hjyApple.github.io/categories/Windows/"/>
-    
-    
-      <category term="Windows" scheme="https://github.com/hjyApple/hjyApple.github.io/tags/Windows/"/>
     
   </entry>
   
