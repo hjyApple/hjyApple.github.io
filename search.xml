@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Python之random函数使用]]></title>
+    <url>%2F2018%2F11%2F15%2FPython%E4%B9%8Brandom%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[pthon中random模块的几个函数可以随机生成数值，下面看一下random的几个函数的使用方法。 随机生成浮点数两个参数，一个是上限，一下是下限123456import randomx = random.uniform(3,9)等价于x = random.random()print x结果产生会随机选取3-9之间的一个随机浮点数 随机生成指定范围内的整数123x = random.randint(10,30)print x结果会随机选取10—3之间的随机整数 随机选取指定字符串中的字符123x = random.choice(&apos;absdf&apos;) #参数可以是列表 ([&apos;a&apos;,&apos;b&apos;])print x结果就会随机选取字符串中的字符会列表中的一条数据 从指定序列中随机获取指定长度的片断1234random.sample(&apos;zcvadfgrwta&apos;,3)wta#参数如果是元组的话 结果将选取元组中随机5个数值 random.randrange()12random.randrange(0,50,2) 用于随机选取0—50之间的随机偶数 对列表元素随机排序1234import randomx = [1,2,3,4,5,6]random.shuffle(x)print x]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[购买火车票指定铺位]]></title>
     <url>%2F2018%2F11%2F14%2F%E8%B4%AD%E4%B9%B0%E7%81%AB%E8%BD%A6%E7%A5%A8%E6%8C%87%E5%AE%9A%E9%93%BA%E4%BD%8D%2F</url>
     <content type="text"><![CDATA[1、生活中总是想着很多美好的事情，接下来要讲的是关于买火车票卧铺时指定铺位2、不建议使用谷歌浏览器，可以使用360安全浏览器，本人使用谷歌浏览器没有成功，然后下载了360浏览器，第一次提交系统直接出错，第二次就成功了3、进入12306官网，登录账户之后，在提交订单前的页面，鼠标放在硬座的地方，右键审查元素，或按下F12再定位硬卧3、定位完成之后，点击Edit as HTML4、在出来的select框的&lt;/select&gt;的后面，输入以下代码 123456&lt;select name=&quot;passenger_1_seat_detail_select&quot; style=&quot;display:block&quot; id=&quot;passenger_1_seat_detail_select&quot; onchange=&quot;setSeatDetail(&apos;1&apos;)&quot;&gt; &lt;option value=&quot;0&quot;&gt;随机&lt;/option&gt; &lt;option value=&quot;3&quot;&gt;上铺&lt;/option&gt; &lt;option value=&quot;2&quot;&gt;中铺&lt;/option&gt; &lt;option value=&quot;1&quot;&gt;下铺&lt;/option&gt;&lt;/select&gt; 5、输入完成后鼠标点击旁边的标签区域，上面席位旁边就会出现选择铺位的下拉菜单了6、接下来添加联系人信息，提交订单付款就可以了，如果遇到系统错误或没有订到心目中的铺位的话，有两种原因：(1)系统错误时可以再按照流程走一遍，碰下运气吧(2)也可能是确实没有想要订的铺位了(售空了)]]></content>
