@@ -144,31 +144,6 @@
   </entry>
   
   <entry>
-    <title>ShadowSock+SwitchyOmega科学上网</title>
-    <link href="https://github.com/hjyApple/hjyApple.github.io/2018/10/29/ShadowSock-SwitchyOmega%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"/>
-    <id>https://github.com/hjyApple/hjyApple.github.io/2018/10/29/ShadowSock-SwitchyOmega科学上网/</id>
-    <published>2018-10-29T12:01:43.000Z</published>
-    <updated>2018-10-29T12:22:01.529Z</updated>
-    
-    <content type="html"><![CDATA[<p>1、首先要有Shadowsock来连接外网(需要ss账号的哟)<br>当然可以联系<a href="mailto:hgeneral@qq.com" target="_blank" rel="noopener">hgeneral@qq.com</a><br>这里简单介绍下Shadowsock的使用<br><a href="https://github.com/shadowsocks/shadowsocks-windows/releases">Windows下载地址</a><br><a href="https://github.com/shadowsocks/shadowsocks-android/releases">安卓的下载地址</a><br>Windows版的安装成功之后，<br>选择编辑服务器，添加一条信息<br><img src="https://upload-images.jianshu.io/upload_images/9464729-07f1e10e6f1a9f9b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>填写服务器IP，端口，选择相应的加密方式,代理端口填写<code>1080</code><br><img src="https://upload-images.jianshu.io/upload_images/9464729-f67dc3e1bc2ce03b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>最直接的是上图中的 从剪贴板导入URL,导入的URl格式为<code>ss*****==</code><br>2、再介绍下ss客户端的部分功能<br><strong>PAC模式:</strong> 也就是智能分流模式，根据规则去匹配你访问的网站，国外网站走代理，国内网站不走代理，非常智能；<br><strong>优点：</strong> 节省流量，国内网站依旧走本地网络，速度快，绝大部分国外网站都走代理，速度也快。<br><strong>缺点：</strong>少部分国外网站会不经过代理，不能起到加速效果，甚至无法访问（解决方案：自己编辑PAC规则列表，将不走代理的国外网址加入进去，或者直接选择全局模式）。<br><strong>全局模式：</strong>国内、国外所有网站都走代理。<br><strong>优点：</strong>可访问全球所有网站。<br><strong>缺点：</strong>所有网站都走代理，访问国内网站速度变慢，且耗流量。<br>为了解决Shadowsock部分功能的不便利，可以使用<code>Chrome+SwitchyOmega+Shadowsock</code>让你的代理更加顺手<br>2、下面介绍的SwitchyOmega已安装在Chrome中，<a href="https://chrome.google.com/webstore/search/SwitchyOmega" target="_blank" rel="noopener">插件下载地址</a><br>配置<code>Auto Switch模式</code>，<br><img src="https://upload-images.jianshu.io/upload_images/9464729-9157ce0274704b47.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Auto Switch"><br><code>gfwlist</code>在线规则，很久没有更新了,地址是：<br><code>https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt</code><br>添加这样一条规则之后，在使用谷歌上网时，开启Auto Switch模式，此时浏览器会匹配这里面的规则自动选择哪些网站的流量走代理，哪些不走代理</p><h5 id="那么，问题来了？"><a href="#那么，问题来了？" class="headerlink" title="那么，问题来了？"></a>那么，问题来了？</h5><p>这个gfwlist库文件里面的规则，覆盖面可能不全<br>可能是个人设置问题，这样设置之后，google.com无法访问  </p><h5 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h5><p>1、额外添加一个情景模式,名称自定义，选择代理服务器类型，<br><img src="https://upload-images.jianshu.io/upload_images/9464729-ab505fce3945a212.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="SS"><br>添加之后，设置如下<br><img src="https://upload-images.jianshu.io/upload_images/9464729-847b4bc68f2ec33b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>2、然后再进入到Auto Switch里面<br>手动添加指定网站的规则，<br><img src="https://upload-images.jianshu.io/upload_images/9464729-1dda7e5f69a1f6e9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>或者当访问某个网站不能访问时插件会出现1个资源未加载，这样添加该网站的规则  例如：为facebook.com添加代理规则，当然这样添加之后，规则属于Auto Switch里面的一条规则，因为此时插件一直是在Auto Switch模式下<br><img src="https://upload-images.jianshu.io/upload_images/9464729-63ffa1d026627278.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>这样就可以访问了<br><img src="https://upload-images.jianshu.io/upload_images/9464729-dd892f765cccda3c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;1、首先要有Shadowsock来连接外网(需要ss账号的哟)&lt;br&gt;当然可以联系&lt;a href=&quot;mailto:hgeneral@qq.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;hgeneral@qq.com&lt;/a&gt;&lt;br&gt;这里简单介绍下Sh
-      
-    
-    </summary>
-    
-      <category term="Tools" scheme="https://github.com/hjyApple/hjyApple.github.io/categories/Tools/"/>
-    
-    
-      <category term="Tools" scheme="https://github.com/hjyApple/hjyApple.github.io/tags/Tools/"/>
-    
-  </entry>
-  
-  <entry>
     <title>防火墙的策略控制&amp;病毒防御&amp;Nat技术&amp;L2TP功能</title>
     <link href="https://github.com/hjyApple/hjyApple.github.io/2018/10/12/%E9%98%B2%E7%81%AB%E5%A2%99%E7%9A%84%E7%AD%96%E7%95%A5%E6%8E%A7%E5%88%B6-%E7%97%85%E6%AF%92%E9%98%B2%E5%BE%A1-Nat%E6%8A%80%E6%9C%AF-L2TP%E5%8A%9F%E8%83%BD/"/>
     <id>https://github.com/hjyApple/hjyApple.github.io/2018/10/12/防火墙的策略控制-病毒防御-Nat技术-L2TP功能/</id>
@@ -531,6 +506,31 @@
     
     
       <category term="Windows" scheme="https://github.com/hjyApple/hjyApple.github.io/tags/Windows/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>arp欺骗</title>
+    <link href="https://github.com/hjyApple/hjyApple.github.io/2018/04/22/arp/"/>
+    <id>https://github.com/hjyApple/hjyApple.github.io/2018/04/22/arp/</id>
+    <published>2018-04-22T01:44:33.000Z</published>
+    <updated>2018-07-21T02:50:46.073Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="ARP"><a href="#ARP" class="headerlink" title="ARP"></a>ARP</h3><p>ARP（Address Resolution Protocol）是地址解析协议，<br>是一种将IP地址转化成物理地址的协议。从IP地址到物理地址的映射有两种方式：表格方式和非表格方式。ARP具体说来就是将网络层（也就是相当于OSI的第三层）地址解析为数据链路层（也就是相当于OSI的第二层）的物理地址(注:此处物理地址并不一定指MAC地址)。</p><h3 id="ARP原理"><a href="#ARP原理" class="headerlink" title="ARP原理"></a>ARP原理</h3><p>某机器A要向主机B发送报文，会查询本地的ARP缓存表，找到B的IP地址对应的MAC地址后，就会进行数据传输。如果未找到，则A广播一个ARP请求报文（携带主机A的IP地址Ia——物理地址Pa），请求IP地址为Ib的主机B回答物理地址Pb。网上所有主机包括B都收到ARP请求，但只有主机B识别自己的IP地址，于是向A主机发回一个ARP响应报文。其中就包含有B的MAC地址，A接收到B的应答后，就会更新本地的ARP缓存。接着使用这个MAC地址发送数据（由网卡附加MAC地址）。因此，本地高速缓存的这个ARP表是本地网络流通的基础，而且这个缓存是动态的。</p><h3 id="ARP欺骗"><a href="#ARP欺骗" class="headerlink" title="ARP欺骗"></a>ARP欺骗</h3><p>在局域网中，黑客经过收到ARP Request广播包，能够偷听到其它节点的 (IP, MAC) 地址, 黑客就伪装为A，告诉B (受害者) 一个假地址，使得B在发送给A 的数据包都被黑客截取；ARP欺骗是局域网中常用的攻击手段，其目的是对局域网中的目标机数据包进行转发，以实现中间人攻击，进而对数据监听、重放、钓鱼等攻击。</p><h4 id="ARP实战"><a href="#ARP实战" class="headerlink" title="ARP实战"></a>ARP实战</h4><p>在kali虚拟机下进行练习<br>本机IP<br><img src="https://upload-images.jianshu.io/upload_images/9464729-c8c0b06780eddf6a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"><br>查看局域网中哪些主机在线<br><code>fping -asg 192.168.231.0/24</code>（局域网的网段）<br><img src="https://upload-images.jianshu.io/upload_images/9464729-dc3c7d2a04ab437a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="fping"><br>使用arpspoof工具进行欺骗，<code>arpspoof -h</code>，<br><img src="https://upload-images.jianshu.io/upload_images/9464729-f0a1aac7ad33ccb7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="arp"><br>输入<code>arpspoof -i eth0 -t 192.168.0.102 -r 192.168.0.1</code><br>arpspoof -i 攻击机网卡 -t 目标主机IP 目标主机网关。<br>此时目标机已经断网。<br>ctrl+c停止断网攻击。</p><h6 id="ARP欺骗-1"><a href="#ARP欺骗-1" class="headerlink" title="ARP欺骗"></a>ARP欺骗</h6><p>linux默认不支持ip转发，修改配置文件以开启流量转发<br><code>echo 1 &gt;/proc/sys/net/ipv4/ip_dorward</code><br>依然使用ARPSpoof工具，输入<code>arpspoof -i eth0 -t 192.168.0.102 -r 192.168.0.1</code>开始欺骗，<br>接下来使用ettercap嗅探工具来抓取http协议上的登录账户和密码<code>ettercap -Tq -i eth0</code></p><p>进行图片获取使用<code>Driftnet -i eth0</code></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;ARP&quot;&gt;&lt;a href=&quot;#ARP&quot; class=&quot;headerlink&quot; title=&quot;ARP&quot;&gt;&lt;/a&gt;ARP&lt;/h3&gt;&lt;p&gt;ARP（Address Resolution Protocol）是地址解析协议，&lt;br&gt;是一种将IP地址转化成物理地址的协议。从IP
+      
+    
+    </summary>
+    
+      <category term="Security" scheme="https://github.com/hjyApple/hjyApple.github.io/categories/Security/"/>
+    
+    
+      <category term="Wireless security" scheme="https://github.com/hjyApple/hjyApple.github.io/tags/Wireless-security/"/>
     
   </entry>
   
