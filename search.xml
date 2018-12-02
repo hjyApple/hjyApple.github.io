@@ -294,8 +294,8 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Burpsuite抓取收据数据包]]></title>
-    <url>%2F2018%2F04%2F05%2FBurpsuite%E6%8A%93%E5%8F%96%E6%94%B6%E6%8D%AE%E6%95%B0%E6%8D%AE%E5%8C%85%2F</url>
+    <title><![CDATA[Burpsuite抓取手机数据包]]></title>
+    <url>%2F2018%2F04%2F05%2FBurpsuite%E6%8A%93%E5%8F%96%E6%89%8B%E6%9C%BA%E6%95%B0%E6%8D%AE%E5%8C%85%2F</url>
     <content type="text"><![CDATA[首先给手机导入crt证书，电脑证书为der格式，直接修改后缀为crt格式即可，此链接已经改好了网盘下载:https://pan.baidu.com/s/1JmdjJ1VO40Vjv0a2OkGVNw &nbsp;密码：6bs8电脑和手机要处于同一个网络，手机WIFI设置好代理及端口，使用Burpsuite进行抓包分析，使用手机访问想要抓取的网站或App里面某一功能，Burpsuite的history里面有记录，可进行分析Burpsuite使用教程,此处需要知道重放包的使用以及history即可此处举例：坦白说&nbsp;&nbsp;QQ新出的坦白说功能，抓取到的页面Host应为ti.qq.com，抓取到的数据为加密类型，解密网址]]></content>
       <categories>
         <category>Tools</category>
