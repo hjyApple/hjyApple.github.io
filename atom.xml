@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/hjyApple/hjyApple.github.io/"/>
-  <updated>2018-11-15T11:12:19.209Z</updated>
+  <updated>2018-12-20T08:59:27.233Z</updated>
   <id>https://github.com/hjyApple/hjyApple.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>EditPlus配置编译asm环境</title>
+    <link href="https://github.com/hjyApple/hjyApple.github.io/2018/12/20/EditPlus%E9%85%8D%E7%BD%AE%E7%BC%96%E8%AF%91asm%E7%8E%AF%E5%A2%83/"/>
+    <id>https://github.com/hjyApple/hjyApple.github.io/2018/12/20/EditPlus配置编译asm环境/</id>
+    <published>2018-12-20T08:58:07.000Z</published>
+    <updated>2018-12-20T08:59:27.233Z</updated>
+    
+    <content type="html"><![CDATA[<p>打开EditPlus，进行编译asm的环境配置</p><p><img src="https://upload-images.jianshu.io/upload_images/9464729-92e694bc9f254a5d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>1.配置编译功能<br><img src="https://upload-images.jianshu.io/upload_images/9464729-e6acb0515d273231.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>2.配置链接功能(Windows链接模式，用于主要链接Windows窗口程序)<br>第三个文本框参数栏写上的是：/SUBSYSTEM:WINDOWS /LIBPATH:F/masm32/lib $(FileNameNoExt).obj (其中F/masm32/lib替换为自己的安装目录)<br><img src="https://upload-images.jianshu.io/upload_images/9464729-cecdbe7b46ddeec0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>3.配置链接功能<strong>(Console**</strong>链接模式，用于主要链接控制台程序)，第三个文本框参数栏写上的是：/SUBSYSTEM:CONSOLE /LIBPATH:F/masm32/lib $(FileNameNoExt).obj <strong>(**</strong>其中F/masm32/lib替换为自己的安装目录)<br><img src="https://upload-images.jianshu.io/upload_images/9464729-d39893e09b8d99af.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>4.配置运行功能<br><img src="https://upload-images.jianshu.io/upload_images/9464729-4994dd28edae8d1b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>5.配置语法高亮，<a href="https://www.editplus.com/javacpp.html" target="_blank" rel="noopener">包下载地址</a>,找到masm下载，放到本地EditPlus的安装目录下即可(D:\ToolSoftWare\Editplus)<br><img src="https://upload-images.jianshu.io/upload_images/9464729-37ce2f1175391ba7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;打开EditPlus，进行编译asm的环境配置&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9464729-92e694bc9f254a5d.png?imageMogr2/auto-orie
+      
+    
+    </summary>
+    
+      <category term="Tools" scheme="https://github.com/hjyApple/hjyApple.github.io/categories/Tools/"/>
+    
+    
+      <category term="Tools" scheme="https://github.com/hjyApple/hjyApple.github.io/tags/Tools/"/>
+    
+  </entry>
   
   <entry>
     <title>Proxy_Spider</title>
@@ -504,31 +530,6 @@
     
     
       <category term="Windows" scheme="https://github.com/hjyApple/hjyApple.github.io/tags/Windows/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>arp欺骗</title>
-    <link href="https://github.com/hjyApple/hjyApple.github.io/2018/04/22/arp/"/>
-    <id>https://github.com/hjyApple/hjyApple.github.io/2018/04/22/arp/</id>
-    <published>2018-04-22T01:44:33.000Z</published>
-    <updated>2018-07-21T02:50:46.073Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="ARP"><a href="#ARP" class="headerlink" title="ARP"></a>ARP</h3><p>ARP（Address Resolution Protocol）是地址解析协议，<br>是一种将IP地址转化成物理地址的协议。从IP地址到物理地址的映射有两种方式：表格方式和非表格方式。ARP具体说来就是将网络层（也就是相当于OSI的第三层）地址解析为数据链路层（也就是相当于OSI的第二层）的物理地址(注:此处物理地址并不一定指MAC地址)。</p><h3 id="ARP原理"><a href="#ARP原理" class="headerlink" title="ARP原理"></a>ARP原理</h3><p>某机器A要向主机B发送报文，会查询本地的ARP缓存表，找到B的IP地址对应的MAC地址后，就会进行数据传输。如果未找到，则A广播一个ARP请求报文（携带主机A的IP地址Ia——物理地址Pa），请求IP地址为Ib的主机B回答物理地址Pb。网上所有主机包括B都收到ARP请求，但只有主机B识别自己的IP地址，于是向A主机发回一个ARP响应报文。其中就包含有B的MAC地址，A接收到B的应答后，就会更新本地的ARP缓存。接着使用这个MAC地址发送数据（由网卡附加MAC地址）。因此，本地高速缓存的这个ARP表是本地网络流通的基础，而且这个缓存是动态的。</p><h3 id="ARP欺骗"><a href="#ARP欺骗" class="headerlink" title="ARP欺骗"></a>ARP欺骗</h3><p>在局域网中，黑客经过收到ARP Request广播包，能够偷听到其它节点的 (IP, MAC) 地址, 黑客就伪装为A，告诉B (受害者) 一个假地址，使得B在发送给A 的数据包都被黑客截取；ARP欺骗是局域网中常用的攻击手段，其目的是对局域网中的目标机数据包进行转发，以实现中间人攻击，进而对数据监听、重放、钓鱼等攻击。</p><h4 id="ARP实战"><a href="#ARP实战" class="headerlink" title="ARP实战"></a>ARP实战</h4><p>在kali虚拟机下进行练习<br>本机IP<br><img src="https://upload-images.jianshu.io/upload_images/9464729-c8c0b06780eddf6a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"><br>查看局域网中哪些主机在线<br><code>fping -asg 192.168.231.0/24</code>（局域网的网段）<br><img src="https://upload-images.jianshu.io/upload_images/9464729-dc3c7d2a04ab437a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="fping"><br>使用arpspoof工具进行欺骗，<code>arpspoof -h</code>，<br><img src="https://upload-images.jianshu.io/upload_images/9464729-f0a1aac7ad33ccb7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="arp"><br>输入<code>arpspoof -i eth0 -t 192.168.0.102 -r 192.168.0.1</code><br>arpspoof -i 攻击机网卡 -t 目标主机IP 目标主机网关。<br>此时目标机已经断网。<br>ctrl+c停止断网攻击。</p><h6 id="ARP欺骗-1"><a href="#ARP欺骗-1" class="headerlink" title="ARP欺骗"></a>ARP欺骗</h6><p>linux默认不支持ip转发，修改配置文件以开启流量转发<br><code>echo 1 &gt;/proc/sys/net/ipv4/ip_dorward</code><br>依然使用ARPSpoof工具，输入<code>arpspoof -i eth0 -t 192.168.0.102 -r 192.168.0.1</code>开始欺骗，<br>接下来使用ettercap嗅探工具来抓取http协议上的登录账户和密码<code>ettercap -Tq -i eth0</code></p><p>进行图片获取使用<code>Driftnet -i eth0</code></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;ARP&quot;&gt;&lt;a href=&quot;#ARP&quot; class=&quot;headerlink&quot; title=&quot;ARP&quot;&gt;&lt;/a&gt;ARP&lt;/h3&gt;&lt;p&gt;ARP（Address Resolution Protocol）是地址解析协议，&lt;br&gt;是一种将IP地址转化成物理地址的协议。从IP
-      
-    
-    </summary>
-    
-      <category term="Security" scheme="https://github.com/hjyApple/hjyApple.github.io/categories/Security/"/>
-    
-    
-      <category term="Wireless security" scheme="https://github.com/hjyApple/hjyApple.github.io/tags/Wireless-security/"/>
     
   </entry>
   
