@@ -272,8 +272,8 @@
   
   <entry>
     <title>Bwapp-Writeup</title>
-    <link href="https://github.com/hjyApple/hjyApple.github.io/2018/08/05/Bwapp/"/>
-    <id>https://github.com/hjyApple/hjyApple.github.io/2018/08/05/Bwapp/</id>
+    <link href="https://github.com/hjyApple/hjyApple.github.io/2018/08/05/Bwapp%E9%83%A8%E5%88%86writeup/"/>
+    <id>https://github.com/hjyApple/hjyApple.github.io/2018/08/05/Bwapp部分writeup/</id>
     <published>2018-08-05T02:15:06.000Z</published>
     <updated>2018-09-05T02:16:18.025Z</updated>
     
@@ -436,29 +436,6 @@
   </entry>
   
   <entry>
-    <title>win10开机键盘无法使用问题</title>
-    <link href="https://github.com/hjyApple/hjyApple.github.io/2018/05/05/%E9%94%AE%E7%9B%98%E9%97%AE%E9%A2%98/"/>
-    <id>https://github.com/hjyApple/hjyApple.github.io/2018/05/05/键盘问题/</id>
-    <published>2018-05-05T03:17:37.000Z</published>
-    <updated>2018-05-05T03:23:57.730Z</updated>
-    
-    <content type="html"><![CDATA[<p>电脑开机外置键盘无法使用<br>进入设备管理器发现键盘下的<code>PC/AT 增强型PS/2键盘</code>驱动为感叹号<br>打开注册表，此时键盘无法使用，那就进入C盘Windows文件下双击regedit.exe文件打开注册表，依次进入<code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E96B-E325-11CE-BFC1-08002BE10318}</code><br>删除UpperFilters项<br>在设备管理器下的键盘选项里删除<code>PC/AT 增强型PS/2键盘</code><br>卸载此设备，重新启动。<br>此时安装驱动会提示错误代码10，该设备无法启动。</p><p>接着修改注册表：<code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E96B-E325-11CE-BFC1-08002BE10318}</code><br>添加字符串<code>UpperFilters</code>项，内容为<code>kbdclass</code><br>卸载设备，重新启动。<br>重新启动后问题得以解决。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;电脑开机外置键盘无法使用&lt;br&gt;进入设备管理器发现键盘下的&lt;code&gt;PC/AT 增强型PS/2键盘&lt;/code&gt;驱动为感叹号&lt;br&gt;打开注册表，此时键盘无法使用，那就进入C盘Windows文件下双击regedit.exe文件打开注册表，依次进入&lt;code&gt;HKEY_LOC
-      
-    
-    </summary>
-    
-    
-      <category term="Windows" scheme="https://github.com/hjyApple/hjyApple.github.io/tags/Windows/"/>
-    
-  </entry>
-  
-  <entry>
     <title>sqli-lab</title>
     <link href="https://github.com/hjyApple/hjyApple.github.io/2018/05/01/sqli-lab/"/>
     <id>https://github.com/hjyApple/hjyApple.github.io/2018/05/01/sqli-lab/</id>
@@ -484,11 +461,11 @@
   </entry>
   
   <entry>
-    <title>Linux&amp;Windows之命令行使用</title>
-    <link href="https://github.com/hjyApple/hjyApple.github.io/2018/04/26/Linux-Windows%E4%B9%8B%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%BD%BF%E7%94%A8/"/>
-    <id>https://github.com/hjyApple/hjyApple.github.io/2018/04/26/Linux-Windows之命令行使用/</id>
+    <title>OS命令行使用</title>
+    <link href="https://github.com/hjyApple/hjyApple.github.io/2018/04/26/OS%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%BD%BF%E7%94%A8/"/>
+    <id>https://github.com/hjyApple/hjyApple.github.io/2018/04/26/OS命令行使用/</id>
     <published>2018-04-26T03:51:39.000Z</published>
-    <updated>2018-08-23T04:06:53.285Z</updated>
+    <updated>2019-05-22T07:34:24.085Z</updated>
     
     <content type="html"><![CDATA[<h3 id="Linux系统下基本命令：-（区分大小写-）"><a href="#Linux系统下基本命令：-（区分大小写-）" class="headerlink" title="Linux系统下基本命令： （区分大小写 ）"></a>Linux系统下基本命令： （区分大小写 ）</h3><p>uname 显示版本信息（同win2K的 ver ）<br>dir 显示当前目录文件,ls -al      显示包括隐藏文件（同win2K的 dir）<br>pwd 查询当前所在的目录位置<br>cd cd　..回到上一层目录，注意cd      与..之间有空格。cd　/返回到根目录。<br>cat 文件名 查看文件内容<br>cat &gt;abc.txt 往abc.txt文件中写上内容。<br>more 文件名 以一页一页的方式显示一个文本文件。<br>cp 复制文件<br>mv 移动文件<br>rm 文件名 删除文件，rm -a 目录名删除目录及子目录<br>mkdir 目录名 建立目录<br>rmdir 删除子目录，目录内没有文档。<br>chmod 设定档案或目录的存取权限<br>grep 在档案中查找字符串<br>diff 档案文件比较<br>find 档案搜寻<br>date 现在的日期、时间<br>who 查询目前和你使用同一台机器的人以及Login时间地点<br>w 查询目前上机者的详细资料<br>whoami 查看自己的帐号名称<br>groups 查看某人的Group<br>passwd 更改密码<br>history 查看自己下过的命令<br>ps 显示进程状态<br>kill 停止某进程<br>gcc 黑客通常用它来编译C语言写的文件<br>su 权限转换为指定使用者<br>telnet IP telnet连接对方主机（同win2K），当出现bash$时就说明连接成功。<br>ftp ftp连接上某服务器（同win2K）     </p><h3 id="windows-系统命令大全"><a href="#windows-系统命令大全" class="headerlink" title="windows 系统命令大全"></a>windows 系统命令大全</h3><h4 id="常用的CMD命令："><a href="#常用的CMD命令：" class="headerlink" title="常用的CMD命令："></a>常用的CMD命令：</h4><p>cd 改变当前目录<br>cls 清屏<br>copy 拷贝文件<br>del 删除文件<br>deltree 删除目录树<br>dir 列文件名<br>diskcopy 复制磁盘<br>edit 文本编辑<br>format 格式化磁盘<br>md 建立子目录<br>more 分屏显示<br>move 移动文件、改目录名<br>rd 删除目录<br>ren 改变文件名<br>echo 内容 &gt; 文件名 创建新文件<br>type 显示文件内容<br>xcopy 拷贝目录与文件<br>attrib 设置文件属性<br>chkdsk 检查磁盘<br>date 显示及修改日期<br>defrag 磁盘碎片整理<br>doskey 重新调用DOS命令<br>emm386 扩展内存管理<br>fdisk 硬盘分区<br>help 帮助<br>label 设置卷标号<br>path 设置搜寻目录<br>prempt 设置提示符<br>restore 恢复备份文件<br>time 显示及修改时间<br>scandisk检测、修理磁盘<br>set 设置环境变量<br>smartdrv设置磁盘加速器<br>undelete恢复被删的文件<br>append 设置非执行文件路径<br>debug 随机调试程序<br>diskcomp磁盘比较<br>expand 还原DOS文件<br>fasthelp快速显示帮助信息<br>fc 文件比较<br>interink启动服务器<br>intersvr启动客户机<br>qbasic Basic集成环境<br>setver 设置版本<br>share 文件共享<br>subst 路径替换<br>tree 列目录树<br>unformat恢复已格式化的磁盘<br>vsafe 防病毒<br>ver 显示DOS版本号<br>vol 显示磁盘卷标号<br>ctty 改变控制设备<br>nbtstat 该命令使用TCP/IP上的NetBIOS显示协议统计和当前TCP/IP连接，使用这个命令你可以得到远程主机的NETBIOS信息</p><h4 id="计算机运行命令全集"><a href="#计算机运行命令全集" class="headerlink" title="计算机运行命令全集"></a>计算机运行命令全集</h4><p>winver———检查Windows版本<br>wmimgmt.msc—-打开windows管理体系结构<br>wupdmgr——–windows更新程序<br>winver———检查Windows版本<br>wmimgmt.msc—-打开windows管理体系结构<br>wupdmgr——–windows更新程序<br>wwww——–windows脚本宿主设置<br>write———-写字板winmsd—–系统信息<br>wiaacmgr——-扫描仪和照相机向导<br>winchat——–XP自带局域网聊天<br>mem.exe——–显示内存使用情况<br>Msconfig.exe—系统配置实用程序<br>mplayer2——-简易widnows media player<br>mspaint——–画图板<br>mstsc———-远程桌面连接<br>mplayer2——-媒体播放机<br>magnify——–放大镜实用程序<br>mmc————打开控制台<br>mobsync——–同步命令<br>dxdiag———检查directx信息<br>drwtsn32—— 系统医生<br>devmgmt.msc— 设备管理器<br>dfrg.msc——-磁盘碎片整理程序<br>diskmgmt.msc—磁盘管理实用程序<br>dcomcnfg——-打开系统组件服务<br>ddeshare——-打开DDE共享设置<br>dvdplay——–DVD播放器<br>net stop messenger—–停止信使服务<br>net start messenger—-开始信使服务<br>notepad——–打开记事本<br>nslookup——-网络管理的工具向导<br>ntbackup——-系统备份和还原<br>narrator——-屏幕”讲述人”<br>ntmsmgr.msc—-移动存储管理器<br>ntmsoprq.msc—移动存储管理员操作请求<br>netstat -an—-(TC)命令检查接口<br>syncapp——–创建一个公文包<br>sysedit——–系统配置编辑器<br>sigverif——-文件签名验证程序<br>sndrec32——-录音机<br>shrpubw——–创建共享文件夹<br>secpol.msc—–本地安全策略<br>syskey———系统加密，一旦加密就不能解开，保护windows xp系统的双重密码<br>services.msc—本地服务设置<br>Sndvol32——-音量控制程序<br>sfc.exe——–系统文件检查器<br>sfc /scannow—windows文件保护<br>tsshutdn——-60秒倒计时关机命令<br>tourstart——xp简介（安装完成后出现的漫游xp程序）<br>taskmgr——–任务管理器<br>eventvwr——-事件查看器<br>eudcedit——-造字程序<br>explorer——-打开资源管理器<br>packager——-对象包装程序<br>perfmon.msc—-计算机性能监测程序<br>progman——–程序管理器<br>regedit.exe—-注册表<br>rsop.msc——-组策略结果集<br>regedt32——-注册表编辑器<br>rononce -p —-15秒关机<br>regsvr32 /u *.dll—-停止dll文件运行<br>regsvr32 /u zipfldr.dll——取消ZIP支持<br>cmd.exe——–CMD命令提示符<br>chkdsk.exe—–Chkdsk磁盘检查<br>certmgr.msc—-证书管理实用程序<br>calc———–启动计算器<br>charmap——–启动字符映射表<br>cliconfg——-SQL SERVER 客户端网络实用程序<br>Clipbrd——–剪贴板查看器<br>conf———–启动netmeeting<br>compmgmt.msc—计算机管理<br>cleanmgr——-**整理<br>ciadv.msc——索引服务程序<br>osk————打开屏幕键盘<br>odbcad32——-ODBC数据源管理器<br>oobe/msoobe /a—-检查XP是否激活<br>lusrmgr.msc—-本机用户和组<br>logoff———注销命令<br>iexpress——-木马捆绑工具，系统自带<br>Nslookup——-IP地址侦测器<br>fsmgmt.msc—–共享文件夹管理器<br>utilman——–辅助工具管理器<br>gpedit.msc—–组策略     </p>]]></content>
     
@@ -510,12 +487,12 @@
   
   <entry>
     <title>Windows使用问题</title>
-    <link href="https://github.com/hjyApple/hjyApple.github.io/2018/04/22/Windows%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98/"/>
-    <id>https://github.com/hjyApple/hjyApple.github.io/2018/04/22/Windows使用问题/</id>
+    <link href="https://github.com/hjyApple/hjyApple.github.io/2018/04/22/Windows%E9%83%A8%E5%88%86%E9%97%AE%E9%A2%98/"/>
+    <id>https://github.com/hjyApple/hjyApple.github.io/2018/04/22/Windows部分问题/</id>
     <published>2018-04-22T07:20:40.000Z</published>
-    <updated>2018-12-05T03:05:06.725Z</updated>
+    <updated>2019-05-22T07:33:34.120Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="windows管理员权限删除文件依然删除不掉"><a href="#windows管理员权限删除文件依然删除不掉" class="headerlink" title="windows管理员权限删除文件依然删除不掉"></a>windows管理员权限删除文件依然删除不掉</h2><p>电脑在开机状态下按shift键，选择重启，开机进入高级选项模式，进入命令行模式，使用命令删除此类文件<br>rd /s /q 文件夹<br>del /F /S /Q 文件夹</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="windows管理员权限删除文件依然删除不掉"><a href="#windows管理员权限删除文件依然删除不掉" class="headerlink" title="windows管理员权限删除文件依然删除不掉"></a>windows管理员权限删除文件依然删除不掉</h2><p>电脑在开机状态下按shift键，选择重启，开机进入高级选项模式，进入命令行模式，使用命令删除此类文件<br>rd /s /q 文件夹<br>del /F /S /Q 文件夹</p><p>电脑开机外置键盘无法使用<br>进入设备管理器发现键盘下的<code>PC/AT 增强型PS/2键盘</code>驱动为感叹号<br>打开注册表，此时键盘无法使用，那就进入C盘Windows文件下双击regedit.exe文件打开注册表，依次进入<code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E96B-E325-11CE-BFC1-08002BE10318}</code><br>删除UpperFilters项<br>在设备管理器下的键盘选项里删除<code>PC/AT 增强型PS/2键盘</code><br>卸载此设备，重新启动。<br>此时安装驱动会提示错误代码10，该设备无法启动。</p><p>接着修改注册表：<code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E96B-E325-11CE-BFC1-08002BE10318}</code><br>添加字符串<code>UpperFilters</code>项，内容为<code>kbdclass</code><br>卸载设备，重新启动。<br>重新启动后问题得以解决。</p>]]></content>
     
     <summary type="html">
     
@@ -530,6 +507,31 @@
     
     
       <category term="Windows" scheme="https://github.com/hjyApple/hjyApple.github.io/tags/Windows/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>arp欺骗</title>
+    <link href="https://github.com/hjyApple/hjyApple.github.io/2018/04/22/arp/"/>
+    <id>https://github.com/hjyApple/hjyApple.github.io/2018/04/22/arp/</id>
+    <published>2018-04-22T01:44:33.000Z</published>
+    <updated>2018-07-21T02:50:46.073Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="ARP"><a href="#ARP" class="headerlink" title="ARP"></a>ARP</h3><p>ARP（Address Resolution Protocol）是地址解析协议，<br>是一种将IP地址转化成物理地址的协议。从IP地址到物理地址的映射有两种方式：表格方式和非表格方式。ARP具体说来就是将网络层（也就是相当于OSI的第三层）地址解析为数据链路层（也就是相当于OSI的第二层）的物理地址(注:此处物理地址并不一定指MAC地址)。</p><h3 id="ARP原理"><a href="#ARP原理" class="headerlink" title="ARP原理"></a>ARP原理</h3><p>某机器A要向主机B发送报文，会查询本地的ARP缓存表，找到B的IP地址对应的MAC地址后，就会进行数据传输。如果未找到，则A广播一个ARP请求报文（携带主机A的IP地址Ia——物理地址Pa），请求IP地址为Ib的主机B回答物理地址Pb。网上所有主机包括B都收到ARP请求，但只有主机B识别自己的IP地址，于是向A主机发回一个ARP响应报文。其中就包含有B的MAC地址，A接收到B的应答后，就会更新本地的ARP缓存。接着使用这个MAC地址发送数据（由网卡附加MAC地址）。因此，本地高速缓存的这个ARP表是本地网络流通的基础，而且这个缓存是动态的。</p><h3 id="ARP欺骗"><a href="#ARP欺骗" class="headerlink" title="ARP欺骗"></a>ARP欺骗</h3><p>在局域网中，黑客经过收到ARP Request广播包，能够偷听到其它节点的 (IP, MAC) 地址, 黑客就伪装为A，告诉B (受害者) 一个假地址，使得B在发送给A 的数据包都被黑客截取；ARP欺骗是局域网中常用的攻击手段，其目的是对局域网中的目标机数据包进行转发，以实现中间人攻击，进而对数据监听、重放、钓鱼等攻击。</p><h4 id="ARP实战"><a href="#ARP实战" class="headerlink" title="ARP实战"></a>ARP实战</h4><p>在kali虚拟机下进行练习<br>本机IP<br><img src="https://upload-images.jianshu.io/upload_images/9464729-c8c0b06780eddf6a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"><br>查看局域网中哪些主机在线<br><code>fping -asg 192.168.231.0/24</code>（局域网的网段）<br><img src="https://upload-images.jianshu.io/upload_images/9464729-dc3c7d2a04ab437a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="fping"><br>使用arpspoof工具进行欺骗，<code>arpspoof -h</code>，<br><img src="https://upload-images.jianshu.io/upload_images/9464729-f0a1aac7ad33ccb7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="arp"><br>输入<code>arpspoof -i eth0 -t 192.168.0.102 -r 192.168.0.1</code><br>arpspoof -i 攻击机网卡 -t 目标主机IP 目标主机网关。<br>此时目标机已经断网。<br>ctrl+c停止断网攻击。</p><h6 id="ARP欺骗-1"><a href="#ARP欺骗-1" class="headerlink" title="ARP欺骗"></a>ARP欺骗</h6><p>linux默认不支持ip转发，修改配置文件以开启流量转发<br><code>echo 1 &gt;/proc/sys/net/ipv4/ip_dorward</code><br>依然使用ARPSpoof工具，输入<code>arpspoof -i eth0 -t 192.168.0.102 -r 192.168.0.1</code>开始欺骗，<br>接下来使用ettercap嗅探工具来抓取http协议上的登录账户和密码<code>ettercap -Tq -i eth0</code></p><p>进行图片获取使用<code>Driftnet -i eth0</code></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;ARP&quot;&gt;&lt;a href=&quot;#ARP&quot; class=&quot;headerlink&quot; title=&quot;ARP&quot;&gt;&lt;/a&gt;ARP&lt;/h3&gt;&lt;p&gt;ARP（Address Resolution Protocol）是地址解析协议，&lt;br&gt;是一种将IP地址转化成物理地址的协议。从IP
+      
+    
+    </summary>
+    
+      <category term="Security" scheme="https://github.com/hjyApple/hjyApple.github.io/categories/Security/"/>
+    
+    
+      <category term="Wireless security" scheme="https://github.com/hjyApple/hjyApple.github.io/tags/Wireless-security/"/>
     
   </entry>
   

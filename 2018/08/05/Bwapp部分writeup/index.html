@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Tools," />
+  <meta name="keywords" content="Security," />
 
 
 
@@ -81,18 +81,26 @@
 
 
 
-<meta name="description" content="Linux系统下基本命令： （区分大小写 ）uname 显示版本信息（同win2K的 ver ）dir 显示当前目录文件,ls -al      显示包括隐藏文件（同win2K的 dir）pwd 查询当前所在的目录位置cd cd　..回到上一层目录，注意cd      与..之间有空格。cd　/返回到根目录。cat 文件名 查看文件内容cat &amp;gt;abc.txt 往abc.txt文件中写上内容">
-<meta name="keywords" content="Tools">
+<meta name="description" content="Injection1.HTML Injection - Reflected (GET)1.1 low源码未进行任何过滤 1234function no_check($data)&amp;#123;        return $data;&amp;#125; 便可想到插入xss语句以及其他类型语句查看源码发现输入的语句以及嵌入到源码中 1.2 medium按照上面的方法进行语句插入，发现直接显示源码，查看源码发现">
+<meta name="keywords" content="Security">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux&amp;Windows之命令行使用">
-<meta property="og:url" content="https://github.com/hjyApple/hjyApple.github.io/2018/04/26/Linux-Windows之命令行使用/index.html">
+<meta property="og:title" content="Bwapp-Writeup">
+<meta property="og:url" content="https://github.com/hjyApple/hjyApple.github.io/2018/08/05/Bwapp部分writeup/index.html">
 <meta property="og:site_name" content="嶽General">
-<meta property="og:description" content="Linux系统下基本命令： （区分大小写 ）uname 显示版本信息（同win2K的 ver ）dir 显示当前目录文件,ls -al      显示包括隐藏文件（同win2K的 dir）pwd 查询当前所在的目录位置cd cd　..回到上一层目录，注意cd      与..之间有空格。cd　/返回到根目录。cat 文件名 查看文件内容cat &amp;gt;abc.txt 往abc.txt文件中写上内容">
+<meta property="og:description" content="Injection1.HTML Injection - Reflected (GET)1.1 low源码未进行任何过滤 1234function no_check($data)&amp;#123;        return $data;&amp;#125; 便可想到插入xss语句以及其他类型语句查看源码发现输入的语句以及嵌入到源码中 1.2 medium按照上面的方法进行语句插入，发现直接显示源码，查看源码发现">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-23T04:06:53.285Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/9464729-42e5d4da3fb95f83.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/9464729-a0434c186c80ca2e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/9464729-aecc36e0ab5dab71.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/9464729-e5ebfb4fcd11454e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/9464729-52406df323fee9c6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/9464729-1e2c31c264da644f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/9464729-5480a1dffcc819b0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-09-05T02:16:18.025Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux&amp;Windows之命令行使用">
-<meta name="twitter:description" content="Linux系统下基本命令： （区分大小写 ）uname 显示版本信息（同win2K的 ver ）dir 显示当前目录文件,ls -al      显示包括隐藏文件（同win2K的 dir）pwd 查询当前所在的目录位置cd cd　..回到上一层目录，注意cd      与..之间有空格。cd　/返回到根目录。cat 文件名 查看文件内容cat &amp;gt;abc.txt 往abc.txt文件中写上内容">
+<meta name="twitter:title" content="Bwapp-Writeup">
+<meta name="twitter:description" content="Injection1.HTML Injection - Reflected (GET)1.1 low源码未进行任何过滤 1234function no_check($data)&amp;#123;        return $data;&amp;#125; 便可想到插入xss语句以及其他类型语句查看源码发现输入的语句以及嵌入到源码中 1.2 medium按照上面的方法进行语句插入，发现直接显示源码，查看源码发现">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/9464729-42e5d4da3fb95f83.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -122,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="https://github.com/hjyApple/hjyApple.github.io/2018/04/26/Linux-Windows之命令行使用/"/>
+  <link rel="canonical" href="https://github.com/hjyApple/hjyApple.github.io/2018/08/05/Bwapp部分writeup/"/>
 
 
 
 
 
-  <title>Linux&Windows之命令行使用 | 嶽General</title>
+  <title>Bwapp-Writeup | 嶽General</title>
   
 
 
@@ -308,7 +316,7 @@ color="255,255,0" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://github.com/hjyApple/hjyApple.github.io/2018/04/26/Linux-Windows之命令行使用/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/hjyApple/hjyApple.github.io/2018/08/05/Bwapp部分writeup/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HJY's Blog">
@@ -325,7 +333,7 @@ color="255,255,0" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
 
         
         
-          <h1 class="post-title" itemprop="name headline">Linux&Windows之命令行使用</h1>
+          <h1 class="post-title" itemprop="name headline">Bwapp-Writeup</h1>
         
 
         <div class="post-meta">
@@ -337,8 +345,8 @@ color="255,255,0" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-26T11:51:39+08:00">
-                2018-04-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-05T10:15:06+08:00">
+                2018-08-05
               </time>
             
 
@@ -360,8 +368,8 @@ color="255,255,0" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Tools/" itemprop="url" rel="index">
-                    <span itemprop="name">Tools</span>
+                  <a href="/categories/Security/" itemprop="url" rel="index">
+                    <span itemprop="name">Security</span>
                   </a>
                 </span>
 
@@ -397,10 +405,21 @@ color="255,255,0" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
       
 
       
-        <h3 id="Linux系统下基本命令：-（区分大小写-）"><a href="#Linux系统下基本命令：-（区分大小写-）" class="headerlink" title="Linux系统下基本命令： （区分大小写 ）"></a>Linux系统下基本命令： （区分大小写 ）</h3><p>uname 显示版本信息（同win2K的 ver ）<br>dir 显示当前目录文件,ls -al      显示包括隐藏文件（同win2K的 dir）<br>pwd 查询当前所在的目录位置<br>cd cd　..回到上一层目录，注意cd      与..之间有空格。cd　/返回到根目录。<br>cat 文件名 查看文件内容<br>cat &gt;abc.txt 往abc.txt文件中写上内容。<br>more 文件名 以一页一页的方式显示一个文本文件。<br>cp 复制文件<br>mv 移动文件<br>rm 文件名 删除文件，rm -a 目录名删除目录及子目录<br>mkdir 目录名 建立目录<br>rmdir 删除子目录，目录内没有文档。<br>chmod 设定档案或目录的存取权限<br>grep 在档案中查找字符串<br>diff 档案文件比较<br>find 档案搜寻<br>date 现在的日期、时间<br>who 查询目前和你使用同一台机器的人以及Login时间地点<br>w 查询目前上机者的详细资料<br>whoami 查看自己的帐号名称<br>groups 查看某人的Group<br>passwd 更改密码<br>history 查看自己下过的命令<br>ps 显示进程状态<br>kill 停止某进程<br>gcc 黑客通常用它来编译C语言写的文件<br>su 权限转换为指定使用者<br>telnet IP telnet连接对方主机（同win2K），当出现bash$时就说明连接成功。<br>ftp ftp连接上某服务器（同win2K）     </p>
-<h3 id="windows-系统命令大全"><a href="#windows-系统命令大全" class="headerlink" title="windows 系统命令大全"></a>windows 系统命令大全</h3><h4 id="常用的CMD命令："><a href="#常用的CMD命令：" class="headerlink" title="常用的CMD命令："></a>常用的CMD命令：</h4><p>cd 改变当前目录<br>cls 清屏<br>copy 拷贝文件<br>del 删除文件<br>deltree 删除目录树<br>dir 列文件名<br>diskcopy 复制磁盘<br>edit 文本编辑<br>format 格式化磁盘<br>md 建立子目录<br>more 分屏显示<br>move 移动文件、改目录名<br>rd 删除目录<br>ren 改变文件名<br>echo 内容 &gt; 文件名 创建新文件<br>type 显示文件内容<br>xcopy 拷贝目录与文件<br>attrib 设置文件属性<br>chkdsk 检查磁盘<br>date 显示及修改日期<br>defrag 磁盘碎片整理<br>doskey 重新调用DOS命令<br>emm386 扩展内存管理<br>fdisk 硬盘分区<br>help 帮助<br>label 设置卷标号<br>path 设置搜寻目录<br>prempt 设置提示符<br>restore 恢复备份文件<br>time 显示及修改时间<br>scandisk检测、修理磁盘<br>set 设置环境变量<br>smartdrv设置磁盘加速器<br>undelete恢复被删的文件<br>append 设置非执行文件路径<br>debug 随机调试程序<br>diskcomp磁盘比较<br>expand 还原DOS文件<br>fasthelp快速显示帮助信息<br>fc 文件比较<br>interink启动服务器<br>intersvr启动客户机<br>qbasic Basic集成环境<br>setver 设置版本<br>share 文件共享<br>subst 路径替换<br>tree 列目录树<br>unformat恢复已格式化的磁盘<br>vsafe 防病毒<br>ver 显示DOS版本号<br>vol 显示磁盘卷标号<br>ctty 改变控制设备<br>nbtstat 该命令使用TCP/IP上的NetBIOS显示协议统计和当前TCP/IP连接，使用这个命令你可以得到远程主机的NETBIOS信息</p>
-<h4 id="计算机运行命令全集"><a href="#计算机运行命令全集" class="headerlink" title="计算机运行命令全集"></a>计算机运行命令全集</h4><p>winver———检查Windows版本<br>wmimgmt.msc—-打开windows管理体系结构<br>wupdmgr——–windows更新程序<br>winver———检查Windows版本<br>wmimgmt.msc—-打开windows管理体系结构<br>wupdmgr——–windows更新程序<br>wwww——–windows脚本宿主设置<br>write———-写字板winmsd—–系统信息<br>wiaacmgr——-扫描仪和照相机向导<br>winchat——–XP自带局域网聊天<br>mem.exe——–显示内存使用情况<br>Msconfig.exe—系统配置实用程序<br>mplayer2——-简易widnows media player<br>mspaint——–画图板<br>mstsc———-远程桌面连接<br>mplayer2——-媒体播放机<br>magnify——–放大镜实用程序<br>mmc————打开控制台<br>mobsync——–同步命令<br>dxdiag———检查directx信息<br>drwtsn32—— 系统医生<br>devmgmt.msc— 设备管理器<br>dfrg.msc——-磁盘碎片整理程序<br>diskmgmt.msc—磁盘管理实用程序<br>dcomcnfg——-打开系统组件服务<br>ddeshare——-打开DDE共享设置<br>dvdplay——–DVD播放器<br>net stop messenger—–停止信使服务<br>net start messenger—-开始信使服务<br>notepad——–打开记事本<br>nslookup——-网络管理的工具向导<br>ntbackup——-系统备份和还原<br>narrator——-屏幕”讲述人”<br>ntmsmgr.msc—-移动存储管理器<br>ntmsoprq.msc—移动存储管理员操作请求<br>netstat -an—-(TC)命令检查接口<br>syncapp——–创建一个公文包<br>sysedit——–系统配置编辑器<br>sigverif——-文件签名验证程序<br>sndrec32——-录音机<br>shrpubw——–创建共享文件夹<br>secpol.msc—–本地安全策略<br>syskey———系统加密，一旦加密就不能解开，保护windows xp系统的双重密码<br>services.msc—本地服务设置<br>Sndvol32——-音量控制程序<br>sfc.exe——–系统文件检查器<br>sfc /scannow—windows文件保护<br>tsshutdn——-60秒倒计时关机命令<br>tourstart——xp简介（安装完成后出现的漫游xp程序）<br>taskmgr——–任务管理器<br>eventvwr——-事件查看器<br>eudcedit——-造字程序<br>explorer——-打开资源管理器<br>packager——-对象包装程序<br>perfmon.msc—-计算机性能监测程序<br>progman——–程序管理器<br>regedit.exe—-注册表<br>rsop.msc——-组策略结果集<br>regedt32——-注册表编辑器<br>rononce -p —-15秒关机<br>regsvr32 /u *.dll—-停止dll文件运行<br>regsvr32 /u zipfldr.dll——取消ZIP支持<br>cmd.exe——–CMD命令提示符<br>chkdsk.exe—–Chkdsk磁盘检查<br>certmgr.msc—-证书管理实用程序<br>calc———–启动计算器<br>charmap——–启动字符映射表<br>cliconfg——-SQL SERVER 客户端网络实用程序<br>Clipbrd——–剪贴板查看器<br>conf———–启动netmeeting<br>compmgmt.msc—计算机管理<br>cleanmgr——-**整理<br>ciadv.msc——索引服务程序<br>osk————打开屏幕键盘<br>odbcad32——-ODBC数据源管理器<br>oobe/msoobe /a—-检查XP是否激活<br>lusrmgr.msc—-本机用户和组<br>logoff———注销命令<br>iexpress——-木马捆绑工具，系统自带<br>Nslookup——-IP地址侦测器<br>fsmgmt.msc—–共享文件夹管理器<br>utilman——–辅助工具管理器<br>gpedit.msc—–组策略     </p>
-
+        <h2 id="Injection"><a href="#Injection" class="headerlink" title="Injection"></a>Injection</h2><h3 id="1-HTML-Injection-Reflected-GET"><a href="#1-HTML-Injection-Reflected-GET" class="headerlink" title="1.HTML Injection - Reflected (GET)"></a>1.HTML Injection - Reflected (GET)</h3><h4 id="1-1-low"><a href="#1-1-low" class="headerlink" title="1.1 low"></a>1.1 low</h4><p>源码未进行任何过滤</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function no_check($data)</span><br><span class="line">&#123;    </span><br><span class="line">    return $data;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>便可想到插入xss语句以及其他类型语句<br><img src="https://upload-images.jianshu.io/upload_images/9464729-42e5d4da3fb95f83.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"><br>查看源码发现输入的语句以及嵌入到源码中<br><img src="https://upload-images.jianshu.io/upload_images/9464729-a0434c186c80ca2e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"></p>
+<h4 id="1-2-medium"><a href="#1-2-medium" class="headerlink" title="1.2 medium"></a>1.2 medium</h4><p>按照上面的方法进行语句插入，发现直接显示源码，查看源码发现进行了html标签过滤<br><img src="https://upload-images.jianshu.io/upload_images/9464729-aecc36e0ab5dab71.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$input = str_replace(&quot;&lt;&quot;, &quot;&amp;lt;&quot;, $data);</span><br><span class="line">$input = str_replace(&quot;&gt;&quot;, &quot;&amp;gt;&quot;, $input);</span><br><span class="line">$input = urldecode($input);</span><br><span class="line">return $input;</span><br></pre></td></tr></table></figure>
+<p>既然对输入的数据进行了编码，那就需要绕过了，对其进行一次url编码不可以，那就对输入的数据进行二次url编码，成功了<br>测试url：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://192.168.112.129/bWAPP/htmli_get.php?firstname=%253Cscript%253Ealert%2528%2527xss%2527%2529%253B%253C%252fscript%253E&amp;lastname=%253Ca%2520href%253D%2522http%253A%252f%252fwww.baidu.com%2522%253Eclick%253C%252fa%253E&amp;form=submit</span><br></pre></td></tr></table></figure>
+<p><img src="https://upload-images.jianshu.io/upload_images/9464729-e5ebfb4fcd11454e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"><br>查看源码，已经成功写入<br><img src="https://upload-images.jianshu.io/upload_images/9464729-52406df323fee9c6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"></p>
+<h4 id="1-3-high"><a href="#1-3-high" class="headerlink" title="1.3 high"></a>1.3 high</h4><p>这个使用了==htmlentities()==将所有适用的字符转换为HTML实体，故安全性比较略高<br><a href="https://www.zhihu.com/question/27646993" target="_blank" rel="noopener">讲解绕过htmlentities</a><br>至此，可以发现html注入反射型漏洞也是有很大危害的，可以进行xss攻击、页面篡改等攻击</p>
+<h3 id="2-HTML-Injection-Reflected-POST"><a href="#2-HTML-Injection-Reflected-POST" class="headerlink" title="2.HTML Injection - Reflected (POST)"></a>2.HTML Injection - Reflected (POST)</h3><p>post的和get型方式一样，不做过多介绍<br><img src="https://upload-images.jianshu.io/upload_images/9464729-1e2c31c264da644f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"></p>
+<h3 id="3-HTML-Injection-Reflected-URL"><a href="#3-HTML-Injection-Reflected-URL" class="headerlink" title="3.HTML Injection - Reflected (URL)"></a>3.HTML Injection - Reflected (URL)</h3><h4 id="3-1-low"><a href="#3-1-low" class="headerlink" title="3.1 low"></a>3.1 low</h4><p>BP抓包，修改host为1.1.1.1<br><img src="https://upload-images.jianshu.io/upload_images/9464729-5480a1dffcc819b0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"></p>
+<h4 id="3-2-medium"><a href="#3-2-medium" class="headerlink" title="3.2 medium"></a>3.2 medium</h4><p>document.write(),动态向页面写入内容<br>document.URL  返回当前页面或文档的URL</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$url = &quot;&lt;script&gt;document.write(document.URL)&lt;/script&gt;&quot;;</span><br></pre></td></tr></table></figure>
+<h4 id="3-3-high"><a href="#3-3-high" class="headerlink" title="3.3 high"></a>3.3 high</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">    case &quot;2&quot; :</span><br><span class="line"></span><br><span class="line">        $url = &quot;http://&quot; . $_SERVER[&quot;HTTP_HOST&quot;] . xss_check_3($_SERVER[&quot;REQUEST_URI&quot;]);</span><br><span class="line">        break;</span><br><span class="line"></span><br><span class="line">function xss_check_3($data, $encoding = &quot;UTF-8&quot;)</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    // htmlspecialchars - converts special characters to HTML entities    </span><br><span class="line">    // &apos;&amp;&apos; (ampersand) becomes &apos;&amp;amp;&apos; </span><br><span class="line">    // &apos;&quot;&apos; (double quote) becomes &apos;&amp;quot;&apos; when ENT_NOQUOTES is not set</span><br><span class="line">    // &quot;&apos;&quot; (single quote) becomes &apos;&amp;#039;&apos; (or &amp;apos;) only when ENT_QUOTES is set</span><br><span class="line">    // &apos;&lt;&apos; (less than) becomes &apos;&amp;lt;&apos;</span><br><span class="line">    // &apos;&gt;&apos; (greater than) becomes &apos;&amp;gt;&apos;  </span><br><span class="line">    </span><br><span class="line">    return htmlspecialchars($data, ENT_QUOTES, $encoding);</span><br><span class="line">       </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h3>
       
     </div>
     
@@ -417,7 +436,7 @@ color="255,255,0" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
       
         <div class="post-tags">
           
-            <a href="/tags/Tools/" rel="tag"># Tools</a>
+            <a href="/tags/Security/" rel="tag"># Security</a>
           
         </div>
       
@@ -430,8 +449,8 @@ color="255,255,0" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/22/Windows使用问题/" rel="next" title="Windows使用问题">
-                <i class="fa fa-chevron-left"></i> Windows使用问题
+              <a href="/2018/08/01/信息收集之命令行的使用/" rel="next" title="信息收集之命令行的使用">
+                <i class="fa fa-chevron-left"></i> 信息收集之命令行的使用
               </a>
             
           </div>
@@ -440,8 +459,8 @@ color="255,255,0" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/05/01/sqli-lab/" rel="prev" title="sqli-lab">
-                sqli-lab <i class="fa fa-chevron-right"></i>
+              <a href="/2018/08/08/Office相关问题/" rel="prev" title="Office相关问题">
+                Office相关问题 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -523,7 +542,7 @@ color="255,255,0" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -587,7 +606,7 @@ color="255,255,0" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux系统下基本命令：-（区分大小写-）"><span class="nav-number">1.</span> <span class="nav-text">Linux系统下基本命令： （区分大小写 ）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#windows-系统命令大全"><span class="nav-number">2.</span> <span class="nav-text">windows 系统命令大全</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#常用的CMD命令："><span class="nav-number">2.1.</span> <span class="nav-text">常用的CMD命令：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算机运行命令全集"><span class="nav-number">2.2.</span> <span class="nav-text">计算机运行命令全集</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Injection"><span class="nav-number">1.</span> <span class="nav-text">Injection</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-HTML-Injection-Reflected-GET"><span class="nav-number">1.1.</span> <span class="nav-text">1.HTML Injection - Reflected (GET)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-low"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1 low</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-medium"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.2 medium</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-high"><span class="nav-number">1.1.3.</span> <span class="nav-text">1.3 high</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-HTML-Injection-Reflected-POST"><span class="nav-number">1.2.</span> <span class="nav-text">2.HTML Injection - Reflected (POST)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-HTML-Injection-Reflected-URL"><span class="nav-number">1.3.</span> <span class="nav-text">3.HTML Injection - Reflected (URL)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-low"><span class="nav-number">1.3.1.</span> <span class="nav-text">3.1 low</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-medium"><span class="nav-number">1.3.2.</span> <span class="nav-text">3.2 medium</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-high"><span class="nav-number">1.3.3.</span> <span class="nav-text">3.3 high</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4"><span class="nav-number">1.4.</span> <span class="nav-text">4.</span></a></li></ol></li></ol></div>
             
 
           </div>

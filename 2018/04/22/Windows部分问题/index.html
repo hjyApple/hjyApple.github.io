@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="首先要有一个U盘启动盘或者装机光盘； 一、安装Win10，按Esc进入BIOS设置两项， Launch CSm关闭 Security Boot选择Disable修改完成后按F10保存并退出接下来就该修改磁盘格式为GPT格式了，进入安装界面时按住Shift+F10，进入命令行， 首先输入diskpart 进入磁盘操作界面list disk 查看磁盘名及类型select disk 0 清除磁盘格式cl">
+<meta name="description" content="windows管理员权限删除文件依然删除不掉电脑在开机状态下按shift键，选择重启，开机进入高级选项模式，进入命令行模式，使用命令删除此类文件rd /s /q 文件夹del /F /S /Q 文件夹 电脑开机外置键盘无法使用进入设备管理器发现键盘下的PC/AT 增强型PS/2键盘驱动为感叹号打开注册表，此时键盘无法使用，那就进入C盘Windows文件下双击regedit.exe文件打开注册表，依">
 <meta name="keywords" content="Windows">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Win resystem">
-<meta property="og:url" content="https://github.com/hjyApple/hjyApple.github.io/2018/04/19/system/index.html">
+<meta property="og:title" content="Windows使用问题">
+<meta property="og:url" content="https://github.com/hjyApple/hjyApple.github.io/2018/04/22/Windows部分问题/index.html">
 <meta property="og:site_name" content="嶽General">
-<meta property="og:description" content="首先要有一个U盘启动盘或者装机光盘； 一、安装Win10，按Esc进入BIOS设置两项， Launch CSm关闭 Security Boot选择Disable修改完成后按F10保存并退出接下来就该修改磁盘格式为GPT格式了，进入安装界面时按住Shift+F10，进入命令行， 首先输入diskpart 进入磁盘操作界面list disk 查看磁盘名及类型select disk 0 清除磁盘格式cl">
+<meta property="og:description" content="windows管理员权限删除文件依然删除不掉电脑在开机状态下按shift键，选择重启，开机进入高级选项模式，进入命令行模式，使用命令删除此类文件rd /s /q 文件夹del /F /S /Q 文件夹 电脑开机外置键盘无法使用进入设备管理器发现键盘下的PC/AT 增强型PS/2键盘驱动为感叹号打开注册表，此时键盘无法使用，那就进入C盘Windows文件下双击regedit.exe文件打开注册表，依">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-17T01:42:13.170Z">
+<meta property="og:updated_time" content="2019-05-22T07:33:34.120Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Win resystem">
-<meta name="twitter:description" content="首先要有一个U盘启动盘或者装机光盘； 一、安装Win10，按Esc进入BIOS设置两项， Launch CSm关闭 Security Boot选择Disable修改完成后按F10保存并退出接下来就该修改磁盘格式为GPT格式了，进入安装界面时按住Shift+F10，进入命令行， 首先输入diskpart 进入磁盘操作界面list disk 查看磁盘名及类型select disk 0 清除磁盘格式cl">
+<meta name="twitter:title" content="Windows使用问题">
+<meta name="twitter:description" content="windows管理员权限删除文件依然删除不掉电脑在开机状态下按shift键，选择重启，开机进入高级选项模式，进入命令行模式，使用命令删除此类文件rd /s /q 文件夹del /F /S /Q 文件夹 电脑开机外置键盘无法使用进入设备管理器发现键盘下的PC/AT 增强型PS/2键盘驱动为感叹号打开注册表，此时键盘无法使用，那就进入C盘Windows文件下双击regedit.exe文件打开注册表，依">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://github.com/hjyApple/hjyApple.github.io/2018/04/19/system/"/>
+  <link rel="canonical" href="https://github.com/hjyApple/hjyApple.github.io/2018/04/22/Windows部分问题/"/>
 
 
 
 
 
-  <title>Win resystem | 嶽General</title>
+  <title>Windows使用问题 | 嶽General</title>
   
 
 
@@ -308,7 +308,7 @@ color="255,255,0" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://github.com/hjyApple/hjyApple.github.io/2018/04/19/system/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/hjyApple/hjyApple.github.io/2018/04/22/Windows部分问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HJY's Blog">
@@ -325,7 +325,7 @@ color="255,255,0" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
 
         
         
-          <h1 class="post-title" itemprop="name headline">Win resystem</h1>
+          <h1 class="post-title" itemprop="name headline">Windows使用问题</h1>
         
 
         <div class="post-meta">
@@ -337,8 +337,8 @@ color="255,255,0" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-19T10:14:17+08:00">
-                2018-04-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-22T15:20:40+08:00">
+                2018-04-22
               </time>
             
 
@@ -397,33 +397,9 @@ color="255,255,0" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
       
 
       
-        <p>首先要有一个U盘启动盘或者装机光盘；</p>
-<h2 id="一、安装Win10，按Esc进入BIOS设置两项，"><a href="#一、安装Win10，按Esc进入BIOS设置两项，" class="headerlink" title="一、安装Win10，按Esc进入BIOS设置两项，"></a>一、安装<code>Win10</code>，按<code>Esc</code>进入<code>BIOS</code>设置两项，</h2><ul>
-<li><code>Launch CSm</code>关闭</li>
-<li><code>Security Boot</code>选择<code>Disable</code><br>修改完成后按F10保存并退出<br>接下来就该修改磁盘格式为GPT格式了，进入安装界面时按住<code>Shift+F10</code>，进入命令行，</li>
-<li>首先输入<code>diskpart</code></li>
-<li>进入磁盘操作界面<code>list disk</code></li>
-<li>查看磁盘名及类型<code>select disk 0</code></li>
-<li>清除磁盘格式<code>clean</code></li>
-<li>安装<code>win10</code>需要格式化为gpt格式<code>convert gpt</code></li>
-<li>格式化完成后进行分区<code>create paraition</code></li>
-<li>创建<code>EFI</code>分区，执行<code>create partition efi size=200</code>（分区大小为200MB）</li>
-<li>创建<code>MSR</code>分区，执行<code>create partition msr size=200</code>（微软系统保留分区）</li>
-<li>创建主分区，执行<code>create partition primary size=xxx</code>（具体大小根据你的要求而定，作为系统分区来说，如果有足够空间，可以留出大于100GB即102400MB的空间，命令为<code>create partition primary size=102400</code>，方便系统有足够周转空间）</li>
-<li>如果还有剩余空间，可继续重复执行上述命令来创建新的分区（注意修改具体数值）。但建议用户创建完系统分区后就退出命令提示符继续安装系统，毕竟这种方式不容易估算剩下的硬盘空间大小，进入安装程序后可以进一步划分剩余空间，也可以在安装结束后，进入系统磁盘管理中进行分配</li>
-<li>企业版win10激活方法，鼠标右击<code>win</code>键，点击<code>Windows Powershell（管理员）</code>，依次输入一下命令，如若序列号不可使用，请百度最新win10企业版序列号替换即可，也可以使用Windows激活工具进行激活<figure class="highlight plain"><figcaption><span>/upk</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">slmgr /ipk NPPR9-FWDCX-D2C8J-H872K-2YT43</span><br><span class="line">slmgr /skms zh.us.to</span><br><span class="line">slmgr /ato</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="二、安装Win7"><a href="#二、安装Win7" class="headerlink" title="二、安装Win7"></a>二、安装Win7</h2><p>听说现在新版电脑不再支持安装Win7了，当然如果你的电脑支持安装Win7，最好不过了。<br>按<code>Esc</code>进入<code>Bios</code></p>
-<ul>
-<li>修改<code>Lanuch CMS</code>为<code>Enable</code></li>
-<li><code>Security Boot</code>选择<code>Disable</code><br>修改完成后按F10保存并退出<br>接下来就该修改磁盘格式了，进入安装界面时按住<code>Shift+F10</code>，进入命令行，</li>
-<li>首先输入<code>diskpart</code></li>
-<li>进入磁盘操作界面<code>list disk</code></li>
-<li>查看磁盘名及类型<code>select disk 0</code></li>
-<li>清除磁盘格式<code>clean</code></li>
-<li>安装<code>win7</code>需要格式化为MBR格式<code>convert mbr</code><br>操作完成后输入<code>exit</code>退出<br>到选择安装系统到哪个磁盘时再进行分区，这是<code>Win7</code>与<code>Win10</code>的不同，分多内存看自己电脑磁盘空间大小，C盘建议分100GB即可，此时电脑会自动分出100MB内存给系统默认分区，选择系统盘时选择自己刚刚创建的100GB的分区就可以，其它剩余的内存安装好系统后进去磁盘管理再分区会更加方便。</li>
-</ul>
+        <h2 id="windows管理员权限删除文件依然删除不掉"><a href="#windows管理员权限删除文件依然删除不掉" class="headerlink" title="windows管理员权限删除文件依然删除不掉"></a>windows管理员权限删除文件依然删除不掉</h2><p>电脑在开机状态下按shift键，选择重启，开机进入高级选项模式，进入命令行模式，使用命令删除此类文件<br>rd /s /q 文件夹<br>del /F /S /Q 文件夹</p>
+<p>电脑开机外置键盘无法使用<br>进入设备管理器发现键盘下的<code>PC/AT 增强型PS/2键盘</code>驱动为感叹号<br>打开注册表，此时键盘无法使用，那就进入C盘Windows文件下双击regedit.exe文件打开注册表，依次进入<code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E96B-E325-11CE-BFC1-08002BE10318}</code><br>删除UpperFilters项<br>在设备管理器下的键盘选项里删除<code>PC/AT 增强型PS/2键盘</code><br>卸载此设备，重新启动。<br>此时安装驱动会提示错误代码10，该设备无法启动。</p>
+<p>接着修改注册表：<code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E96B-E325-11CE-BFC1-08002BE10318}</code><br>添加字符串<code>UpperFilters</code>项，内容为<code>kbdclass</code><br>卸载设备，重新启动。<br>重新启动后问题得以解决。</p>
 
       
     </div>
@@ -454,8 +430,8 @@ color="255,255,0" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/11/kali/" rel="next" title="kali">
-                <i class="fa fa-chevron-left"></i> kali
+              <a href="/2018/04/22/arp/" rel="next" title="arp欺骗">
+                <i class="fa fa-chevron-left"></i> arp欺骗
               </a>
             
           </div>
@@ -464,8 +440,8 @@ color="255,255,0" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/19/xss/" rel="prev" title="DVWA系列之XSS">
-                DVWA系列之XSS <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/26/OS命令行使用/" rel="prev" title="OS命令行使用">
+                OS命令行使用 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -547,7 +523,7 @@ color="255,255,0" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -611,7 +587,7 @@ color="255,255,0" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、安装Win10，按Esc进入BIOS设置两项，"><span class="nav-number">1.</span> <span class="nav-text">一、安装Win10，按Esc进入BIOS设置两项，</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、安装Win7"><span class="nav-number">2.</span> <span class="nav-text">二、安装Win7</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#windows管理员权限删除文件依然删除不掉"><span class="nav-number">1.</span> <span class="nav-text">windows管理员权限删除文件依然删除不掉</span></a></li></ol></div>
             
 
           </div>

