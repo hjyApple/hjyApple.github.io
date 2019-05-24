@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/hjyApple/hjyApple.github.io/"/>
-  <updated>2018-12-20T08:59:27.233Z</updated>
+  <updated>2019-05-24T07:40:26.934Z</updated>
   <id>https://github.com/hjyApple/hjyApple.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>常见端口漏洞</title>
+    <link href="https://github.com/hjyApple/hjyApple.github.io/2019/05/24/%E5%B8%B8%E8%A7%81%E7%AB%AF%E5%8F%A3%E6%BC%8F%E6%B4%9E/"/>
+    <id>https://github.com/hjyApple/hjyApple.github.io/2019/05/24/常见端口漏洞/</id>
+    <published>2019-05-24T07:37:20.000Z</published>
+    <updated>2019-05-24T07:40:26.934Z</updated>
+    
+    <content type="html"><![CDATA[<h5 id="常见端口漏洞"><a href="#常见端口漏洞" class="headerlink" title="常见端口漏洞"></a>常见端口漏洞</h5><p>端口    服务    主要漏洞</p><p>21 FTP 主要看是否支持匿名，也可跑弱口令</p><p>22 SSH 弱口令爆破</p><p>23 telnet 弱口令爆破</p><p>80-90 WEB 常见WEB漏洞以及一些为管理后台</p><p>161 snmp public弱口令</p><p>389 ldap 是否为匿名访问</p><p>443 openssl 心脏出血以及一些WEB漏洞测试</p><p>445 smb 跑弱口令，检测是否有ms_08067等溢出</p><p>873 rsync 是否为匿名访问，也可以跑弱口令</p><p>1025 RPC NFS匿名访问</p><p>1099 java rmi 远程命令执行漏洞</p><p>1433 mssql 弱口令爆破</p><p>1521 oracle 弱口令爆破</p><p>2082/2083 cpanel主机管理系统登陆 弱口令爆破</p><p>2222 DA虚拟主机管理系统登陆 弱口令爆破</p><p>2601,2604 zebra路由器 默认密码zebra</p><p>3128 squid代理默认端口 如果没设置口令很可能 就直接漫游内网</p><p>3306 mysql 弱口令爆破</p><p>3312/3311 kangle主机管理系统登陆 说明</p><p>3389 RDP 弱口令爆破，SHIFT后门，放大镜，输入法漏洞</p><p>4440 rundeck web</p><p>4848 GlassFish web中间件 弱口令admin/adminadmin</p><p>5432 postgres 弱口令爆破</p><p>5560,7778 iSqlPlus</p><p>5900,5901,5902 vnc 弱口令爆破</p><p>5984 CouchDB <a href="http://link.zhihu.com/?target=http%3A//xxx%3A5984/_utils/" target="_blank" rel="noopener">http://xxx:5984/_utils/</a></p><p>6082 varnish</p><p>6379 redis 一般无验证，直接访问</p><p>7001,7002 weblogic 弱口令爆破</p><p>7778 Kloxo主机控制面板登录</p><p>8080 tomcat\jboss 弱口令爆破，jboss后台可能不验证</p><p>8649 ganglia</p><p>8080-8090 常见WEB端口</p><p>8083 Vestacp主机管理系统 （国外用较多）</p><p>8649 ganglia</p><p>8888 amh/LuManager 主机管理系统默认端口 说明</p><p>9000 fcgi fcgi php命令执行漏洞</p><p>9200 elasticsearch 代码执行</p><p>9043 websphere 弱口令爆破</p><p>10000 Virtualmin/Webmin 服务器虚拟主机管理系统</p><p>11211 memcache 内存泄露</p><p>27017,28017 mongodb 未授权访问</p><p>50000 Upnp SAP命令执行</p><p>50060,50030 hadoop WEB 未授权访问</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h5 id=&quot;常见端口漏洞&quot;&gt;&lt;a href=&quot;#常见端口漏洞&quot; class=&quot;headerlink&quot; title=&quot;常见端口漏洞&quot;&gt;&lt;/a&gt;常见端口漏洞&lt;/h5&gt;&lt;p&gt;端口    服务    主要漏洞&lt;/p&gt;
+&lt;p&gt;21 FTP 主要看是否支持匿名，也可跑弱口令&lt;/p&gt;
+&lt;p
+      
+    
+    </summary>
+    
+      <category term="Security" scheme="https://github.com/hjyApple/hjyApple.github.io/categories/Security/"/>
+    
+    
+      <category term="Security" scheme="https://github.com/hjyApple/hjyApple.github.io/tags/Security/"/>
+    
+  </entry>
   
   <entry>
     <title>EditPlus配置编译asm环境</title>
@@ -507,31 +534,6 @@
     
     
       <category term="Windows" scheme="https://github.com/hjyApple/hjyApple.github.io/tags/Windows/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>arp欺骗</title>
-    <link href="https://github.com/hjyApple/hjyApple.github.io/2018/04/22/arp/"/>
-    <id>https://github.com/hjyApple/hjyApple.github.io/2018/04/22/arp/</id>
-    <published>2018-04-22T01:44:33.000Z</published>
-    <updated>2018-07-21T02:50:46.073Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="ARP"><a href="#ARP" class="headerlink" title="ARP"></a>ARP</h3><p>ARP（Address Resolution Protocol）是地址解析协议，<br>是一种将IP地址转化成物理地址的协议。从IP地址到物理地址的映射有两种方式：表格方式和非表格方式。ARP具体说来就是将网络层（也就是相当于OSI的第三层）地址解析为数据链路层（也就是相当于OSI的第二层）的物理地址(注:此处物理地址并不一定指MAC地址)。</p><h3 id="ARP原理"><a href="#ARP原理" class="headerlink" title="ARP原理"></a>ARP原理</h3><p>某机器A要向主机B发送报文，会查询本地的ARP缓存表，找到B的IP地址对应的MAC地址后，就会进行数据传输。如果未找到，则A广播一个ARP请求报文（携带主机A的IP地址Ia——物理地址Pa），请求IP地址为Ib的主机B回答物理地址Pb。网上所有主机包括B都收到ARP请求，但只有主机B识别自己的IP地址，于是向A主机发回一个ARP响应报文。其中就包含有B的MAC地址，A接收到B的应答后，就会更新本地的ARP缓存。接着使用这个MAC地址发送数据（由网卡附加MAC地址）。因此，本地高速缓存的这个ARP表是本地网络流通的基础，而且这个缓存是动态的。</p><h3 id="ARP欺骗"><a href="#ARP欺骗" class="headerlink" title="ARP欺骗"></a>ARP欺骗</h3><p>在局域网中，黑客经过收到ARP Request广播包，能够偷听到其它节点的 (IP, MAC) 地址, 黑客就伪装为A，告诉B (受害者) 一个假地址，使得B在发送给A 的数据包都被黑客截取；ARP欺骗是局域网中常用的攻击手段，其目的是对局域网中的目标机数据包进行转发，以实现中间人攻击，进而对数据监听、重放、钓鱼等攻击。</p><h4 id="ARP实战"><a href="#ARP实战" class="headerlink" title="ARP实战"></a>ARP实战</h4><p>在kali虚拟机下进行练习<br>本机IP<br><img src="https://upload-images.jianshu.io/upload_images/9464729-c8c0b06780eddf6a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"><br>查看局域网中哪些主机在线<br><code>fping -asg 192.168.231.0/24</code>（局域网的网段）<br><img src="https://upload-images.jianshu.io/upload_images/9464729-dc3c7d2a04ab437a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="fping"><br>使用arpspoof工具进行欺骗，<code>arpspoof -h</code>，<br><img src="https://upload-images.jianshu.io/upload_images/9464729-f0a1aac7ad33ccb7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="arp"><br>输入<code>arpspoof -i eth0 -t 192.168.0.102 -r 192.168.0.1</code><br>arpspoof -i 攻击机网卡 -t 目标主机IP 目标主机网关。<br>此时目标机已经断网。<br>ctrl+c停止断网攻击。</p><h6 id="ARP欺骗-1"><a href="#ARP欺骗-1" class="headerlink" title="ARP欺骗"></a>ARP欺骗</h6><p>linux默认不支持ip转发，修改配置文件以开启流量转发<br><code>echo 1 &gt;/proc/sys/net/ipv4/ip_dorward</code><br>依然使用ARPSpoof工具，输入<code>arpspoof -i eth0 -t 192.168.0.102 -r 192.168.0.1</code>开始欺骗，<br>接下来使用ettercap嗅探工具来抓取http协议上的登录账户和密码<code>ettercap -Tq -i eth0</code></p><p>进行图片获取使用<code>Driftnet -i eth0</code></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;ARP&quot;&gt;&lt;a href=&quot;#ARP&quot; class=&quot;headerlink&quot; title=&quot;ARP&quot;&gt;&lt;/a&gt;ARP&lt;/h3&gt;&lt;p&gt;ARP（Address Resolution Protocol）是地址解析协议，&lt;br&gt;是一种将IP地址转化成物理地址的协议。从IP
-      
-    
-    </summary>
-    
-      <category term="Security" scheme="https://github.com/hjyApple/hjyApple.github.io/categories/Security/"/>
-    
-    
-      <category term="Wireless security" scheme="https://github.com/hjyApple/hjyApple.github.io/tags/Wireless-security/"/>
     
   </entry>
   
