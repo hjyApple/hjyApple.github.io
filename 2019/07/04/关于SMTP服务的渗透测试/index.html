@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Tools,BurpSuite," />
+  <meta name="keywords" content="Security," />
 
 
 
@@ -81,26 +81,18 @@
 
 
 
-<meta name="description" content="首先来认识下Burp Suite Intruder的四种攻击类型： Sniper（狙击手模式）这个模式使用单一的payload组。它会针对每个位置设置payload。这种攻击类型适合对常见漏洞中的请求参数单独地进行fuzzing测试。攻击中的请求总数应该是position数量和payload数量的乘积。 Battering ram（攻城锤模式）这一模式使用单一的payload组。它会重复paylo">
-<meta name="keywords" content="Tools,BurpSuite">
+<meta name="description" content="关于SMTP服务的渗透测试针对smtp服务的25端口作渗透性测试时，可使用 smtp_enum进行用户名枚举和进行telnet IP 25（port） 连接 用户枚举metasploitmetasploit有辅助模块smtp_enum,也可以用来枚举smtp用户名。1234567891011121314151617181920212223直接在kali终端输入： msfconsolemsf &amp;gt">
+<meta name="keywords" content="Security">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Brute_Force">
-<meta property="og:url" content="https://github.com/hjyApple/hjyApple.github.io/2018/04/21/Brute-Force/index.html">
+<meta property="og:title" content="关于SMTP的端口测试">
+<meta property="og:url" content="https://github.com/hjyApple/hjyApple.github.io/2019/07/04/关于SMTP服务的渗透测试/index.html">
 <meta property="og:site_name" content="嶽General">
-<meta property="og:description" content="首先来认识下Burp Suite Intruder的四种攻击类型： Sniper（狙击手模式）这个模式使用单一的payload组。它会针对每个位置设置payload。这种攻击类型适合对常见漏洞中的请求参数单独地进行fuzzing测试。攻击中的请求总数应该是position数量和payload数量的乘积。 Battering ram（攻城锤模式）这一模式使用单一的payload组。它会重复paylo">
+<meta property="og:description" content="关于SMTP服务的渗透测试针对smtp服务的25端口作渗透性测试时，可使用 smtp_enum进行用户名枚举和进行telnet IP 25（port） 连接 用户枚举metasploitmetasploit有辅助模块smtp_enum,也可以用来枚举smtp用户名。1234567891011121314151617181920212223直接在kali终端输入： msfconsolemsf &amp;gt">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/9464729-deafa0671bebb1f5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/9464729-f8e855bcd42c1f3c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/9464729-07eff3d34e907e49.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/9464729-b899a05db27105cc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/9464729-0e64530aac748cc8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/9464729-50a0f7c0f6eb0c67.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/9464729-682d4cfe8c40d9f6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-05-13T07:19:42.673Z">
+<meta property="og:updated_time" content="2019-07-04T09:35:38.161Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Brute_Force">
-<meta name="twitter:description" content="首先来认识下Burp Suite Intruder的四种攻击类型： Sniper（狙击手模式）这个模式使用单一的payload组。它会针对每个位置设置payload。这种攻击类型适合对常见漏洞中的请求参数单独地进行fuzzing测试。攻击中的请求总数应该是position数量和payload数量的乘积。 Battering ram（攻城锤模式）这一模式使用单一的payload组。它会重复paylo">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/9464729-deafa0671bebb1f5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:title" content="关于SMTP的端口测试">
+<meta name="twitter:description" content="关于SMTP服务的渗透测试针对smtp服务的25端口作渗透性测试时，可使用 smtp_enum进行用户名枚举和进行telnet IP 25（port） 连接 用户枚举metasploitmetasploit有辅助模块smtp_enum,也可以用来枚举smtp用户名。1234567891011121314151617181920212223直接在kali终端输入： msfconsolemsf &amp;gt">
 
 
 
@@ -130,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://github.com/hjyApple/hjyApple.github.io/2018/04/21/Brute-Force/"/>
+  <link rel="canonical" href="https://github.com/hjyApple/hjyApple.github.io/2019/07/04/关于SMTP服务的渗透测试/"/>
 
 
 
 
 
-  <title>Brute_Force | 嶽General</title>
+  <title>关于SMTP的端口测试 | 嶽General</title>
   
 
 
@@ -316,7 +308,7 @@ color="255,255,0" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://github.com/hjyApple/hjyApple.github.io/2018/04/21/Brute-Force/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/hjyApple/hjyApple.github.io/2019/07/04/关于SMTP服务的渗透测试/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HJY's Blog">
@@ -333,7 +325,7 @@ color="255,255,0" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
 
         
         
-          <h1 class="post-title" itemprop="name headline">Brute_Force</h1>
+          <h1 class="post-title" itemprop="name headline">关于SMTP的端口测试</h1>
         
 
         <div class="post-meta">
@@ -345,8 +337,8 @@ color="255,255,0" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-21T10:33:29+08:00">
-                2018-04-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-04T17:16:32+08:00">
+                2019-07-04
               </time>
             
 
@@ -368,8 +360,8 @@ color="255,255,0" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Tools/" itemprop="url" rel="index">
-                    <span itemprop="name">Tools</span>
+                  <a href="/categories/Security/" itemprop="url" rel="index">
+                    <span itemprop="name">Security</span>
                   </a>
                 </span>
 
@@ -405,12 +397,65 @@ color="255,255,0" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
       
 
       
-        <p>首先来认识下Burp Suite Intruder的四种攻击类型：</p>
-<h4 id="Sniper（狙击手模式）"><a href="#Sniper（狙击手模式）" class="headerlink" title="Sniper（狙击手模式）"></a>Sniper（狙击手模式）</h4><p>这个模式使用单一的payload组。它会针对每个位置设置payload。这种攻击类型适合对常见漏洞中的请求参数单独地进行fuzzing测试。攻击中的请求总数应该是position数量和payload数量的乘积。</p>
-<h4 id="Battering-ram（攻城锤模式）"><a href="#Battering-ram（攻城锤模式）" class="headerlink" title="Battering ram（攻城锤模式）"></a>Battering ram（攻城锤模式）</h4><p>这一模式使用单一的payload组。它会重复payload并且一次把所有相同的payload放入指定的位置中。这种攻击适合那种需要在请求中把相同的输入放到多个位置的情况。请求的总数是payload组中payload的总数。</p>
-<h4 id="Pitchfork（草叉模式）"><a href="#Pitchfork（草叉模式）" class="headerlink" title="Pitchfork（草叉模式）"></a>Pitchfork（草叉模式）</h4><p>这一模式使用多个payload组。对于定义的位置可以使用不同的payload组。攻击会同步迭代所有的payload组，把payload放入每个定义的位置中。这种攻击类型非常适合那种不同位置中需要插入不同但相关的输入的情况。请求的数量应该是最小的payload组中的payload数量。</p>
-<h4 id="Cluster-bomb（集束炸弹模式）"><a href="#Cluster-bomb（集束炸弹模式）" class="headerlink" title="Cluster bomb（集束炸弹模式）"></a>Cluster bomb（集束炸弹模式）</h4><p>这种模式会使用多个payload组。每个定义的位置中有不同的payload组。攻击会迭代每个payload组，每种payload组合都会被测试一遍。这种攻击适用于那种位置中需要不同且不相关或者未知的输入的攻击。攻击请求的总数是各payload组中payload数量的乘积。</p>
-<h5 id="DVWA下的Brute-Force模块"><a href="#DVWA下的Brute-Force模块" class="headerlink" title="DVWA下的Brute Force模块"></a>DVWA下的Brute Force模块</h5><p>随便登录一个账号，记下报错码<br><img src="https://upload-images.jianshu.io/upload_images/9464729-deafa0671bebb1f5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="错误码"><br>打开BurpSuite，抓包开始爆破<br><img src="https://upload-images.jianshu.io/upload_images/9464729-f8e855bcd42c1f3c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>Ctrl+I发送到Intruder模块，选择攻击类型，此处为了爆破账户名和密码，选择Cluster bomb模式，选中要进行爆破的字段内容<br><img src="https://upload-images.jianshu.io/upload_images/9464729-07eff3d34e907e49.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="首先改"><br>在Payloads选项卡下面，设置set：1的list，可以自定义，也可以使用BurpSuite自带的字段，set：2设置密码字段，可以在simple list里面用load使用本地密码字典<br><img src="https://upload-images.jianshu.io/upload_images/9464729-b899a05db27105cc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="1+2"><br>复制刚刚的报错信息到Options选项卡里面，在Grep-Match里面Add一下<br><img src="https://upload-images.jianshu.io/upload_images/9464729-0e64530aac748cc8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="错误"><br>准备工作到此结束，可以开始攻击了，点击Start attack,根据Length的不同，找出有效的Payload，<br><img src="https://upload-images.jianshu.io/upload_images/9464729-50a0f7c0f6eb0c67.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="破解"><br>在response里面查看一下，成功了，大功告成<br><img src="https://upload-images.jianshu.io/upload_images/9464729-682d4cfe8c40d9f6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="显示"></p>
+        <h3 id="关于SMTP服务的渗透测试"><a href="#关于SMTP服务的渗透测试" class="headerlink" title="关于SMTP服务的渗透测试"></a>关于SMTP服务的渗透测试</h3><p>针对smtp服务的25端口<br>作渗透性测试时，可使用 smtp_enum进行用户名枚举和进行<code>telnet IP 25（port）</code> 连接</p>
+<h4 id="用户枚举"><a href="#用户枚举" class="headerlink" title="用户枚举"></a>用户枚举</h4><h4 id="metasploit"><a href="#metasploit" class="headerlink" title="metasploit"></a>metasploit</h4><p>metasploit有辅助模块smtp_enum,也可以用来枚举smtp用户名。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">直接在kali终端输入： msfconsole</span><br><span class="line">msf &gt; use auxiliary/scanner/smtp/smtp_enum </span><br><span class="line">msf auxiliary(scanner/smtp/smtp_enum) &gt; show options </span><br><span class="line"></span><br><span class="line">Module options (auxiliary/scanner/smtp/smtp_enum):</span><br><span class="line"></span><br><span class="line">   Name       Current Setting                                                Required  Description</span><br><span class="line">   ----       ---------------                                                --------  -----------</span><br><span class="line">   RHOSTS                                                                    yes       The target address range or CIDR identifier</span><br><span class="line">   RPORT      25                                                             yes       The target port (TCP)</span><br><span class="line">   THREADS    1                                                              yes       The number of concurrent threads</span><br><span class="line">   UNIXONLY   true                                                           yes       Skip Microsoft bannered servers when testing unix users</span><br><span class="line">   USER_FILE  /usr/share/metasploit-framework/data/wordlists/unix_users.txt  yes       The file that contains a list of probable users accounts.</span><br><span class="line"></span><br><span class="line">msf auxiliary(scanner/smtp/smtp_enum) &gt; set rhosts 202.xx.xx.xx</span><br><span class="line">rhosts =&gt; 202.xx.xx.xx</span><br><span class="line">msf auxiliary(scanner/smtp/smtp_enum) &gt; run</span><br><span class="line"></span><br><span class="line">[*] 202.xx.xx.xx    - 202.xx.xx.xx25 Banner: 220 mxt.scut.edu.cn ESMTP Postfix</span><br><span class="line">[+] 202.xx.xx.xx     - 202.xx.xx.xx:25 Users found: adm, avahi, avahi-autoipd, bin, daemon, fax, ftp, games, gdm, gopher, haldaemon, halt, lp, mail, news, nobody, operator, postgres, postmaster, root, sshd, sync, uucp, webmaster, www</span><br><span class="line">[*] Scanned 1 of 1 hosts (100% complete)</span><br><span class="line">[*] Auxiliary module execution completed</span><br><span class="line">爆破出以上用户名</span><br></pre></td></tr></table></figure></p>
+<p>smtp-user-enum是kali自带的枚举工具，也可以通过以下命令来枚举SMTP服务的用户帐户(sendmail)。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">smtp-user-enum -M VRFY -u root -t IP #验证root用户是否存在</span><br></pre></td></tr></table></figure>
+<h4 id="telnet连接"><a href="#telnet连接" class="headerlink" title="telnet连接"></a>telnet连接</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">telnet IP Port(一般用25)</span><br><span class="line">EHLO xx.com</span><br><span class="line">(此时若直接进行下面的步骤，则表示存在非登录直接发送邮件的漏洞，</span><br><span class="line">若无法继续，则需要auth login登录，采用base64编码进行登录,</span><br><span class="line">首先输入user@xx.com的base64编码,返回334后，</span><br><span class="line">输入smtp的授权码的base64编码,此时返回235即代表认证成功)</span><br><span class="line">MAIL FROM:a@xx.com   #qq和smtp等smtp服务该命令格式不同 mail from:&lt;a@xx.com&gt;</span><br><span class="line">RCPT TO:b@xx.com     #qq和smtp等smtp服务该命令格式不同 rcpt to:&lt;a@xx.com&gt;</span><br><span class="line">DATA</span><br><span class="line">from : a@xx.com</span><br><span class="line">to : b@xx.com</span><br><span class="line">subject:主题</span><br><span class="line">正文</span><br><span class="line">.  #正文最后回车，以一个点终结，返回250即邮件发送成功</span><br><span class="line">下面以smtp.163.com为例</span><br><span class="line">telnet smtp.163.com 25</span><br><span class="line">220 mtl-mtsp-mta05-in2 ESMTP (SMTP.com v6)</span><br></pre></td></tr></table></figure>
+<p>若不须登录即可发送邮件，则存在伪造邮件(钓鱼邮件)漏洞</p>
+<p><a href="https://blog.csdn.net/gscaiyucheng/article/details/22038099" target="_blank" rel="noopener">参考链接</a></p>
+<h6 id="邮件服务返回代码含义"><a href="#邮件服务返回代码含义" class="headerlink" title="邮件服务返回代码含义"></a>邮件服务返回代码含义</h6><ul>
+<li><p>500   格式错误，命令不可识别（此错误也包括命令行过长）</p>
+</li>
+<li><p>501   参数格式错误</p>
+</li>
+<li><p>502   命令不可实现 </p>
+</li>
+<li><p>503   错误的命令序列</p>
+</li>
+<li><p>504   命令参数不可实现</p>
+</li>
+<li><p>211    系统状态或系统帮助响应</p>
+</li>
+<li><p>214   帮助信息</p>
+</li>
+<li><p>220     服务就绪 </p>
+</li>
+<li><p>221     服务关闭传输信道 </p>
+</li>
+<li><p>421     服务未就绪，关闭传输信道（当必须关闭时，此应答可以作为对任何命令的响应） </p>
+</li>
+<li><p>250   要求的邮件操作完成 </p>
+</li>
+<li><p>251   用户非本地，将转发向</p>
+</li>
+<li><p>450   要求的邮件操作未完成，邮箱不可用（例如，邮箱忙）</p>
+</li>
+<li><p>550   要求的邮件操作未完成，邮箱不可用（例如，邮箱未找到，或不可访问）</p>
+<ul>
+<li>451   放弃要求的操作；处理过程中出错</li>
+</ul>
+</li>
+<li><p>551   用户非本地，请尝试 </p>
+</li>
+<li><p>452   系统存储不足，要求的操作未执行 </p>
+</li>
+<li><p>552   过量的存储分配，要求的操作未执行</p>
+</li>
+<li><p>553   邮箱名不可用，要求的操作未执行（例如邮箱格式错误）</p>
+</li>
+<li><p>354   开始邮件输入，以. 结束</p>
+</li>
+<li><p>554   操作失败</p>
+</li>
+<li><p>535   用户验证失败</p>
+</li>
+<li><p>235   用户验证成功 </p>
+</li>
+<li><p>334   等待用户输入验证信息 for next connection</p>
+</li>
+</ul>
+<p>参考链接：<br><a href="https://www.sqlsec.com/2017/08/smtp.html" target="_blank" rel="noopener">https://www.sqlsec.com/2017/08/smtp.html</a></p>
 
       
     </div>
@@ -428,9 +473,7 @@ color="255,255,0" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
       
         <div class="post-tags">
           
-            <a href="/tags/Tools/" rel="tag"># Tools</a>
-          
-            <a href="/tags/BurpSuite/" rel="tag"># BurpSuite</a>
+            <a href="/tags/Security/" rel="tag"># Security</a>
           
         </div>
       
@@ -443,8 +486,8 @@ color="255,255,0" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/19/xss/" rel="next" title="DVWA系列之XSS">
-                <i class="fa fa-chevron-left"></i> DVWA系列之XSS
+              <a href="/2019/02/24/常见端口漏洞/" rel="next" title="常见端口漏洞">
+                <i class="fa fa-chevron-left"></i> 常见端口漏洞
               </a>
             
           </div>
@@ -452,10 +495,6 @@ color="255,255,0" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/22/arp/" rel="prev" title="arp欺骗">
-                arp欺骗 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -600,7 +639,7 @@ color="255,255,0" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Sniper（狙击手模式）"><span class="nav-number">1.</span> <span class="nav-text">Sniper（狙击手模式）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Battering-ram（攻城锤模式）"><span class="nav-number">2.</span> <span class="nav-text">Battering ram（攻城锤模式）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Pitchfork（草叉模式）"><span class="nav-number">3.</span> <span class="nav-text">Pitchfork（草叉模式）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cluster-bomb（集束炸弹模式）"><span class="nav-number">4.</span> <span class="nav-text">Cluster bomb（集束炸弹模式）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#DVWA下的Brute-Force模块"><span class="nav-number">4.1.</span> <span class="nav-text">DVWA下的Brute Force模块</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#关于SMTP服务的渗透测试"><span class="nav-number">1.</span> <span class="nav-text">关于SMTP服务的渗透测试</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#用户枚举"><span class="nav-number">1.1.</span> <span class="nav-text">用户枚举</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#metasploit"><span class="nav-number">1.2.</span> <span class="nav-text">metasploit</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#telnet连接"><span class="nav-number">1.3.</span> <span class="nav-text">telnet连接</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#邮件服务返回代码含义"><span class="nav-number">1.3.0.1.</span> <span class="nav-text">邮件服务返回代码含义</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
