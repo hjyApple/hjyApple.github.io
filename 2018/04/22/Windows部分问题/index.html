@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="HGeneral">
 <meta property="og:description" content="windows管理员权限删除文件依然删除不掉电脑在开机状态下按shift键，选择重启，开机进入高级选项模式，进入命令行模式，使用命令删除此类文件rd /s /q 文件夹del /F /S /Q 文件夹 电脑开机外置键盘无法使用进入设备管理器发现键盘下的PC/AT 增强型PS/2键盘驱动为感叹号打开注册表，此时键盘无法使用，那就进入C盘Windows文件下双击regedit.exe文件打开注册表，依">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-22T07:33:34.120Z">
+<meta property="og:updated_time" content="2020-07-25T08:22:41.103Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Windows使用问题">
 <meta name="twitter:description" content="windows管理员权限删除文件依然删除不掉电脑在开机状态下按shift键，选择重启，开机进入高级选项模式，进入命令行模式，使用命令删除此类文件rd /s /q 文件夹del /F /S /Q 文件夹 电脑开机外置键盘无法使用进入设备管理器发现键盘下的PC/AT 增强型PS/2键盘驱动为感叹号打开注册表，此时键盘无法使用，那就进入C盘Windows文件下双击regedit.exe文件打开注册表，依">
@@ -400,6 +400,8 @@ color="255,255,0" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
         <h2 id="windows管理员权限删除文件依然删除不掉"><a href="#windows管理员权限删除文件依然删除不掉" class="headerlink" title="windows管理员权限删除文件依然删除不掉"></a>windows管理员权限删除文件依然删除不掉</h2><p>电脑在开机状态下按shift键，选择重启，开机进入高级选项模式，进入命令行模式，使用命令删除此类文件<br>rd /s /q 文件夹<br>del /F /S /Q 文件夹</p>
 <p>电脑开机外置键盘无法使用<br>进入设备管理器发现键盘下的<code>PC/AT 增强型PS/2键盘</code>驱动为感叹号<br>打开注册表，此时键盘无法使用，那就进入C盘Windows文件下双击regedit.exe文件打开注册表，依次进入<code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E96B-E325-11CE-BFC1-08002BE10318}</code><br>删除UpperFilters项<br>在设备管理器下的键盘选项里删除<code>PC/AT 增强型PS/2键盘</code><br>卸载此设备，重新启动。<br>此时安装驱动会提示错误代码10，该设备无法启动。</p>
 <p>接着修改注册表：<code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E96B-E325-11CE-BFC1-08002BE10318}</code><br>添加字符串<code>UpperFilters</code>项，内容为<code>kbdclass</code><br>卸载设备，重新启动。<br>重新启动后问题得以解决。</p>
+<h3 id="彻底清理C盘垃圾文件"><a href="#彻底清理C盘垃圾文件" class="headerlink" title="彻底清理C盘垃圾文件"></a>彻底清理C盘垃圾文件</h3><p>在桌面新建一个txt文本，将下面的代码复制过去，另存为.bat文件，右键以管理员身份运行即可</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line">echo Cleaning junk files，please waiting......</span><br><span class="line">del /f /s /q %systemdrive%\*.tmp</span><br><span class="line">del /f /s /q %systemdrive%\*._mp</span><br><span class="line">del /f /s /q %systemdrive%\*.log</span><br><span class="line">del /f /s /q %systemdrive%\*.gid</span><br><span class="line">del /f /s /q %systemdrive%\*.chk</span><br><span class="line">del /f /s /q %systemdrive%\*.old</span><br><span class="line">del /f /s /q %systemdrive%\recycled\*.*</span><br><span class="line">del /f /s /q %windir%\*.bak</span><br><span class="line">del /f /s /q %windir%\prefetch\*.*</span><br><span class="line">rd /s /q %windir%\temp &amp; md %windir%\temp</span><br><span class="line">del /f /q %userprofile%\cookies\*.*</span><br><span class="line">del /f /q %userprofile%\recent\*.*</span><br><span class="line">del /f /s /q &quot;%userprofile%\Local Settings\Temporary Internet Files\*.*&quot;</span><br><span class="line">del /f /s /q &quot;%userprofile%\Local Settings\Temp\*.*&quot;</span><br><span class="line">del /f /s /q &quot;%userprofile%\recent\*.*&quot;</span><br><span class="line">echo Clean up completed!</span><br><span class="line">echo. &amp; pause</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -587,7 +589,7 @@ color="255,255,0" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#windows管理员权限删除文件依然删除不掉"><span class="nav-number">1.</span> <span class="nav-text">windows管理员权限删除文件依然删除不掉</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#windows管理员权限删除文件依然删除不掉"><span class="nav-number">1.</span> <span class="nav-text">windows管理员权限删除文件依然删除不掉</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#彻底清理C盘垃圾文件"><span class="nav-number">1.1.</span> <span class="nav-text">彻底清理C盘垃圾文件</span></a></li></ol></li></ol></div>
             
 
           </div>
