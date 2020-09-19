@@ -12,6 +12,14 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[python项目]]></title>
+    <url>%2F2019%2F06%2F19%2Fpython%E9%A1%B9%E7%9B%AE%2F</url>
+    <content type="text"><![CDATA[Python项目Flask1、初次使用flask错误一 遇到以下错误时，通过分析最后一句错误原因，需要修改本地计算机名称，右键计算机–&gt;属性–&gt;更改计算机名为全英文，重启电脑，问题解决 12345678910111213141516171819Traceback (most recent call last): File "learning.py", line 106, in &lt;module&gt; main() File "learning.py", line 37, in main httpd = make_server('127.0.0.1', PORT, application) File "D:\Program Files\Python34\lib\wsgiref\simple_server.py", line 153, in make_server server = server_class((host, port), handler_class) File "D:\Program Files\Python34\lib\socketserver.py", line 430, in __init__ self.server_bind() File "D:\Program Files\Python34\lib\wsgiref\simple_server.py", line 50, in server_bind HTTPServer.server_bind(self) File "D:\Program Files\Python34\lib\http\server.py", line 135, in server_bind self.server_name = socket.getfqdn(host) File "D:\Program Files\Python34\lib\socket.py", line 463, in getfqdn hostname, aliases, ipaddrs = gethostbyaddr(name)UnicodeDecodeError: 'utf-8' codec can't decode byte 0xd5 in position 0: invalidcontinuation byte 也ython中的socket.py 中来看一下出错的地方 1234567if not name or name ='0000': name = gethostname()try: hostname,aliases,ipaddrs = gethostbyaddr(name)except errot: passelse]]></content>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[常见端口漏洞]]></title>
     <url>%2F2019%2F02%2F24%2F%E5%B8%B8%E8%A7%81%E7%AB%AF%E5%8F%A3%E6%BC%8F%E6%B4%9E%2F</url>
     <content type="text"><![CDATA[常见端口漏洞端口 服务 主要漏洞 21 FTP 主要看是否支持匿名，也可跑弱口令 22 SSH 弱口令爆破 23 telnet 弱口令爆破 25 smtp 用户名枚举、伪造邮件 80-90 WEB 常见WEB漏洞以及一些为管理后台 161 snmp public弱口令 389 ldap 是否为匿名访问 443 openssl 心脏出血以及一些WEB漏洞测试 445 smb 跑弱口令，检测是否有ms_08067等溢出 873 rsync 是否为匿名访问，也可以跑弱口令 1025 RPC NFS匿名访问 1099 java rmi 远程命令执行漏洞 1433 mssql 弱口令爆破 1521 oracle 弱口令爆破 2082/2083 cpanel主机管理系统登陆 弱口令爆破 2222 DA虚拟主机管理系统登陆 弱口令爆破 2601,2604 zebra路由器 默认密码zebra 3128 squid代理默认端口 如果没设置口令很可能 就直接漫游内网 3306 mysql 弱口令爆破 3312/3311 kangle主机管理系统登陆 说明 3389 RDP 弱口令爆破，SHIFT后门，放大镜，输入法漏洞 4440 rundeck web 4848 GlassFish web中间件 弱口令admin/adminadmin 5432 postgres 弱口令爆破 5560,7778 iSqlPlus 5900,5901,5902 vnc 弱口令爆破 5984 CouchDB http://xxx:5984/_utils/ 6082 varnish 6379 redis 一般无验证，直接访问 7001,7002 weblogic 弱口令爆破 7778 Kloxo主机控制面板登录 8080 tomcat\jboss 弱口令爆破，jboss后台可能不验证 8649 ganglia 8080-8090 常见WEB端口 8083 Vestacp主机管理系统 （国外用较多） 8649 ganglia 8888 amh/LuManager 主机管理系统默认端口 说明 9000 fcgi fcgi php命令执行漏洞 9200 elasticsearch 代码执行 9043 websphere 弱口令爆破 10000 Virtualmin/Webmin 服务器虚拟主机管理系统 11211 memcache 内存泄露 27017,28017 mongodb 未授权访问 50000 Upnp SAP命令执行 50060,50030 hadoop WEB 未授权访问]]></content>
